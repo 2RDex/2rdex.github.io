@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #cacaca96;
+    background: linear-gradient( rgba(255, 255, 255, 0.555), rgba(255, 255, 255, 0.555)), url(./../images/background.png);
+    background-position: center;
+}
+
+header {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    min-height: 54vh;
+    width: 100vw;
+    height: 54vh;
+}

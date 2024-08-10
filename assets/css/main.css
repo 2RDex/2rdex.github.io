@@ -4866,8 +4866,7 @@ sup {
     color: #fff
 }
 
-
-@media only screen and (min-width:1340px) {
+@media only screen and (min-width:800px) {
     .header .site-title {
         margin: 0;
         font-size: 75px;
@@ -4877,7 +4876,7 @@ sup {
 @media only screen and (min-width:550px) {
     .header .site-title {
         margin: 0;
-        font-size: 100px;
+        font-size: 60px;
     }
 }
 
@@ -4887,12 +4886,6 @@ sup {
     line-height: 1;
     color: #fff;
     margin-top: 10px
-}
-
-@media only screen and (min-width:1340px) {
-    .header .site-description {
-        font-size: 30px
-    }
 }
 
 @media only screen and (min-width:550px) {
@@ -4913,12 +4906,6 @@ sup {
     text-decoration: none;
     font-size: 15px;
     margin: 10px
-}
-
-@media only screen and (min-width:1340px) {
-    .header-links .link {
-        font-size: 15px
-    }
 }
 
 @media only screen and (min-width:550px) {
@@ -4954,14 +4941,6 @@ sup {
 .header-icons .icon:hover {
     color: #1a222c;
     background: #fff
-}
-
-@media only screen and (min-width:1340px) {
-    .header-icons .icon {
-        width: 26.25px;
-        height: 26.25px;
-        font-size: 26.25px
-    }
 }
 
 @media only screen and (min-width:550px) {
@@ -5010,12 +4989,6 @@ sup {
     max-width: 960px
 }
 
-@media only screen and (min-width:1340px) {
-    #about {
-        width: 60%
-    }
-}
-
 @media only screen and (min-width:550px) {
     #about {
         width: 80%
@@ -5039,13 +5012,6 @@ sup {
     font-size: 16px
 }
 
-@media only screen and (min-width:1340px) {
-    .user {
-        flex-wrap: nowrap;
-        font-size: 55px
-    }
-}
-
 @media only screen and (min-width:550px) {
     .user {
         flex-wrap: nowrap;
@@ -5065,12 +5031,6 @@ sup {
     width: 90%;
     max-width: 960px;
     margin: 0 auto
-}
-
-@media only screen and (min-width:1340px) {
-    #projects {
-        width: 60%
-    }
 }
 
 @media only screen and (min-width:550px) {

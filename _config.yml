@@ -1,15 +1,38 @@
 # Site settings
+domain: "2RD.top"
 title: "2RD Channel | Linktree"
 description: "รวมลิงค์โปรไฟล์โซเชียลมีเดียทั้งหมดของผม"
-domain: "2RD.top"
+page_404: "404 PAGE NOT FOUND"
+page_404_description: "ไซต์ที่กําหนดค่าตามที่อยู่นี้ไม่ มีไฟล์ที่ร้องขอ"
 
 # User settings
 username: "@2RD.Channel"
+user_description: ""
 footer: "&copy;2024"
 email: "contact@2rd.top"
 
-page_404: "404 PAGE NOT FOUND"
-page_404_description: "ไซต์ที่กําหนดค่าตามที่อยู่นี้ไม่ มีไฟล์ที่ร้องขอ"
+# Link settings
+s1_hide: "" #If you want to hide it, enter True and if you want to show it, leave it blank.
+s1_name: "facebook"
+s1_link: "https://www.facebook.com/2RD.Channel"
+
+s2_hide: "" #If you want to hide it, enter True and if you want to show it, leave it blank.
+s2_name: "youtube"
+s2_link: "https://www.youtube.com/@2RD.Channel"
+
+s3_hide: "" #If you want to hide it, enter True and if you want to show it, leave it blank.
+s3_name: "tiktok"
+s3_link: "https://www.tiktok.com/@2RD.Channel"
+
+s4_hide: "true" #If you want to hide it, enter True and if you want to show it, leave it blank.
+s4_name: "xbox"
+s4_link: "https://www.xbox.com/th-TH/play/user/Nixvip"
+
+s5_hide: "" #If you want to hide it, enter True and if you want to show it, leave it blank.
+s5_name: "steam"
+s5_link: "https://steamcommunity.com/id/2GB/"
+
+#mailto:{{site.email}}?subject=สวัสดีครับ!
 
 # Google-analytics
 google-analytics:

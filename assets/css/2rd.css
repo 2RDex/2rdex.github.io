@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Itim&family=K2D:wght@400;700&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 
 *{
   margin: 0;
@@ -8,12 +8,34 @@
   font-style: normal;
 }
 
-article,aside,details,figcaption,figure,footer,header,main,menu,nav,section {
-    display: block
+html {
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%
 }
 
 body {
   margin: 0;
+}
+
+article,aside,details,figcaption,figure,footer,header,main,menu,nav,section {
+  display: block
+}
+
+#particles-js {
+  background: #1a222c;
+  display: flex;
+  vertical-align: bottom;
+  width: 100%;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed
+}
+
+#particles-js .particles-js-canvas-el {
+    width: 100% !important;
+    height: 100vh !important
 }
 
 .header {
@@ -30,7 +52,11 @@ body {
   align-items: center;
 }
 
-.site-title {
+.img-fluid {
+  border: 3px dotted #0895e1;
+}
+
+h1 .site-title {
   font-size: 34px;
   display: block;
   line-height: 1;
@@ -39,7 +65,7 @@ body {
   margin-top: -30px;
 }
 
-.site-description {
+h1 .site-description {
   font-size: 14px;
   display: block;
   line-height: 1;
@@ -48,32 +74,13 @@ body {
   margin-top: 10px
 }
 
-html {
-  line-height: 1.15;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%
-}
-
-.footer {
-  background: #1a222c;
-  margin-top: 20px;
-  /* margin-top: 100px; */
+h2 .site-user-description {
+  font-size: 14px;
+  display: block;
+  line-height: 1;
+  color: #fff;
   text-align: center;
-  color: #fff
-}
-
-.footer .love {
-  color: red
-}
-
-.footer a {
-  text-decoration: none;
-  margin: 0;
-  color: #fff
-}
-
-.share {
-  margin-top: 10px;
+  margin: 20px;
 }
 
 .share h1 {
@@ -89,13 +96,14 @@ html {
   flex-wrap: wrap;
   align-content: center;
 }
-	.share-container > div {
-		width: 280px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-    margin-top: 10px;
-	}
+
+.share-container > div {
+	width: 280px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  margin: 0px 0px 10px 0px;
+}
 
 .share-button {
 	width: 100%;
@@ -119,82 +127,31 @@ html {
   color: white;
 }
 
-	.share-button i {
-		font-size: 24px;
-    margin: 5px;
-	}
-
-  .share-button span {
-    margin-top: -2.5px;
-  }
-
-
-/** Social button colors **/
-.share-button-twitter {
-	background: #00aced;
-}
-	.share-button-twitter:hover,
-	.share-button-twitter:active {
-		background: #0084b4;
-	}
-
-.share-button-facebook {
-	background: #3B5997;
-}
-	.share-button-facebook:hover,
-	.share-button-facebook:active {
-		background: #2d4372;
-	}
-
-.share-button-youtube {
-  background: #d70606;
-  }
-  .share-button-youtube:hover,
-  .share-button-youtube:active {
-     background: #a50505;
-  }
-
-.share-button-tiktok {
-	background: #4b4a4a;
-}
-	.share-button-tiktok:hover,
-	.share-button-tiktok:active {
-		background: #3a3838;
-	}
-
-  .share-button-bluesky {
-    background: #00b4fb;
-  }
-    .share-button-bluesky:hover,
-    .share-button-bluesky:active {
-      background: #017bab;
-    }
-
-.share-button-email {
-	background: #43d854;
-}
-	.share-button-email:hover,
-	.share-button-email:active {
-		background: #009688;
-	}
-
-  .share-button-hide {
-    display: none !important;
-  }
-
-  #particles-js {
-    background: #1a222c;
-    display: flex;
-    vertical-align: bottom;
-    width: 100%;
-    min-height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed
+.share-button i {
+	font-size: 24px;
+  margin: 5px;
 }
 
-#particles-js .particles-js-canvas-el {
-    width: 100% !important;
-    height: 100vh !important
+.share-button span {
+  text-transform: capitalize;
 }
 
+.share-button-hide-true {
+  display: none !important;
+}
+
+.footer {
+  background: #1a222c;
+  text-align: center;
+  color: #fff
+}
+
+.footer .love {
+  color: red
+}
+
+.footer a {
+  text-decoration: none;
+  margin: 0;
+  color: #fff
+}

@@ -1,0 +1,63 @@
+/** สีของปุ่มโซเชียล **/
+.share-button-facebook {
+  background: #3B5997;
+}
+
+.share-button-facebook:hover,
+.share-button-facebook:active {
+  background: #2d4372;
+}
+
+.share-button-youtube {
+  background: #d70606;
+}
+
+.share-button-youtube:hover,
+.share-button-youtube:active {
+  background: #a50505;
+}
+
+.share-button-tiktok {
+  background: #020204;
+}
+
+.share-button-tiktok:hover,
+.share-button-tiktok:active {
+  background: #121213;
+}
+
+.share-button-bluesky {
+  background: #00b4fb;
+}
+
+.share-button-bluesky:hover,
+.share-button-bluesky:active {
+  background: #017bab;
+}
+
+.share-button-email {
+  background: #43d854;
+}
+
+.share-button-email:hover,
+.share-button-email:active {
+  background: #009688;
+}
+
+.share-button-steam {
+  background: #171d25;
+}
+
+.share-button-steam:hover,
+.share-button-steam:active {
+  background: #1d2c40;
+}
+
+.share-button-xbox {
+  background: #107c10;
+}
+
+.share-button-xbox:hover,
+.share-button-xbox:active {
+  background: #0a590a;
+}

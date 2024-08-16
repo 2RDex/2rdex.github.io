@@ -28,7 +28,7 @@ s4_hide: "" #If you want to hide it, enter True and if you want to show it, leav
 s4_name: "steam"
 s4_link: "https://steamcommunity.com/id/2GB/"
 
-s5_hide: "" #If you want to hide it, enter True and if you want to show it, leave it blank.
+s5_hide: "true" #If you want to hide it, enter True and if you want to show it, leave it blank.
 s5_name: "email"
 s5_link: "mailto:{{site.email}}?subject=สวัสดีครับ!"
 

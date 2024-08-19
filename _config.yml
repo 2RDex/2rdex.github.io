@@ -24,7 +24,7 @@ s3_hide: "" #If you want to hide it, enter True and if you want to show it, leav
 s3_name: "tiktok"
 s3_link: "https://www.tiktok.com/@2RD.Channel"
 
-s4_hide: "" #If you want to hide it, enter True and if you want to show it, leave it blank.
+s4_hide: "true" #If you want to hide it, enter True and if you want to show it, leave it blank.
 s4_name: "steam"
 s4_link: "https://steamcommunity.com/id/2GB/"
 

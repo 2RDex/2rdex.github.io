@@ -13,23 +13,28 @@ email: "contact@2rd.top"
 
 # Link settings
 s1_hide: "" #If you want to hide it, enter True and if you want to show it, leave it blank.
-s1_name: "facebook"
+s1_icon: "facebook" #https://fontawesome.com/icons
+s1_name: "Facebook"
 s1_link: "https://www.facebook.com/2RD.Channel"
 
 s2_hide: "" #If you want to hide it, enter True and if you want to show it, leave it blank.
-s2_name: "youtube"
+s2_icon: "youtube" #https://fontawesome.com/icons
+s2_name: "Youtube"
 s2_link: "https://www.youtube.com/@2RD.Channel"
 
 s3_hide: "" #If you want to hide it, enter True and if you want to show it, leave it blank.
-s3_name: "tiktok"
+s3_icon: "tiktok" #https://fontawesome.com/icons
+s3_name: "Tiktok"
 s3_link: "https://www.tiktok.com/@2RD.Channel"
 
 s4_hide: "true" #If you want to hide it, enter True and if you want to show it, leave it blank.
+s4_icon: "steam" #https://fontawesome.com/icons
 s4_name: "steam"
 s4_link: "https://steamcommunity.com/id/2GB/"
 
 s5_hide: "true" #If you want to hide it, enter True and if you want to show it, leave it blank.
-s5_name: "email"
+s5_icon: "at" #https://fontawesome.com/icons
+s5_name: "Email"
 s5_link: "mailto:{{site.email}}?subject=สวัสดีครับ!"
 
 #mailto:{{site.email}}?subject=สวัสดีครับ!

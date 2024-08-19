@@ -39,7 +39,6 @@ article,aside,details,figcaption,figure,footer,header,main,menu,nav,section {
 }
 
 .header {
-  width: 100vw;
   min-height: 50vh;
   top: 50vh;
   left: 50vw;

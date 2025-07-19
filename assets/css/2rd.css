@@ -29,7 +29,7 @@ article,aside,details,figcaption,figure,footer,header,main,menu,nav,section {
   width: 100%;
   min-height: 100vh;
 
-  background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(./../img/wallpaper_minecraft_trickytrials_2560x1440.png);
+  background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(./../img/MCV_SummerDrop_Hero_DotNet_Downloadable_Wallpaper_r2560x1440.png);
   filter: blur(3px);
   -webkit-filter: blur(3px);
   height: 100%;
@@ -63,13 +63,13 @@ article,aside,details,figcaption,figure,footer,header,main,menu,nav,section {
   linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)) 50% 50%/calc(100% - 8px) calc(100% - 20px) no-repeat,
   linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)) 50% 50%/calc(100% - 20px) calc(100% - 8px) no-repeat,
   linear-gradient(159deg, rgba(51,53,15,0.4) 0%, transparent 42.18%, rgba(0,0,0,0.4) 100%),
-  linear-gradient(206deg, rgba(74,231,46,0.4) 0%, rgba(86,209,221,0.4) 100%);
+  linear-gradient(206deg, rgba(253, 226, 135,0.4) 0%, rgba(153, 135, 76,0.4) 100%);
   border-radius: 10px;
   box-sizing: content-box;
 }
 
 .img-fluid {
-  border: 3px dotted #0895e1;
+  border: 3px dotted rgba(153, 135, 76,0.4);
 }
 
 h1 .site-title {
@@ -137,7 +137,7 @@ h2 .site-user-description {
 	flex-direction: column;
 	padding: 5px;
   flex-direction: row;
-  border: 1px solid #cfcfcf;
+  border: 1px solid rgba(153, 135, 76, 0.4);
 }
 
 .share-button:hover, .share-button:active {

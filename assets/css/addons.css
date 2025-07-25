@@ -29,7 +29,7 @@ article,aside,details,figcaption,figure,footer,header,main,menu,nav,section {
   width: 100%;
   min-height: 100vh;
 
-  background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(./../img/MCV_SummerDrop_Hero_DotNet_Downloadable_Wallpaper_r2560x1440.png);
+  background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(./../img/Rlcraft_Screenshot_0.jpg);
   filter: blur(3px);
   -webkit-filter: blur(3px);
   height: 100%;
@@ -160,8 +160,7 @@ h2 .site-user-description {
 
 .footer {
   text-align: center;
-  color: #fff;
-  padding-bottom: 15px;
+  color: #fff
 }
 
 .footer .love {

@@ -1,13 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
 
-.chakra-petch-regular {
+body {
     font-family: "Chakra Petch", sans-serif;
     font-weight: 400;
     font-style: normal;
-}
-
-body {
-    font-family: 'Press Start 2P', cursive;
     /* ฟอนต์แนวพิกเซล */
     background-color: #363636;
     /* สีพื้นหลังเหมือนในเกม */

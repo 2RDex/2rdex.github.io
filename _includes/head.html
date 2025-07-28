@@ -7,14 +7,16 @@
   <link rel="icon" type="image/png" href="{{site.url}}/assets/img/2rd_icon.png">
 
   <!-- HTML Meta Tags -->
-	<title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <meta name="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description"
+    content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
   <!-- Facebook Meta Tags -->
   <meta property="og:url" content="{{site.url}}">
   <meta property="og:type" content="website">
   <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-  <meta property="og:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:description"
+    content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
   <meta property="og:image" content="{{site.url}}/assets/img/2rd_ogm.png">
 
   <!-- Twitter Meta Tags -->
@@ -22,7 +24,8 @@
   <meta property="twitter:domain" content="{{site.domain}}">
   <meta property="twitter:url" content="{{site.url}}">
   <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-  <meta name="twitter:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="twitter:description"
+    content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
   <meta name="twitter:image" content="{{site.url}}/assets/img/2rd_ogm.png">
 
   <link rel="stylesheet" href="{{ '/assets/css/2rd_index.css' | prepend: site.baseurl }}">

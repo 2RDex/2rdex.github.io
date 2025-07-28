@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
+
 body {
-    font-family: 'Press Start 2P', cursive;
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     background-color: #363636;
     /* สีพื้นหลังเหมือนใน shop-content */
     color: #fff;
@@ -33,7 +37,7 @@ body {
 }
 
 .menu-item {
-    margin-bottom: 2px;
+    margin-bottom: 3px;
     position: relative;
 }
 
@@ -55,6 +59,7 @@ body {
     text-overflow: ellipsis;
     box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.4);
     cursor: pointer;
+    margin-bottom: 3px;
 }
 
 .menu-link:hover {

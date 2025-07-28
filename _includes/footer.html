@@ -1,5 +1,17 @@
-
 <script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script src="{{ '/assets/js/sweet-scroll.min.js' | prepend: site.baseurl }}"></script>
 <script src="{{ '/assets/js/2rd.js' | prepend: site.baseurl }}"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuToggles = document.querySelectorAll('.menu-toggle');
+
+        menuToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const parentItem = toggle.closest('.menu-item');
+                parentItem.classList.toggle('expanded');
+                // ไม่ต้องอัพเดท scrollbar ที่นี่ เพราะ iFrame มี scrollbar ของตัวเอง
+            });
+        });
+    });
+</script>
 {% include google-analytics.html %}

@@ -1,12 +1,27 @@
 <div id="particles-js"></div>
-  <div class="header">
-    <img class="rounded-circle mb-5" src="{{site.url}}/assets/img/2rd_avatar.png" width="0"
-      alt="{{site.username}}">
-      <h1>
-        <span class="site-title">{{site.page_404}}</span>
-        <span class="site-description">{{site.page_404_description}}</span>
-      </h1>
-    <footer class="footer">
-      <p><span class="site-description"><a href="{{site.url}}" style="color: darkgrey;">กลับหน้าแรก</a></span></p>
-    </footer>
-  </div>
+    <div class="header">
+    <div class="shop-window-container">
+        <div class="shop-header">
+            <span class="shop-title">เมนู</span>
+            <div class="header-buttons">
+              <a href="{{site.url}}" class="menu-link"><i class="fa-brands fa-bluesky"></i> <button class="header-btn close-btn">X</button></a>
+                <button class="header-btn minimize-btn"></button>
+            </div>
+        </div>
+
+        <div class="shop-content" style="display: flex; flex-direction: column; justify-content: space-around;">
+        <h1><span class="site-title">{{site.page_404}}</span>
+        <span class="site-description">{{site.page_404_description}}</span></h1>
+        </div>
+
+        <div class="shop-footer">
+            <div class="shop-controls">
+                <!-- <button class="control-btn">Help</button>
+                <button class="control-btn">About</button> -->
+            </div>
+            <div class="player-gold">
+                <span>Player:</span> <span class="gold-amount">2RD Channel</span>
+            </div>
+        </div>
+    </div>
+    </div>

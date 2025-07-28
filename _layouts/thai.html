@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Content</title>
+    <link rel="stylesheet" href="{{ '/assets/css/2rd_menu.css' | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <ul class="tree-menu">
+        <li class="menu-item expanded">
+            <a href="/thai" class="menu-link category-link" style="color: #f07474; text-shadow: 1px 1px #0f0808;"><i class="fa-solid fa-file-arrow-down"></i> โหลดม็อดภาษาไทย</a>
+            <ul class="submenu">
+                <li class="menu-item">
+                    <a href="{{site.url}}/download/RLCraft_THLanguage_0.3.mcpack" class="menu-link" target="_blank">RLCraft v0.3</a>
+                </li>
+                <!--<li class="menu-item">
+                    <a href="{{site.url}}/download/BoB_THLanguage_0.1.mcpack" class="menu-link" target="_blank">Better on Bedrock v0.1</a>
+                </li>-->
+                <li class="menu-item">
+                    <a href="https://www.youtube.com/embed/HhJ7skYD1p0?si=LWDTEyfsbI77tayI" class="menu-link" style="color: #e7304e; text-shadow: 1px 1px #3d3108;"><i class="fa-brands fa-youtube"></i> วิธีเปิดใช้งานม็อด</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    {% include footer.html %}
+</body>
+</html>

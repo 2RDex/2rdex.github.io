@@ -1,0 +1,167 @@
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #363636;
+    /* สีพื้นหลังเหมือนใน shop-content */
+    color: #fff;
+    margin: 0;
+    padding: 5px;
+    /* Padding ภายใน iframe */
+    image-rendering: pixelated;
+}
+
+/* --- Tree Menu Styles (คัดลอกมาจาก style.css เดิม) --- */
+.tree-menu {
+    list-style: none;
+    /* ลบ bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+.tree-menu ul {
+    /* สำหรับ submenus */
+    list-style: none;
+    padding-left: 20px;
+    /* Indent submenus */
+    margin: 0;
+    display: none;
+    /* ซ่อน submenus โดยดีฟอลต์ */
+}
+
+.menu-item.expanded>.submenu {
+    display: block;
+    /* แสดง submenu เมื่อมีคลาส expanded */
+}
+
+.menu-item {
+    margin-bottom: 2px;
+    position: relative;
+}
+
+.menu-link {
+    display: block;
+    padding: 8px 10px;
+    background-color: #555;
+    border: 2px solid #000;
+    border-top: 2px solid #999;
+    border-left: 2px solid #999;
+    border-right: 2px solid #333;
+    border-bottom: 2px solid #333;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9em;
+    text-shadow: 1px 1px #000;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+.menu-link:hover {
+    background-color: #666;
+}
+
+.menu-link.category-link {
+    font-weight: bold;
+    color: #ffd700;
+    /* สีทองสำหรับหมวดหมู่หลัก */
+    text-shadow: 1px 1px #8a5f00;
+}
+
+.menu-toggle {
+    position: absolute;
+    left: 5px;
+    /* ตำแหน่งของลูกศร */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    /* ทำให้คลิกที่ช่อง toggle ได้ง่าย */
+    cursor: pointer;
+}
+
+.menu-toggle::before {
+    content: '▶';
+    /* ลูกศรชี้ขวา (Unicode character) */
+    font-size: 0.8em;
+    color: #ccc;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    pointer-events: none;
+    /* ทำให้คลิกผ่านไปยัง parent ได้ */
+}
+
+.menu-item.expanded>.menu-toggle::before {
+    content: '▼';
+    /* ลูกศรชี้ลงเมื่อขยาย */
+}
+
+/* ------------------------------------------- */
+/* --- Responsive Design for Tree Menu (inside iframe) --- */
+/* ------------------------------------------- */
+
+/* สไตล์สำหรับหน้าจอขนาดกลางและเล็ก (เช่น แท็บเล็ตและมือถือ) */
+@media (max-width: 768px) {
+    body {
+        padding: 3px;
+        /* ลด padding ใน body ของ iframe */
+    }
+
+    .menu-link {
+        padding: 6px 8px;
+        /* ลด padding ของรายการเมนู */
+        font-size: 0.95em;
+        /* ลดขนาด font */
+        border-width: 1px;
+    }
+
+    .tree-menu ul {
+        padding-left: 15px;
+        /* ลด indent ของ submenu */
+    }
+
+    .menu-toggle {
+        left: 3px;
+        /* ปรับตำแหน่งลูกศร */
+    }
+
+    .menu-toggle::before {
+        font-size: 0.7em;
+        /* ลดขนาดลูกศร */
+    }
+
+    /* หากมี .menu-item ที่มีรูปภาพหรือไอคอนอยู่ข้างหน้า
+       คุณอาจจะต้องปรับขนาดหรือตำแหน่งของมันใน Media Query นี้ด้วย */
+}
+
+/* สไตล์สำหรับหน้าจอขนาดเล็กพิเศษ (เช่น มือถือที่เล็กมากๆ) */
+@media (max-width: 480px) {
+    body {
+        padding: 2px;
+        /* ลด padding อีก */
+    }
+
+    .menu-link {
+        font-size: 0.85em;
+        /* ลดขนาด font อีกเล็กน้อย */
+        padding: 5px 7px;
+    }
+
+    .tree-menu ul {
+        padding-left: 10px;
+        /* ลด indent อีก */
+    }
+
+    .menu-toggle {
+        left: 2px;
+        /* ปรับตำแหน่งลูกศรอีก */
+    }
+
+    .menu-toggle::before {
+        font-size: 0.65em;
+        /* ลดขนาดลูกศรอีก */
+    }
+}

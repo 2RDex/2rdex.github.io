@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
+
+.chakra-petch-regular {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    /* ฟอนต์แนวพิกเซล */
+    background-color: #363636;
+    /* สีพื้นหลังเหมือนในเกม */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    /* ป้องกัน scrollbar ของหน้าเว็บ */
+    color: #fff;
+    image-rendering: pixelated;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./../img/MCV_SummerDrop_Hero_DotNet_Downloadable_Wallpaper_r2560x1440.png'); /* เปลี่ยน 'images/background.jpg' เป็น path ที่ถูกต้อง */
+    background-repeat: repeat;
+
+    /* สำคัญมากสำหรับภาพพิกเซล */
+}
+
+/* --- Shop Window Container --- */
+.shop-window-container {
+    background-color: #2b2b2b;
+    /* สีพื้นหลังของกรอบ UI */
+    border: 3px solid #000;
+    border-top: 3px solid #6c6c6c;
+    /* ขอบบนที่สว่างกว่า */
+    border-left: 3px solid #6c6c6c;
+    /* ขอบซ้ายที่สว่างกว่า */
+    border-right: 3px solid #1a1a1a;
+    /* ขอบขวาที่เข้มกว่า */
+    border-bottom: 3px solid #1a1a1a;
+    /* ขอบล่างที่เข้มกว่า */
+    border-radius: 5px;
+    /* มุมโค้งเล็กน้อย */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.7);
+    /* เงาใต้หน้าต่าง */
+    width: 800px;
+    /* กำหนดความกว้างรวมของหน้าต่าง */
+    height: 600px;
+    /* กำหนดความสูง */
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
+    /* ให้ padding นับรวมใน width/height */
+}
+
+/* --- Header --- */
+.shop-header {
+    background-color: #4a4a4a;
+    /* สีพื้นหลังส่วนหัว */
+    border: 2px solid #000;
+    border-top: 2px solid #8d8d8d;
+    border-left: 2px solid #8d8d8d;
+    border-right: 2px solid #2a2a2a;
+    border-bottom: 2px solid #2a2a2a;
+    padding: 8px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px #000;
+    position: relative;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.shop-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+    flex-grow: 1;
+    /* ทำให้ข้อความอยู่ตรงกลาง */
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.header-buttons {
+    display: flex;
+    gap: 5px;
+    z-index: 1;
+    /* ให้ปุ่มอยู่ด้านบน title */
+}
+
+.header-btn {
+    width: 25px;
+    height: 25px;
+    background-color: #7b7b7b;
+    /* สีปุ่ม */
+    border: 2px solid #000;
+    border-top: 2px solid #afafaf;
+    border-left: 2px solid #afafaf;
+    border-right: 2px solid #363636;
+    border-bottom: 2px solid #363636;
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.3);
+}
+
+.header-btn:hover {
+    background-color: #909090;
+}
+
+.header-btn:active {
+    background-color: #606060;
+    border: 2px solid #363636;
+    border-top: 2px solid #000;
+    border-left: 2px solid #000;
+    border-right: 2px solid #afafaf;
+    border-bottom: 2px solid #afafaf;
+}
+
+.minimize-btn::before {
+    content: '_';
+    /* หรือใช้ภาพ icon */
+    font-size: 1.2em;
+    line-height: 0.5;
+}
+
+/* --- Shop Content (iFrame) --- */
+.shop-content {
+    display: flex;
+    flex-grow: 1;
+    /* ให้ยืดเต็มพื้นที่ที่เหลือ */
+    background-color: #363636;
+    /* สีพื้นหลังของพื้นที่เนื้อหา */
+    border: 2px solid #000;
+    border-top: 2px solid #6c6c6c;
+    border-left: 2px solid #6c6c6c;
+    border-right: 2px solid #1a1a1a;
+    border-bottom: 2px solid #1a1a1a;
+    padding: 5px;
+    box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.5);
+    position: relative;
+    /* ไม่มี scrollbar custom แล้ว */
+}
+
+/* สไตล์สำหรับ iframe */
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    /* ลบ border ของ iframe */
+    background-color: #363636;
+    /* ให้พื้นหลังของ iframe เป็นสีเดียวกับ shop-content */
+    }
+
+
+/* --- Footer / Controls --- */
+.shop-footer {
+    background-color: #4a4a4a;
+    /* สีพื้นหลังส่วนท้าย */
+    border: 2px solid #000;
+    border-top: 2px solid #8d8d8d;
+    border-left: 2px solid #8d8d8d;
+    border-right: 2px solid #2a2a2a;
+    border-bottom: 2px solid #2a2a2a;
+    padding: 10px 15px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.shop-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.control-btn {
+    background-color: #7b7b7b;
+    border: 2px solid #000;
+    border-top: 2px solid #afafaf;
+    border-left: 2px solid #afafaf;
+    border-right: 2px solid #363636;
+    border-bottom: 2px solid #363636;
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.9em;
+    padding: 8px 15px;
+    cursor: pointer;
+    text-shadow: 1px 1px #000;
+    box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+}
+
+.control-btn:hover {
+    background-color: #909090;
+}
+
+.control-btn:active {
+    background-color: #606060;
+    border: 2px solid #363636;
+    border-top: 2px solid #000;
+    border-left: 2px solid #000;
+    border-right: 2px solid #afafaf;
+    border-bottom: 2px solid #afafaf;
+}
+
+.player-gold {
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px #000;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    background-color: #5a5a5a;
+    border: 2px solid #000;
+    border-top: 2px solid #8d8d8d;
+    border-left: 2px solid #8d8d8d;
+    border-right: 2px solid #2a2a2a;
+    border-bottom: 2px solid #2a2a2a;
+}
+
+.gold-amount {
+    color: #ffeb3b;
+    /* สีทอง */
+    text-shadow: 1px 1px #8a5f00;
+}
+
+
+h1 .site-title {
+    font-size: 34px;
+    display: block;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    margin-top: -30px;
+}
+
+h1 .site-description {
+    font-size: 14px;
+    display: block;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    margin-top: 10px
+}
+
+/* สไตล์สำหรับหน้าจอขนาดกลางและเล็ก (เช่น แท็บเล็ตและมือถือ) */
+@media (max-width: 768px) {
+    .shop-title {
+    font-size: 1.1em;
+    }
+
+    /* ปรับขนาดของกรอบ UI โดยรวม */
+    .shop-window-container {
+        width: 95%; /* ให้กว้างเกือบเต็มหน้าจอ */
+        height: 90vh; /* ให้สูง 90% ของความสูง viewport */
+        padding: 8px; /* ลด padding */
+        border-width: 2px; /* ลดขนาดขอบ */
+    }
+    /* ... โค้ดอื่นๆ ... */
+}
+
+/* สไตล์สำหรับหน้าจอขนาดเล็กพิเศษ (เช่น มือถือที่เล็กมากๆ) */
+@media (max-width: 480px) {
+    .shop-window-container {
+        width: 98%; /* ให้กว้างขึ้นอีกสำหรับจอที่เล็กมากๆ */
+        height: 95vh;
+        border-radius: 3px;
+    }
+    /* ... โค้ดอื่นๆ ... */
+}

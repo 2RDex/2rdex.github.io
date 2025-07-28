@@ -11,34 +11,6 @@ user_description: ""
 footer: "&copy;2024"
 email: "contact@2rd.top"
 
-# Link settings
-s1_hide: "true" #If you want to hide it, enter True and if you want to show it, leave it blank.
-s1_icon: "facebook" #https://fontawesome.com/icons
-s1_name: "Facebook"
-s1_link: "https://www.facebook.com/2RD.Channel"
-
-s2_hide: "" #If you want to hide it, enter True and if you want to show it, leave it blank.
-s2_icon: "bluesky" #https://fontawesome.com/icons
-s2_name: "Bluesky"
-s2_link: "https://bsky.app/profile/2rd.top"
-
-s3_hide: "" #If you want to hide it, enter True and if you want to show it, leave it blank.
-s3_icon: "youtube" #https://fontawesome.com/icons
-s3_name: "Youtube"
-s3_link: "https://www.youtube.com/@2RD.Channel"
-
-s4_hide: "" #If you want to hide it, enter True and if you want to show it, leave it blank.
-s4_icon: "tiktok" #https://fontawesome.com/icons
-s4_name: "Tiktok"
-s4_link: "https://www.tiktok.com/@2RD.Channel"
-
-s5_hide: "true" #If you want to hide it, enter True and if you want to show it, leave it blank.
-s5_icon: "at" #https://fontawesome.com/icons
-s5_name: "Email"
-s5_link: "mailto:contact@2rd.top?subject=สวัสดีครับ!"
-
-#mailto:{{site.email}}?subject=สวัสดีครับ!
-
 # Google-analytics
 google-analytics:
   id: ""

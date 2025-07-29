@@ -44,7 +44,8 @@ body {
     border-bottom: 1px solid #4b4d55;
     padding: 8px 15px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    /* justify-content: space-between; */
     align-items: center;
     margin-bottom: 10px;
     position: relative;
@@ -75,13 +76,13 @@ body {
 .header-btn {
     width: 25px;
     height: 25px;
-    background-color: #666666;
+    background-color: #c6c6c6;
     border: 1px solid #000;
-    border-top: 1px solid #afafaf;
-    border-left: 1px solid #afafaf;
-    border-right: 1px solid #363636;
-    border-bottom: 1px solid #363636;
-    color: #fff;
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    color: #3e3e3e;
     font-family: "Chakra Petch", sans-serif;
     font-weight: bold;
     font-size: 0.8em;
@@ -89,13 +90,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 1px 1px 0px 1px rgba(0,0,0,0.4) inset;
-    -webkit-box-shadow: 1px 1px 0px 1px rgba(0,0,0,0.4) inset;
-    -moz-box-shadow: 1px 1px 0px 1px rgba(0,0,0,0.4) inset;    
+    box-shadow: 1px 1px 0px 1px rgba(255, 255, 255, 0.4) inset;
+    -webkit-box-shadow: 1px 1px 0px 1px rgba(255, 255, 255, 0.4) inset;
+    -moz-box-shadow: 1px 1px 0px 1px rgba(255, 255, 255, 0.4) inset;    
 }
 
 .header-btn:hover {
-    background-color: #909090;
+    background-color: #6bae46;
+    /* 909090 */
 }
 
 .header-btn:active {

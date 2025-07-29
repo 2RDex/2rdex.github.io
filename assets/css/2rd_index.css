@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&display=swap');
 
 body {
     font-family: "Chakra Petch", sans-serif;
@@ -11,10 +11,11 @@ body {
     overflow: hidden;
     color: #fff;
     image-rendering: pixelated;
-    background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./../img/MCV_SummerDrop_Hero_DotNet_Downloadable_Wallpaper_r2560x1440.png'); /* เปลี่ยน 'images/background.jpg' เป็น path ที่ถูกต้อง */
-    background-repeat: repeat;
-    backdrop-filter: blur(8px);           /* ระดับความเบลอ */
-    -webkit-backdrop-filter: blur(8px);   /* รองรับเบราว์เซอร์เก่า */
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./../img/background.jpg'); /* เปลี่ยน 'images/background.jpg' เป็น path ที่ถูกต้อง */
+    background-size: cover;                /* ขยายภาพให้เต็มจอ */
+    background-position: center bottom;        /* ตำแหน่งภาพตรงกลาง */
+    background-repeat: no-repeat;          /* ไม่ให้ภาพซ้ำ */
+    background-attachment: fixed;          /* ภาพติดพื้นหลัง ไม่เลื่อนตาม scroll */
 }
 
 .shop-window-container {
@@ -26,8 +27,8 @@ body {
     border-bottom: 3px solid #1a1a1a;
     border-radius: 5px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.7);
-    width: 800px;
-    height: 600px;
+    width: 700px;
+    height: 550px;
     display: flex;
     flex-direction: column;
     padding: 10px;
@@ -54,14 +55,15 @@ body {
 
 .shop-title {
     font-size: 1.5em;
-    font-weight: bold;
+    font-weight: 700;
     color: #ffffff;
     flex-grow: 1;
     text-align: center;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    text-shadow: 0px 0px 3px #2e2e2e;
+    text-shadow: 0px 0px 3px rgba(0,0,0,1);
+    -webkit-text-stroke: 0.6px rgba(0,0,0,0.4);
 }
 
 .header-buttons {
@@ -192,7 +194,7 @@ iframe {
 
 .player-gold {
     font-size: 0.9em;
-    font-weight: bold;
+    font-weight: 700;
     color: #fff;
     text-shadow: 1px 1px #000;
     display: flex;
@@ -206,8 +208,8 @@ iframe {
 }
 
 .gold-amount {
-    color: #ffeb3b;
-    text-shadow: 1px 1px #8a5f00;
+    color: #4c4c4c;
+    text-shadow: 1px 1px #8a8a8a;
 }
 
 

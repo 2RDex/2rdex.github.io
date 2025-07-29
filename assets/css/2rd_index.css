@@ -2,8 +2,6 @@
 
 body {
     font-family: "Chakra Petch", sans-serif;
-    font-weight: 400;
-    font-style: normal;
     background-color: #363636;
     display: flex;
     justify-content: center;
@@ -15,6 +13,8 @@ body {
     image-rendering: pixelated;
     background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./../img/MCV_SummerDrop_Hero_DotNet_Downloadable_Wallpaper_r2560x1440.png'); /* เปลี่ยน 'images/background.jpg' เป็น path ที่ถูกต้อง */
     background-repeat: repeat;
+    backdrop-filter: blur(8px);           /* ระดับความเบลอ */
+    -webkit-backdrop-filter: blur(8px);   /* รองรับเบราว์เซอร์เก่า */
 }
 
 .shop-window-container {

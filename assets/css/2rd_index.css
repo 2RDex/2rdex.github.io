@@ -242,6 +242,9 @@ h1 .site-description {
         padding: 8px; /* ลด padding */
         border-width: 2px; /* ลดขนาดขอบ */
     }
+    .player-footer {
+        font-size: 0.8em;
+    }
 }
 
 @media (max-width: 480px) {

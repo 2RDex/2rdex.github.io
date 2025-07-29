@@ -11,11 +11,16 @@ body {
     overflow: hidden;
     color: #fff;
     image-rendering: pixelated;
-    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./../img/background.jpg'); /* เปลี่ยน 'images/background.jpg' เป็น path ที่ถูกต้อง */
-    background-size: cover;                /* ขยายภาพให้เต็มจอ */
-    background-position: center bottom;        /* ตำแหน่งภาพตรงกลาง */
-    background-repeat: no-repeat;          /* ไม่ให้ภาพซ้ำ */
-    background-attachment: fixed;          /* ภาพติดพื้นหลัง ไม่เลื่อนตาม scroll */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./../img/background.jpg');
+    /* เปลี่ยน 'images/background.jpg' เป็น path ที่ถูกต้อง */
+    background-size: cover;
+    /* ขยายภาพให้เต็มจอ */
+    background-position: center bottom;
+    /* ตำแหน่งภาพตรงกลาง */
+    background-repeat: no-repeat;
+    /* ไม่ให้ภาพซ้ำ */
+    background-attachment: fixed;
+    /* ภาพติดพื้นหลัง ไม่เลื่อนตาม scroll */
 }
 
 .shop-window-container {
@@ -49,9 +54,9 @@ body {
     align-items: center;
     margin-bottom: 10px;
     position: relative;
-    box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.4) inset;
-    -webkit-box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.4) inset;
-    -moz-box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.4) inset;    
+    box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.4) inset;
+    -webkit-box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.4) inset;
+    -moz-box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.4) inset;
 }
 
 .shop-title {
@@ -63,8 +68,8 @@ body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    text-shadow: 0px 0px 3px rgba(0,0,0,1);
-    -webkit-text-stroke: 0.6px rgba(0,0,0,0.4);
+    text-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
+    -webkit-text-stroke: 0.6px rgba(0, 0, 0, 0.4);
 }
 
 .header-buttons {
@@ -92,7 +97,7 @@ body {
     align-items: center;
     box-shadow: 1px 1px 0px 1px rgba(255, 255, 255, 0.4) inset;
     -webkit-box-shadow: 1px 1px 0px 1px rgba(255, 255, 255, 0.4) inset;
-    -moz-box-shadow: 1px 1px 0px 1px rgba(255, 255, 255, 0.4) inset;    
+    -moz-box-shadow: 1px 1px 0px 1px rgba(255, 255, 255, 0.4) inset;
 }
 
 .header-btn:hover {
@@ -126,9 +131,9 @@ body {
     border-right: 1px solid #4b4d55;
     border-bottom: 1px solid #4b4d55;
     padding: 2px;
-    box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.4) inset;
-    -webkit-box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.4) inset;
-    -moz-box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.4) inset;    
+    box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.4) inset;
+    -webkit-box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.4) inset;
+    -moz-box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.4) inset;
     position: relative;
 }
 
@@ -138,7 +143,7 @@ iframe {
     height: 100%;
     border: none;
     background-color: #8e9098;
-    }
+}
 
 
 .shop-footer {
@@ -153,9 +158,9 @@ iframe {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.4) inset;
-    -webkit-box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.4) inset;
-    -moz-box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.4) inset;    
+    box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.4) inset;
+    -webkit-box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.4) inset;
+    -moz-box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.4) inset;
 }
 
 .shop-controls {
@@ -203,13 +208,13 @@ iframe {
     align-items: center;
     justify-content: flex-end;
     gap: 5px;
-    text-shadow: 0px 0px 3px rgba(0,0,0,1);
-    -webkit-text-stroke: 0.6px rgba(0,0,0,0.4);
+    text-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
+    -webkit-text-stroke: 0.6px rgba(0, 0, 0, 0.4);
 }
 
 .player-footer a {
-  color: #fff;
-  text-decoration: none;
+    color: #fff;
+    text-decoration: none;
 }
 
 
@@ -233,15 +238,20 @@ h1 .site-description {
 
 @media (max-width: 768px) {
     .shop-title {
-    font-size: 1.1em;
+        font-size: 1.1em;
     }
 
     .shop-window-container {
-        width: 95%; /* ให้กว้างเกือบเต็มหน้าจอ */
-        height: 50vh; /* ให้สูง 90% ของความสูง viewport */
-        padding: 8px; /* ลด padding */
-        border-width: 2px; /* ลดขนาดขอบ */
+        width: 95%;
+        /* ให้กว้างเกือบเต็มหน้าจอ */
+        height: 50vh;
+        /* ให้สูง 90% ของความสูง viewport */
+        padding: 8px;
+        /* ลด padding */
+        border-width: 2px;
+        /* ลดขนาดขอบ */
     }
+
     .player-footer {
         font-size: 0.8em;
     }
@@ -249,8 +259,43 @@ h1 .site-description {
 
 @media (max-width: 480px) {
     .shop-window-container {
-        width: 98%; /* ให้กว้างขึ้นอีกสำหรับจอที่เล็กมากๆ */
+        width: 98%;
+        /* ให้กว้างขึ้นอีกสำหรับจอที่เล็กมากๆ */
         height: 55vh;
         border-radius: 3px;
+    }
+}
+
+/* โฆษณา */
+.shop-content.ro-bear {
+    font-size: 1em;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    height: 900px;
+    text-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
+    -webkit-text-stroke: 0.6px rgba(0, 0, 0, 0.4);
+
+}
+
+.shop-window-container.ro-bear {
+    height: 600px;
+}
+
+.shop-content.ro-bear>p {
+    margin: 5px 0px 0px 5px;
+}
+
+@media (max-width: 768px) {
+    .shop-content.ro-bear {
+        font-size: 0.8em;
+    }
+
+    .shop-window-container.ro-bear {
+        height: 80vh;
+    }
+
+    .shop-title.ro-bear {
+        font-size: 1em;
     }
 }

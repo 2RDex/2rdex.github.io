@@ -119,13 +119,3 @@ body {
         font-size: 0.65em;
     }
 }
-
-/* โฆษณา */
-.menu-link.ro-bear {
-    color: #fff;
-    background-color: #a70b0b;
-}
-
-.menu-link.ro-bear:hover {
-    background-color: #7e0f0f;
-}

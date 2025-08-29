@@ -36,6 +36,7 @@ body {
 
 .menu-link {
     display: block;
+    flex: 1;
     padding: 8px 10px;
     background-color: #cacbce;
     border: 1px solid #000;
@@ -52,7 +53,7 @@ body {
     text-overflow: ellipsis;
     box-shadow: 1px 1px 0px 2px rgba(255, 255, 255, 0.4) inset;
     -webkit-box-shadow: 1px 1px 0px 2x rgba(255, 255, 255, 0.4) inset;
-    -moz-box-shadow: 1px 1px 0px 2px rgba(255, 255, 255, 0.4) inset;    
+    -moz-box-shadow: 1px 1px 0px 2px rgba(255, 255, 255, 0.4) inset;
     /*box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.4) inset;
     -webkit-box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.4) inset;
     -moz-box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.4) inset;*/
@@ -60,6 +61,47 @@ body {
     margin-bottom: 3px;
     text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.7);
     -webkit-text-stroke: 0.5px rgba(142, 144, 152, 0.5);
+}
+
+.menu-row {
+    display: flex;
+    align-items: stretch;
+    /* ให้สูงเท่ากัน */
+    gap: 4px;
+    /* เว้นระยะระหว่างปุ่ม */
+}
+
+.small-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    background-color: #a70b0b;
+    border: 1px solid #000;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9em;
+    /* ทำให้ icon เล็กลง */
+    cursor: pointer;
+    border-radius: 2px;
+    flex-shrink: 0;
+    /* ไม่ให้บีบเล็กกว่านี้ */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-shadow: 1px 1px 0px 2px rgba(255, 255, 255, 0.4) inset;
+    -webkit-box-shadow: 1px 1px 0px 2x rgba(255, 255, 255, 0.4) inset;
+    -moz-box-shadow: 1px 1px 0px 2px rgba(255, 255, 255, 0.4) inset;
+    /*box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.4) inset;
+    -webkit-box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.4) inset;
+    -moz-box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.4) inset;*/
+    cursor: pointer;
+    margin-bottom: 3px;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.7);
+    -webkit-text-stroke: 0.5px rgba(142, 144, 152, 0.5);
+}
+
+.small-btn:hover {
+    background-color: #7e0f0f;
 }
 
 .menu-link:hover {
@@ -80,6 +122,11 @@ body {
 
     .menu-link {
         padding: 6px 8px;
+        font-size: 0.95em;
+        border-width: 1px;
+    }
+
+    .small-btn {
         font-size: 0.95em;
         border-width: 1px;
     }
@@ -105,6 +152,11 @@ body {
     .menu-link {
         font-size: 0.85em;
         padding: 5px 7px;
+    }
+
+    .small-btn {
+        font-size: 0.85em;
+        border-width: 1px;
     }
 
     .tree-menu ul {

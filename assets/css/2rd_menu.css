@@ -29,7 +29,6 @@ body {
 }
 
 .menu-item {
-    margin-bottom: 3px;
     position: relative;
     font-weight: 500;
 }
@@ -67,7 +66,7 @@ body {
     display: flex;
     align-items: stretch;
     /* ให้สูงเท่ากัน */
-    gap: 4px;
+    gap: 2px;
     /* เว้นระยะระหว่างปุ่ม */
 }
 

@@ -1,0 +1,110 @@
+---
+layout: null
+permalink: /make-link/
+---
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>สร้างลิงก์ Redirect (ImgBB + Catbox)</title>
+  <style>
+    input, button {
+      padding: 10px;
+      font-size: 1rem;
+      margin-top: .5rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    button {
+      cursor: pointer;
+      margin-top: 1rem;
+      background: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .result {
+      margin-top: 1rem;
+      padding: 1rem;
+      background: #f0f0f0;
+      border-radius: 8px;
+      text-align: left;
+    }
+    .link-box { margin: .5rem 0; }
+    .copy-btn {
+      margin-left: 8px;
+      padding: 4px 8px;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <p>วางลิงก์:</p>
+    <ul style="text-align:left">
+      <li>Imgbb เช่น <code>https://ibb.co/XXXXX</code></li>
+      <li>Catbox เช่น <code>https://files.catbox.moe/XXXXX.png</code></li>
+    </ul>
+
+    <input id="inputUrl" type="text" placeholder="https://ibb.co/XXXXX หรือ https://files.catbox.moe/XXXXX.png">
+    <button onclick="makeLink()">สร้างลิงก์</button>
+
+    <div class="result" id="result" style="display:none"></div>
+  </div>
+
+<script>
+  function makeLink() {
+    const input = document.getElementById('inputUrl').value.trim();
+    let htmlOut = "";
+    const base = window.location.origin;
+
+    // Imgbb (เหมือนเดิม)
+    const matchIbb = input.match(/ibb\.co\/([a-zA-Z0-9_-]+)/);
+    if (matchIbb) {
+      const code = matchIbb[1];
+      const shortUrl = `${base}/i/${code}`; // ถ้าอยากให้เป็นแบบ query ด้วยก็ทำเป็น /i/?bb=code
+      htmlOut += `
+        <div class="link-box">
+          <strong>Imgbb:</strong>
+          <a href="${shortUrl}" target="_blank">${shortUrl}</a>
+          <button class="copy-btn" onclick="copyToClipboard('${shortUrl}')">คัดลอก</button>
+        </div>`;
+    }
+
+    // Catbox → สร้างเป็น /c/?code=…&ext=…
+    const matchCat = input.match(/catbox\.moe\/([a-zA-Z0-9]+)\.([a-z0-9]+)$/i);
+    if (matchCat) {
+      const code = matchCat[1];
+      const ext  = matchCat[2].toLowerCase();
+      const shortUrl = `${base}/c/?code=${code}&ext=${ext}`;
+      htmlOut += `
+        <div class="link-box">
+          <strong>Catbox:</strong>
+          <a href="${shortUrl}" target="_blank">${shortUrl}</a>
+          <button class="copy-btn" onclick="copyToClipboard('${shortUrl}')">คัดลอก</button>
+        </div>`;
+    }
+
+    if (!htmlOut) {
+      alert("กรุณาใส่ลิงก์ Imgbb หรือ Catbox ที่ถูกต้อง");
+      return;
+    }
+
+    const div = document.getElementById('result');
+    div.innerHTML = `<p>ลิงก์ redirect ของคุณ:</p>${htmlOut}`;
+    div.style.display = "block";
+  }
+
+  function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => {
+      alert("คัดลอกลิงก์เรียบร้อยแล้ว ✅");
+    }).catch(err => console.error("Copy failed:", err));
+  }
+</script>
+</body>
+</html>

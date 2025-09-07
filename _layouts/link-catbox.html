@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <title>Catbox Redirect</title>
+  <meta name="robots" content="noindex">
+  <script>
+    (function () {
+      const p = new URLSearchParams(location.search);
+      const code = p.get('code') || '';
+      const ext  = (p.get('ext') || '').toLowerCase();
+
+      // อนุญาต a-z A-Z 0-9 เท่านั้นสำหรับ code และ a-z0-9 สำหรับนามสกุล
+      const okCode = /^[a-zA-Z0-9]+$/.test(code);
+      const okExt  = /^[a-z0-9]+$/.test(ext);
+
+      if (okCode && okExt) {
+        location.replace(`https://files.catbox.moe/${code}.${ext}`);
+        return;
+      }
+
+      // แสดงวิธีใช้ ถ้าพารามิเตอร์ไม่ครบหรือไม่ถูกต้อง
+      document.addEventListener('DOMContentLoaded', () => {
+        const base = ( "{{ site.url }}{{ site.baseurl }}" || window.location.origin ).replace(/\/+$/,'');
+        document.body.innerHTML = `
+          <h1>Catbox Redirect</h1>
+          <p>Usage:</p>
+          <pre>${base}/c/?code=<strong>1njba5</strong>&ext=<strong>png</strong></pre>
+          <p>จะไปที่: <code>https://files.catbox.moe/1njba5.png</code></p>
+        `;
+      });
+    })();
+  </script>
+</head>
+<body>
+  <p>Redirecting…</p>
+</body>
+</html>

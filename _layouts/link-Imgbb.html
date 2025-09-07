@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting…</title>
+  <meta name="robots" content="noindex">
+  <script>
+    (function () {
+      // อ่าน path หลัง /i/ เช่น /i/239V5RPY
+      const path = (location.pathname || "").replace(/^.*\/i\//, "");
+      const code = path.replace(/\/+$/,''); // ตัด / ท้าย
+
+      if (/^[a-zA-Z0-9_-]+$/.test(code) && code.length > 0) {
+        location.replace("https://ibb.co/" + code);
+      } else {
+        // ถ้ามาเป็น /i/ เฉยๆ ไม่มี code
+        location.replace("{{ site.baseurl | default: '' }}/link");
+      }
+    })();
+  </script>
+</head>
+<body>Redirecting…</body>
+</html>

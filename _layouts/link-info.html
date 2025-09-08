@@ -3,10 +3,35 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1"> <!-- เพิ่ม -->
   <title>สร้างลิงก์ Redirect (ImgBB + Catbox)</title>
   <style>
     /* จัดให้อยู่กลางหน้าจอทั้งแนวตั้งและแนวนอน */
+    html,
+    body {
+      font-family: "Chakra Petch", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      background-color: #8e9098;
+      margin: 0;
+      padding: 5px;
+      image-rendering: pixelated;
+    }
+
+    .screen {
+      min-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 720px;
+    }
+
     h1 {
+      text-align: center;
       margin: 0 0 12px;
       font-size: 1.25rem;
     }
@@ -16,8 +41,10 @@
     }
 
     ul {
-      margin: 0 0 12px -10px;
+      margin: 0 0 12px 18px;
+      padding-left: 18px;
     }
+
 
     input,
     button {
@@ -86,29 +113,40 @@
       margin-top: 8px;
     }
 
+    /* ตัดเส้นใต้ + ทำตัวหนา โดยไม่บังคับสี */
     .no-underline,
     .no-underline:visited,
     .no-underline:hover,
     .no-underline:active,
     .no-underline:focus {
-      font-weight: bold;
-      /* text-decoration: none; */
-      color: #000000;
-      /* ตัดเส้นใต้ทุก state */
+      font-weight: 700;
+      text-decoration: none;
+      color: inherit;
+      /* ใช้สีตามบริบท แทนการ fix เป็นดำ */
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 16px;
+        border-radius: 10px;
+      }
     }
   </style>
 </head>
+
 
 <body>
   <div class="screen">
     <div class="container">
       <p>วางลิงก์:</p>
-      <ul>
-        <li><a href="https://imgbb.com/" target="_blank" rel="noopener" class="no-underline">Imgbb</a> เช่น
-          <code>https://ibb.co/XXXXX</code></li>
-        <li><a href="https://catbox.moe/" target="_blank" rel="noopener" class="no-underline">Catbox</a> เช่น
-          <code>https://files.catbox.moe/XXXXX.png</code></li>
-      </ul>
+      <li>
+        <a href="https://imgbb.com/" target="_blank" rel="noopener noreferrer" class="no-underline">Imgbb</a>
+        เช่น <code>https://ibb.co/XXXXX</code>
+      </li>
+      <li>
+        <a href="https://catbox.moe/" target="_blank" rel="noopener noreferrer" class="no-underline">Catbox</a>
+        เช่น <code>https://files.catbox.moe/XXXXX.png</code>
+      </li>
 
       <input id="inputUrl" type="text" placeholder="https://ibb.co/XXXXX หรือ https://files.catbox.moe/XXXXX.png"
         autofocus>
@@ -155,7 +193,7 @@
       const mIbb = raw.match(/(?:https?:\/\/)?(?:www\.)?ibb\.co\/([A-Za-z0-9_-]+)/);
       if (mIbb) {
         const code = mIbb[1];
-        const shortUrl = `${base}/i/?url=${encodeURIComponent(code)}`;
+        const shortUrl = `${base}/i/?code=${encodeURIComponent(code)}`;
         htmlOut += renderLine('Imgbb', shortUrl);
       }
 
@@ -164,7 +202,8 @@
       if (mCat) {
         const code = mCat[1];
         const ext = mCat[2].toLowerCase();
-        const shortUrl = `${base}/c/?url=${encodeURIComponent(code)}&ext=${encodeURIComponent(ext)}`;
+        // const shortUrl = `${base}/c/?url=${encodeURIComponent(code)}&ext=${encodeURIComponent(ext)}`;
+        const shortUrl = `${base}/c/?code=${encodeURIComponent(code)}.${encodeURIComponent(ext)}`;
         htmlOut += renderLine('Catbox', shortUrl);
       }
 
@@ -206,6 +245,7 @@
       });
     }
   </script>
+  {% include footer.html %}
 </body>
 
 </html>

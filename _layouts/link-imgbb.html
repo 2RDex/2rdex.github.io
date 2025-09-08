@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <title>Imgbb Redirect</title>
+  <meta name="robots" content="noindex">
+  <script>
+    (function () {
+      // รองรับทั้ง ?code= และ ?url=
+      const p = new URLSearchParams(location.search);
+      let code = (p.get("code") || p.get("url") || "").trim();
+
+      // ตรวจสอบความถูกต้อง
+      if (/^[A-Za-z0-9_-]+$/.test(code)) {
+        location.replace("https://ibb.co/" + code);
+        return;
+      }
+
+      // ถ้าไม่เจอหรือไม่ถูกต้อง → แสดงวิธีใช้งาน
+      document.addEventListener("DOMContentLoaded", () => {
+        const base = ( "{{ site.url }}{{ site.baseurl }}" || location.origin ).replace(/\/+$/,'');
+        document.body.innerHTML = `
+          <h1>Imgbb Redirect</h1>
+          <p>Usage ตัวอย่าง:</p>
+          <ul>
+            <li><code>${base}/i/?code=239V5RPY</code></li>
+          </ul>
+          <p>จะไปที่: <code>https://ibb.co/239V5RPY</code></p>
+        `;
+      });
+    })();
+  </script>
+</head>
+<body>
+  <p>Redirecting…</p>
+  {% include footer.html %}
+</body>
+</html>

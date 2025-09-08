@@ -7,25 +7,37 @@
   <script>
     (function () {
       const p = new URLSearchParams(location.search);
-      const url = p.get('url') || '';
-      const ext  = (p.get('ext') || '').toLowerCase();
+      let url = (p.get('url') || '').trim();
+      let ext = (p.get('ext') || '').trim().toLowerCase();
 
-      // อนุญาต a-z A-Z 0-9 เท่านั้นสำหรับ code และ a-z0-9 สำหรับนามสกุล
+      // ถ้า url มี . (เช่น 1njba5.png) → แยกออกเป็น code กับ ext
+      if (url && !ext && url.includes('.')) {
+        const parts = url.split('.');
+        if (parts.length === 2) {
+          url = parts[0];
+          ext = parts[1].toLowerCase();
+        }
+      }
+
+      // ตรวจสอบความถูกต้อง
       const okUrl = /^[a-zA-Z0-9]+$/.test(url);
-      const okExt  = /^[a-z0-9]+$/.test(ext);
+      const okExt = /^[a-z0-9]+$/.test(ext);
 
       if (okUrl && okExt) {
         location.replace(`https://files.catbox.moe/${url}.${ext}`);
         return;
       }
 
-      // แสดงวิธีใช้ ถ้าพารามิเตอร์ไม่ครบหรือไม่ถูกต้อง
+      // ถ้าไม่ถูกต้อง → แสดงวิธีใช้
       document.addEventListener('DOMContentLoaded', () => {
         const base = ( "{{ site.url }}{{ site.baseurl }}" || window.location.origin ).replace(/\/+$/,'');
         document.body.innerHTML = `
           <h1>Catbox Redirect</h1>
-          <p>Usage:</p>
-          <pre>${base}/c/?url=<strong>1njba5</strong>&ext=<strong>png</strong></pre>
+          <p>Usage ตัวอย่าง:</p>
+          <ul>
+            <li><code>${base}/c/?url=1njba5&ext=png</code></li>
+            <li><code>${base}/c/?url=1njba5.png</code></li>
+          </ul>
           <p>จะไปที่: <code>https://files.catbox.moe/1njba5.png</code></p>
         `;
       });

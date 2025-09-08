@@ -1,23 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="th">
 <head>
   <meta charset="utf-8">
-  <title>Redirecting…</title>
+  <title>Imgbb Redirect</title>
   <meta name="robots" content="noindex">
   <script>
     (function () {
-      // อ่าน path หลัง /i/ เช่น /i/239V5RPY
-      const path = (location.pathname || "").replace(/^.*\/i\//, "");
-      const code = path.replace(/\/+$/,''); // ตัด / ท้าย
+      // อ่าน query string: /i/?url=CODE
+      const p = new URLSearchParams(location.search);
+      const code = (p.get("url") || "").trim();
 
-      if (/^[a-zA-Z0-9_-]+$/.test(code) && code.length > 0) {
+      if (/^[A-Za-z0-9_-]+$/.test(code)) {
         location.replace("https://ibb.co/" + code);
-      } else {
-        // ถ้ามาเป็น /i/ เฉยๆ ไม่มี code
-        location.replace("{{ site.baseurl | default: '' }}/link");
+        return;
       }
+
+      // ถ้าไม่เจอ query หรือไม่ถูกต้อง → แสดงวิธีใช้งาน
+      document.addEventListener("DOMContentLoaded", () => {
+        const base = ( "{{ site.url }}{{ site.baseurl }}" || location.origin ).replace(/\/+$/,'');
+        document.body.innerHTML = `
+          <h1>Imgbb Redirect</h1>
+          <p>Usage:</p>
+          <pre>${base}/i/?url=<strong>239V5RPY</strong></pre>
+          <p>จะไปที่: <code>https://ibb.co/239V5RPY</code></p>
+        `;
+      });
     })();
   </script>
 </head>
-<body>Redirecting…</body>
+<body>
+  <p>Redirecting…</p>
+</body>
 </html>

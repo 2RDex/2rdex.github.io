@@ -60,8 +60,12 @@ body {
 }
 
 .shop-title {
+    display: inline-block;
     font-size: 1.5em;
     font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     color: #ffffff;
     flex-grow: 1;
     text-align: center;

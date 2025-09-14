@@ -141,12 +141,12 @@
       <!--<li>
         <a href="https://imgbb.com/" target="_blank" rel="noopener noreferrer" class="no-underline">Imgbb</a>
         เช่น <code>https://ibb.co/XXXXX</code>
-      </li>
+      </li>-->
       <li>
         <a href="https://catbox.moe/" target="_blank" rel="noopener noreferrer" class="no-underline">Catbox</a>
         เช่น <code>https://files.catbox.moe/XXXXX.png</code>
-      </li>-->
-      <input id="inputUrl" type="text" placeholder="https://files.catbox.moe/XXXXX.png"
+      </li>
+      <input id="inputUrl" type="text" placeholder="วางลิงก์"
         autofocus>
       <div class="actions">
         <button id="makeBtn" type="button">สร้างลิงก์</button>
@@ -186,14 +186,6 @@
 
       const base = window.location.origin;
       let htmlOut = '';
-
-      // รองรับ Imgbb: ibb.co/<CODE>
-      const mIbb = raw.match(/(?:https?:\/\/)?(?:www\.)?ibb\.co\/([A-Za-z0-9_-]+)/);
-      if (mIbb) {
-        const code = mIbb[1];
-        const shortUrl = `${base}/i/?code=${encodeURIComponent(code)}`;
-        htmlOut += renderLine('Imgbb', shortUrl);
-      }
 
       // รองรับ Catbox: files.catbox.moe/<CODE>.<EXT>
       const mCat = raw.match(/(?:https?:\/\/)?files\.catbox\.moe\/([A-Za-z0-9]+)\.([A-Za-z0-9]+)$/i);

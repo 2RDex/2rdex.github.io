@@ -193,7 +193,7 @@
         const code = mCat[1];
         const ext = mCat[2].toLowerCase();
         //const shortUrl = `${base}/c/?code=${encodeURIComponent(code)}&ext=${encodeURIComponent(ext)}`;
-        const shortUrl = `${base}/c/?code=${encodeURIComponent(code)}.${encodeURIComponent(ext)}`;
+        const shortUrl = `${base}/cb/?code=${encodeURIComponent(code)}.${encodeURIComponent(ext)}`;
         htmlOut += renderLine('Catbox', shortUrl);
 
       }

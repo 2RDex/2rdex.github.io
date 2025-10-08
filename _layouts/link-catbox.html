@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <title>Catbox Redirect</title>
+  <meta name="robots" content="noindex">
+  <script>
+    (function () {
+      const p = new URLSearchParams(location.search);
+
+      // รองรับทั้ง ?code= และ ?url= (เผื่อใช้คำเก่า)
+      let raw = (p.get('code') || p.get('url') || '').trim();
+      let ext  = (p.get('ext') || '').trim().toLowerCase();
+
+      // ถ้า raw มีจุด และยังไม่ได้ส่ง ext แยกมา → แยก code/ext จาก raw
+      if (raw && !ext && raw.includes('.')) {
+        const dot = raw.lastIndexOf('.');
+        if (dot > 0 && dot < raw.length - 1) {
+          ext = raw.slice(dot + 1).toLowerCase();
+          raw = raw.slice(0, dot);
+        }
+      }
+
+      // ทำความสะอาดค่า
+      // Catbox id ปกติเป็น a-zA-Z0-9; extension เป็น a-z0-9
+      const code = (raw.match(/[a-zA-Z0-9]+/) || [''])[0];
+      const safeExt = (ext.match(/[a-z0-9]+/) || [''])[0];
+
+      if (code && safeExt) {
+        location.replace(`https://2rd.top/cb/?code=${code}.${safeExt}`);
+        return;
+      }
+
+      // แสดงวิธีใช้เมื่อไม่ครบ/ไม่ถูกต้อง
+      document.addEventListener('DOMContentLoaded', () => {
+        const base = ( "{{ site.url }}{{ site.baseurl }}" || window.location.origin ).replace(/\/+$/,'');
+        document.body.innerHTML = `
+          <h1>Catbox Redirect</h1>
+          <p>Usage ตัวอย่าง:</p>
+          <ul>
+            <li><code>${base}/c/?code=1njba5&ext=png</code></li>
+            <li><code>${base}/c/?code=1njba5.png</code></li>
+          </ul>
+          <p>จะไปที่: <code>https://files.catbox.moe/1njba5.png</code></p>
+        `;
+      });
+    })();
+  </script>
+</head>
+<body>
+  <p>Redirecting…</p>
+  {% include footer.html %}
+</body>
+</html>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&display=swap");
 
 body {
     font-family: "Chakra Petch", sans-serif;
@@ -11,7 +11,9 @@ body {
     overflow: hidden;
     color: #fff;
     image-rendering: pixelated;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./../img/background.jpg');
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("./../img/background.jpg");
     /* เปลี่ยน 'images/background.jpg' เป็น path ที่ถูกต้อง */
     background-size: cover;
     /* ขยายภาพให้เต็มจอ */
@@ -119,7 +121,7 @@ body {
 }
 
 .minimize-btn::before {
-    content: '_';
+    content: "_";
     font-size: 1.2em;
     line-height: 0.5;
 }
@@ -148,7 +150,6 @@ iframe {
     border: none;
     background-color: #8e9098;
 }
-
 
 .shop-footer {
     background-color: #8e9098;
@@ -221,7 +222,6 @@ iframe {
     text-decoration: none;
 }
 
-
 h1 .site-title {
     font-size: 34px;
     display: block;
@@ -237,7 +237,7 @@ h1 .site-description {
     line-height: 1;
     color: #fff;
     text-align: center;
-    margin-top: 10px
+    margin-top: 10px;
 }
 
 @media (max-width: 768px) {

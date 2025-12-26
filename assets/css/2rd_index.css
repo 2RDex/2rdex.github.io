@@ -248,7 +248,7 @@ h1 .site-description {
     .shop-window-container {
         width: 95%;
         /* ให้กว้างเกือบเต็มหน้าจอ */
-        height: 90vh;
+        height: 75vh;
         /* ให้สูง 90% ของความสูง viewport */
         padding: 8px;
         /* ลด padding */
@@ -265,7 +265,7 @@ h1 .site-description {
     .shop-window-container {
         width: 98%;
         /* ให้กว้างขึ้นอีกสำหรับจอที่เล็กมากๆ */
-        height: 90vh;
+        /* height: 65vh; */
         border-radius: 3px;
     }
 }

@@ -451,6 +451,8 @@
   --button-background:#026466;
 }
 
+/* 2RD */
+
 /* Download */
 .button-download {
     --button-text: #ffffff;
@@ -469,5 +471,12 @@
 .button-THLanguage {
     --button-text: #ffffff;
     --button-background: #8b3737;
+    --button-border: 1px solid #FFFFFF;
+}
+
+/* Mods */
+.button-mods {
+    --button-text: #ffffff;
+    --button-background: #b80000;
     --button-border: 1px solid #FFFFFF;
 }

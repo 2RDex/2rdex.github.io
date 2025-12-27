@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
   <meta charset="utf-8">
   <title>Catbox Redirect</title>
@@ -10,7 +11,7 @@
 
       // รองรับทั้ง ?code= และ ?url= (เผื่อใช้คำเก่า)
       let raw = (p.get('code') || p.get('url') || '').trim();
-      let ext  = (p.get('ext') || '').trim().toLowerCase();
+      let ext = (p.get('ext') || '').trim().toLowerCase();
 
       // ถ้า raw มีจุด และยังไม่ได้ส่ง ext แยกมา → แยก code/ext จาก raw
       if (raw && !ext && raw.includes('.')) {
@@ -33,7 +34,7 @@
 
       // แสดงวิธีใช้เมื่อไม่ครบ/ไม่ถูกต้อง
       document.addEventListener('DOMContentLoaded', () => {
-        const base = ( "{{ site.url }}{{ site.baseurl }}" || window.location.origin ).replace(/\/+$/,'');
+        const base = ("{{ site.url }}{{ site.baseurl }}" || window.location.origin).replace(/\/+$/, '');
         document.body.innerHTML = `
           <h1>Catbox Redirect</h1>
           <p>Usage ตัวอย่าง:</p>
@@ -47,8 +48,10 @@
     })();
   </script>
 </head>
+
 <body>
   <p>Redirecting…</p>
   {% include footer.html %}
 </body>
+
 </html>

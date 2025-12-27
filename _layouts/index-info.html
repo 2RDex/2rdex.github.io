@@ -7,37 +7,93 @@
     <title>Menu Content</title>
     <link rel="stylesheet" href="{{ '/assets/css/2rd_menu.css' | prepend: site.baseurl }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        .menu-link.rd2-youtube {
+            color: #a70b0b;
+            text-shadow: 1px 1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, -1px -1px 0 #fff, 1px 0px 0 #fff, 0px 1px 0 #fff, -1px 0px 0 #fff, 0px -1px 0 #fff;
+        }
+
+        .menu-link.rd2-youtube:hover {
+            color: #fff;
+            text-shadow: 1px 1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000, 1px 0px 0 #000, 0px 1px 0 #000, -1px 0px 0 #000, 0px -1px 0 #000;
+        }
+
+        .menu-link.rd2-tiktok {
+            color: #000;
+            text-shadow: 1.2px 1.2px 0px rgba(254, 44, 85, 0.9), -1.2px -1.2px 0px rgba(44, 244, 239, 0.9);
+        }
+
+        .menu-link.rd2-tiktok:hover {
+            color: #fff;
+            text-shadow: 1px 1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000, 1px 0px 0 #000, 0px 1px 0 #000, -1px 0px 0 #000, 0px -1px 0 #000;
+        }
+
+        .menu-link.rd2-bluesky {
+            color: #00c1ff;
+            text-shadow: 1px 1px 0 #4c4c4c, 1px -1px 0 #4c4c4c, -1px 1px 0 #4c4c4c, -1px -1px 0 #4c4c4c, 1px 0px 0 #4c4c4c, 0px 1px 0 #4c4c4c, -1px 0px 0 #4c4c4c, 0px -1px 0 #4c4c4c;
+        }
+
+        .menu-link.rd2-bluesky:hover {
+            color: #fff;
+            text-shadow: 1px 1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000, 1px 0px 0 #000, 0px 1px 0 #000, -1px 0px 0 #000, 0px -1px 0 #000;
+        }
+
+        .menu-link.rd2-x {
+            color: #000;
+            text-shadow: 1px 1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, -1px -1px 0 #fff, 1px 0px 0 #fff, 0px 1px 0 #fff, -1px 0px 0 #fff, 0px -1px 0 #fff;
+        }
+
+        .menu-link.rd2-x:hover {
+            color: #fff;
+            text-shadow: 1px 1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000, 1px 0px 0 #000, 0px 1px 0 #000, -1px 0px 0 #000, 0px -1px 0 #000;
+        }
+
+        .menu-link.rd2-email {
+            color: #4df27a;
+            text-shadow: 1px 1px 0 #4c4c4c, 1px -1px 0 #4c4c4c, -1px 1px 0 #4c4c4c, -1px -1px 0 #4c4c4c, 1px 0px 0 #4c4c4c, 0px 1px 0 #4c4c4c, -1px 0px 0 #4c4c4c, 0px -1px 0 #4c4c4c;
+        }
+
+        .menu-link.rd2-email:hover {
+            color: #fff;
+            text-shadow: 1px 1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000, 1px 0px 0 #000, 0px 1px 0 #000, -1px 0px 0 #000, 0px -1px 0 #000;
+        }
+
+    </style>
 </head>
 
 <body>
     <ul class="tree-menu">
         <li class="menu-item expanded">
-            <a href="{{site.url}}" class="menu-link category-link" target="_top"><i class="fa-solid fa-hashtag" style="width: 25px; text-align: center;"></i>
+            <!--<a href="{{site.url}}" class="menu-link category-link" target="_top"><i class="fa-solid fa-hashtag" style="width: 25px; text-align: center;"></i>
                 ลิงค์โซเชียลมีเดีย</a>
-            <ul class="submenu">
+            <ul class="submenu">-->
                 <li class="menu-item">
-                    <a href="https://www.youtube.com/@2RD.Channel" class="menu-link" target="_blank"><i
+                    <a href="https://www.youtube.com/@2RD.Channel" class="menu-link rd2-youtube" target="_blank"><i
                             class="fa-brands fa-youtube" style="width: 25px; text-align: center;"></i> Youtube</a>
                 </li>
                 <li class="menu-item">
-                    <a href="https://www.tiktok.com/@2RD.Channel" class="menu-link" target="_blank"><i
+                    <a href="https://www.tiktok.com/@2RD.Channel" class="menu-link rd2-tiktok" target="_blank"><i
                             class="fa-brands fa-tiktok" style="width: 25px; text-align: center;"></i> Tiktok</a>
                 </li>
                 <li class="menu-item">
-                    <a href="https://bsky.app/profile/2rd.top" class="menu-link" target="_blank"><i
+                    <a href="https://bsky.app/profile/2rd.top" class="menu-link rd2-bluesky" target="_blank"><i
                             class="fa-brands fa-bluesky" style="width: 25px; text-align: center;"></i> Bluesky</a>
                 </li>
                 <li class="menu-item">
-                    <a href="mailto:contact@2rd.top?subject=สวัสดีครับ!" class="menu-link" target="_blank"><i
+                    <a href="https://x.com/2RD_Channel" class="menu-link rd2-x" target="_blank"><i
+                            class="fa-brands fa-x-twitter" style="width: 25px; text-align: center;"></i> Twitter</a>
+                </li>
+                <li class="menu-item">
+                    <a href="mailto:contact@2rd.top?subject=สวัสดีครับ!" class="menu-link rd2-email" target="_blank"><i
                             class="fa-brands fa-at" style="width: 25px; text-align: center;"></i> Contact@2RD.top</a>
                 </li>
                 <!--<li class="menu-item">
                     <a href="mailto:contact@2rd.top?subject=สวัสดีครับ!" class="menu-link" target="_blank"><i class="fa-brands fa-at"></i> Email</a>
                 </li>-->
-            </ul>
+            <!--</ul>-->
         </li>
         <li class="menu-item expanded">
-            <a href="/mods" class="menu-link category-link" style="color: #942626;" target="_top"><i
+            <a href="/mods" class="menu-link" target="_top"><i
                     class="fa-solid fa-file-arrow-down" style="width: 25px; text-align: center;"></i> โหลดม็อดภาษาไทย</a>
         </li>
     </ul>

@@ -1,344 +1,344 @@
-<div class="container">
-    <div class="card">
-        <h2 class="card-title">Button Preview</h2>
-        <div class="preview-area">
-            <a id="previewButton" class="button" href="#" target="_blank" rel="noopener" role="button">
-                <img class="icon" src="images/littlelink.svg" alt="Button icon">
-                <span>Button Text</span>
-            </a>
-        </div>
-        <div class="contrast-checker">
-            <h3 class="card-title">Contrast Check</h3>
-            <div class="contrast-item">
-                <div class="contrast-swatch" id="bgSwatch"></div>
-                <span>Button on Light Theme</span>
-                <div class="contrast-score" id="lightScore">-</div>
+   <div class="container">
+        <div class="card">
+            <h2 class="card-title">Button Preview</h2>
+            <div class="preview-area">
+                <a id="previewButton" class="button" href="#" target="_blank" rel="noopener" role="button">
+                    <img class="icon" src="images/littlelink.svg" alt="Button icon">
+                    <span>Button Text</span>
+                </a>
             </div>
-            <div id="lightSuggestion" class="contrast-suggestion"></div>
+            <div class="contrast-checker">
+                <h3 class="card-title">Contrast Check</h3>
+                <div class="contrast-item">
+                    <div class="contrast-swatch" id="bgSwatch"></div>
+                    <span>Button on Light Theme</span>
+                    <div class="contrast-score" id="lightScore">-</div>
+                </div>
+                <div id="lightSuggestion" class="contrast-suggestion"></div>
 
-            <div class="contrast-item">
-                <div class="contrast-swatch" id="bgSwatch2"></div>
-                <span>Button on Dark Theme</span>
-                <div class="contrast-score" id="darkScore">-</div>
-            </div>
-            <div id="darkSuggestion" class="contrast-suggestion"></div>
+                <div class="contrast-item">
+                    <div class="contrast-swatch" id="bgSwatch2"></div>
+                    <span>Button on Dark Theme</span>
+                    <div class="contrast-score" id="darkScore">-</div>
+                </div>
+                <div id="darkSuggestion" class="contrast-suggestion"></div>
 
-            <div class="contrast-item">
-                <div class="contrast-swatch" id="textSwatch"></div>
-                <span>Text on Button</span>
-                <div class="contrast-score" id="textScore">-</div>
+                <div class="contrast-item">
+                    <div class="contrast-swatch" id="textSwatch"></div>
+                    <span>Text on Button</span>
+                    <div class="contrast-score" id="textScore">-</div>
+                </div>
+            </div>
+            <div class="code-container">
+                <div class="code-tabs">
+                    <button class="code-tab active" data-tab="css">CSS for 'css/brands.css'</button>
+                    <button class="code-tab" data-tab="html">HTML for 'index.html'</button>
+                </div>
+                <div class="code-output" id="codeOutput"></div>
+            </div>
+            <div id="reminderText" class="reminder-text" style="display: none;">
+                Remember to add the icon file to images/icons in your LittleLink folder
+            </div>
+            <button class="copy-button" onclick="copyCode()">Copy Code</button>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title">Customization</h2>
+            <div class="theme-section">
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"/>
+                        <line x1="12" y1="1" x2="12" y2="3"/>
+                        <line x1="12" y1="21" x2="12" y2="23"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                        <line x1="1" y1="12" x2="3" y2="12"/>
+                        <line x1="21" y1="12" x2="23" y2="12"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                    </svg>
+                    <span>Toggle Theme</span>
+                </button>
+                <small>Test on Light and Dark themes.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="file-upload" id="file-upload-label">Upload Icon (SVG, PNG, GIF, JPG)</label>
+                <input type="file" id="file-upload" accept=".svg,.png,.gif,.jpg,.jpeg">
+            </div>
+
+            <div class="form-group">
+                <label for="buttonText">Button Text</label>
+                <input type="text" id="buttonText" value="LittleLink">
+            </div>
+
+            <div class="form-group">
+                <label for="buttonURL">Button URL</label>
+                <input type="url"
+                       id="buttonURL"
+                       placeholder="https://example.com"
+                       pattern="https?://.*"
+                       class="text-input">
+            </div>
+
+            <div class="form-group">
+                <label>Background Color</label>
+                <div class="color-input-group">
+                    <input type="color" id="bgColor" value="#2457F5">
+                    <input type="text" id="bgColorText" value="#2457F5">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Text Color</label>
+                <div class="color-input-group">
+                    <input type="color" id="textColor" value="#FFFFFF">
+                    <input type="text" id="textColorText" value="#FFFFFF">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="strokeSelect">Border Stroke</label>
+                <select id="strokeSelect" class="stroke-select">
+                    <option value="none">No Stroke</option>
+                    <option value="#FFFFFF">White</option>
+                    <option value="#000000">Black</option>
+                </select>
             </div>
         </div>
-        <div class="code-container">
-            <div class="code-tabs">
-                <button class="code-tab active" data-tab="css">CSS for 'css/brands.css'</button>
-                <button class="code-tab" data-tab="html">HTML for 'index.html'</button>
-            </div>
-            <div class="code-output" id="codeOutput"></div>
-        </div>
-        <div id="reminderText" class="reminder-text" style="display: none;">
-            Remember to add the icon file to images/icons in your LittleLink folder
-        </div>
-        <button class="copy-button" onclick="copyCode()">Copy Code</button>
     </div>
-
-    <div class="card">
-        <h2 class="card-title">Customization</h2>
-        <div class="theme-section">
-            <button class="theme-toggle" onclick="toggleTheme()">
-                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="5" />
-                    <line x1="12" y1="1" x2="12" y2="3" />
-                    <line x1="12" y1="21" x2="12" y2="23" />
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                    <line x1="1" y1="12" x2="3" y2="12" />
-                    <line x1="21" y1="12" x2="23" y2="12" />
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-                </svg>
-                <span>Toggle Theme</span>
-            </button>
-            <small>Test on Light and Dark themes.</small>
-        </div>
-
-        <div class="form-group">
-            <label for="file-upload" id="file-upload-label">Upload Icon (SVG, PNG, GIF, JPG)</label>
-            <input type="file" id="file-upload" accept=".svg,.png,.gif,.jpg,.jpeg">
-        </div>
-
-        <div class="form-group">
-            <label for="buttonText">Button Text</label>
-            <input type="text" id="buttonText" value="LittleLink">
-        </div>
-
-        <div class="form-group">
-            <label for="buttonURL">Button URL</label>
-            <input type="url" id="buttonURL" placeholder="https://example.com" pattern="https?://.*" class="text-input">
-        </div>
-
-        <div class="form-group">
-            <label>Background Color</label>
-            <div class="color-input-group">
-                <input type="color" id="bgColor" value="#2457F5">
-                <input type="text" id="bgColorText" value="#2457F5">
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label>Text Color</label>
-            <div class="color-input-group">
-                <input type="color" id="textColor" value="#FFFFFF">
-                <input type="text" id="textColorText" value="#FFFFFF">
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="strokeSelect">Border Stroke</label>
-            <select id="strokeSelect" class="stroke-select">
-                <option value="none">No Stroke</option>
-                <option value="#FFFFFF">White</option>
-                <option value="#000000">Black</option>
-            </select>
-        </div>
-    </div>
-</div>
 </div>
 <br>
-<center>
-      {{site.footer}}
-      <a href="{{site.url}}" class="menu-link category-link">{{site.username}}</a>. All rights reserved.
-</center>
+    <center><p><a href="https://github.com/sethcottle/littlelink-button-builder" target="_blank">Open Source</a> | Built for <a href="https://littlelink.io" target="_blank">LittleLink</a> by <a href="https://seth.social" target="_blank">Seth</a> </p></center>
 </div>
 
-<script>
-    // Utility function to calculate relative luminance
-    function getLuminance(r, g, b) {
-        let [rs, gs, bs] = [r, g, b].map(c => {
-            c = c / 255;
-            return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
-        });
-        return 0.2126 * rs + 0.7152 * gs + 0.0722 * bs;
-    }
+    <script>
+        // Utility function to calculate relative luminance
+        function getLuminance(r, g, b) {
+            let [rs, gs, bs] = [r, g, b].map(c => {
+                c = c / 255;
+                return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+            });
+            return 0.2126 * rs + 0.7152 * gs + 0.0722 * bs;
+        }
 
-    // Function to calculate contrast ratio
-    function getContrastRatio(color1, color2) {
-        // Convert hex to RGB
-        const getRGB = (hex) => {
-            const r = parseInt(hex.slice(1, 3), 16);
-            const g = parseInt(hex.slice(3, 5), 16);
-            const b = parseInt(hex.slice(5, 7), 16);
-            return [r, g, b];
-        };
+        // Function to calculate contrast ratio
+        function getContrastRatio(color1, color2) {
+            // Convert hex to RGB
+            const getRGB = (hex) => {
+                const r = parseInt(hex.slice(1, 3), 16);
+                const g = parseInt(hex.slice(3, 5), 16);
+                const b = parseInt(hex.slice(5, 7), 16);
+                return [r, g, b];
+            };
 
-        const [r1, g1, b1] = getRGB(color1);
-        const [r2, g2, b2] = getRGB(color2);
+            const [r1, g1, b1] = getRGB(color1);
+            const [r2, g2, b2] = getRGB(color2);
 
-        const l1 = getLuminance(r1, g1, b1);
-        const l2 = getLuminance(r2, g2, b2);
+            const l1 = getLuminance(r1, g1, b1);
+            const l2 = getLuminance(r2, g2, b2);
 
-        const lighter = Math.max(l1, l2);
-        const darker = Math.min(l1, l2);
+            const lighter = Math.max(l1, l2);
+            const darker = Math.min(l1, l2);
 
-        return (lighter + 0.05) / (darker + 0.05);
-    }
+            return (lighter + 0.05) / (darker + 0.05);
+        }
 
-    // Function to format contrast score display
-    function formatContrastScore(ratio, isText = false) {
-        const score = ratio.toFixed(2);
-        if (!isText) {
-            // For background contrast (more liberal 3.0:1 ratio)
-            if (ratio >= 3.0) {
-                return `<div class="contrast-score contrast-pass">${score}</div>`;
+        // Function to format contrast score display
+        function formatContrastScore(ratio, isText = false) {
+            const score = ratio.toFixed(2);
+            if (!isText) {
+                // For background contrast (more liberal 3.0:1 ratio)
+                if (ratio >= 3.0) {
+                    return `<div class="contrast-score contrast-pass">${score}</div>`;
+                }
+                return `<div class="contrast-score contrast-fail">${score}</div>`;
+            } else {
+                // For text contrast (WCAG standard 4.5:1 ratio)
+                if (ratio >= 7) {
+                    return `<div class="contrast-score contrast-pass">${score}</div>`;
+                } else if (ratio >= 4.5) {
+                    return `<div class="contrast-score contrast-warn">${score}</div>`;
+                }
+                return `<div class="contrast-score contrast-fail">${score}</div>`;
             }
-            return `<div class="contrast-score contrast-fail">${score}</div>`;
-        } else {
-            // For text contrast (WCAG standard 4.5:1 ratio)
-            if (ratio >= 7) {
-                return `<div class="contrast-score contrast-pass">${score}</div>`;
-            } else if (ratio >= 4.5) {
-                return `<div class="contrast-score contrast-warn">${score}</div>`;
+        }
+
+        const button = document.getElementById('previewButton');
+        const buttonText = document.getElementById('buttonText');
+        const buttonURL = document.getElementById('buttonURL');
+        const bgColor = document.getElementById('bgColor');
+        const bgColorText = document.getElementById('bgColorText');
+        const textColor = document.getElementById('textColor');
+        const textColorText = document.getElementById('textColorText');
+        const fileUpload = document.getElementById('file-upload');
+        const codeOutput = document.getElementById('codeOutput');
+        const strokeSelect = document.getElementById('strokeSelect');
+        const reminderText = document.getElementById('reminderText');
+
+        let uploadedFileName = '';
+        let currentIconSrc = '/api/placeholder/20/20';
+        let currentTab = 'css';
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            html.className = html.className === 'theme-light' ? 'theme-dark' : 'theme-light';
+            updateButton();
+        }
+
+        function updateContrastSuggestions(lightContrast, darkContrast) {
+            const lightSuggestion = document.getElementById('lightSuggestion');
+            const darkSuggestion = document.getElementById('darkSuggestion');
+
+            // Clear previous suggestions
+            lightSuggestion.textContent = '';
+            darkSuggestion.textContent = '';
+
+            // Always calculate the needed stroke state based on current contrasts
+            let needsStroke = false;
+            let suggestedStrokeColor = null;
+
+            // Check if we need a border for light theme
+            if (lightContrast < 3.0) {
+                lightSuggestion.textContent = 'Suggestion: Add a dark border for light theme visibility';
+                needsStroke = true;
+                suggestedStrokeColor = '#000000';
             }
-            return `<div class="contrast-score contrast-fail">${score}</div>`;
-        }
-    }
 
-    const button = document.getElementById('previewButton');
-    const buttonText = document.getElementById('buttonText');
-    const buttonURL = document.getElementById('buttonURL');
-    const bgColor = document.getElementById('bgColor');
-    const bgColorText = document.getElementById('bgColorText');
-    const textColor = document.getElementById('textColor');
-    const textColorText = document.getElementById('textColorText');
-    const fileUpload = document.getElementById('file-upload');
-    const codeOutput = document.getElementById('codeOutput');
-    const strokeSelect = document.getElementById('strokeSelect');
-    const reminderText = document.getElementById('reminderText');
+            // Check if we need a border for dark theme
+            if (darkContrast < 3.0) {
+                darkSuggestion.textContent = 'Suggestion: Add a light border for dark theme visibility';
+                needsStroke = true;
+                suggestedStrokeColor = '#FFFFFF';
+            }
 
-    let uploadedFileName = '';
-    let currentIconSrc = '/api/placeholder/20/20';
-    let currentTab = 'css';
+            // Update stroke select based on contrast needs
+            if (needsStroke) {
+                strokeSelect.value = suggestedStrokeColor;
+            } else {
+                strokeSelect.value = 'none';
+            }
 
-    function toggleTheme() {
-        const html = document.documentElement;
-        html.className = html.className === 'theme-light' ? 'theme-dark' : 'theme-light';
-        updateButton();
-    }
-
-    function updateContrastSuggestions(lightContrast, darkContrast) {
-        const lightSuggestion = document.getElementById('lightSuggestion');
-        const darkSuggestion = document.getElementById('darkSuggestion');
-
-        // Clear previous suggestions
-        lightSuggestion.textContent = '';
-        darkSuggestion.textContent = '';
-
-        // Always calculate the needed stroke state based on current contrasts
-        let needsStroke = false;
-        let suggestedStrokeColor = null;
-
-        // Check if we need a border for light theme
-        if (lightContrast < 3.0) {
-            lightSuggestion.textContent = 'Suggestion: Add a dark border for light theme visibility';
-            needsStroke = true;
-            suggestedStrokeColor = '#000000';
+            // Update button border
+            if (needsStroke) {
+                button.style.border = `1px solid ${suggestedStrokeColor}`;
+            } else {
+                button.style.border = 'none';
+            }
         }
 
-        // Check if we need a border for dark theme
-        if (darkContrast < 3.0) {
-            darkSuggestion.textContent = 'Suggestion: Add a light border for dark theme visibility';
-            needsStroke = true;
-            suggestedStrokeColor = '#FFFFFF';
-        }
+        function generateCode() {
+            const buttonLabel = buttonText.value || 'Button Text';
+            const className = buttonLabel.toLowerCase().replace(/[^a-z0-9\u0e00-\u0e7f]/g, '-');
+            const url = buttonURL.value || '#';
 
-        // Update stroke select based on contrast needs
-        if (needsStroke) {
-            strokeSelect.value = suggestedStrokeColor;
-        } else {
-            strokeSelect.value = 'none';
-        }
-
-        // Update button border
-        if (needsStroke) {
-            button.style.border = `1px solid ${suggestedStrokeColor}`;
-        } else {
-            button.style.border = 'none';
-        }
-    }
-
-    function generateCode() {
-        const buttonLabel = buttonText.value || 'Button Text';
-        const className = buttonLabel.toLowerCase().replace(/[^a-z0-9\u0e00-\u0e7f]/g, '-');
-        const url = buttonURL.value || '#';
-
-        // Generate the CSS
-        let css = `/* ${buttonLabel} */
+            // Generate the CSS
+            let css = `/* ${buttonLabel} */
 .button-${className} {
     --button-text: ${textColor.value};
     --button-background: ${bgColor.value};`;
 
-        if (strokeSelect.value !== 'none') {
-            css += `\n    --button-border: 1px solid ${strokeSelect.value};`;
-        }
+            if (strokeSelect.value !== 'none') {
+                css += `\n    --button-border: 1px solid ${strokeSelect.value};`;
+            }
 
-        css += '\n}';
+            css += '\n}';
 
-        // Generate the HTML with aria-hidden and URL
-        const html = `<!-- ${buttonLabel} -->
+            // Generate the HTML with aria-hidden and URL
+            const html = `<!-- ${buttonLabel} -->
 <a class="button button-${className}" href="${url}" target="_blank" rel="noopener" role="button"><img class="icon" aria-hidden="true" src="images/icons/${uploadedFileName || 'default-icon.svg'}" alt="${buttonLabel} icon">${buttonLabel}</a>`;
 
-        // Display code based on current tab
-        codeOutput.textContent = currentTab === 'css' ? css : html;
+            // Display code based on current tab
+            codeOutput.textContent = currentTab === 'css' ? css : html;
 
-        // Show/hide reminder text
-        reminderText.style.display = (uploadedFileName) ? 'block' : 'none';
-        if (uploadedFileName) {
-            reminderText.textContent = `Remember to add "${uploadedFileName}" to images/icons in your LittleLink folder`;
+            // Show/hide reminder text
+            reminderText.style.display = (uploadedFileName) ? 'block' : 'none';
+            if (uploadedFileName) {
+                reminderText.textContent = `Remember to add "${uploadedFileName}" to images/icons in your LittleLink folder`;
+            }
+
+            // Update contrast checks
+            const bgContrast = getContrastRatio(bgColor.value, '#FFFFFF');
+            const darkContrast = getContrastRatio(bgColor.value, '#121212');
+            const textContrast = getContrastRatio(bgColor.value, textColor.value);
+
+            document.getElementById('lightScore').innerHTML = formatContrastScore(bgContrast);
+            document.getElementById('darkScore').innerHTML = formatContrastScore(darkContrast);
+            document.getElementById('textScore').innerHTML = formatContrastScore(textContrast, true);
+
+            // Update contrast suggestions
+            updateContrastSuggestions(bgContrast, darkContrast);
+
+            // Update swatches
+            document.getElementById('bgSwatch').style.backgroundColor = bgColor.value;
+            document.getElementById('bgSwatch2').style.backgroundColor = bgColor.value;
+            document.getElementById('textSwatch').style.backgroundColor = textColor.value;
         }
 
-        // Update contrast checks
-        const bgContrast = getContrastRatio(bgColor.value, '#FFFFFF');
-        const darkContrast = getContrastRatio(bgColor.value, '#121212');
-        const textContrast = getContrastRatio(bgColor.value, textColor.value);
-
-        document.getElementById('lightScore').innerHTML = formatContrastScore(bgContrast);
-        document.getElementById('darkScore').innerHTML = formatContrastScore(darkContrast);
-        document.getElementById('textScore').innerHTML = formatContrastScore(textContrast, true);
-
-        // Update contrast suggestions
-        updateContrastSuggestions(bgContrast, darkContrast);
-
-        // Update swatches
-        document.getElementById('bgSwatch').style.backgroundColor = bgColor.value;
-        document.getElementById('bgSwatch2').style.backgroundColor = bgColor.value;
-        document.getElementById('textSwatch').style.backgroundColor = textColor.value;
-    }
-
-    function updateButton() {
-        button.style.backgroundColor = bgColor.value;
-        button.style.color = textColor.value;
-        button.href = buttonURL.value || '#';
-        button.querySelector('span').textContent = buttonText.value;
-        generateCode();
-    }
-
-    // Event Listeners
-    fileUpload.addEventListener('change', function (e) {
-        const file = e.target.files[0];
-        if (file) {
-            uploadedFileName = file.name;
-            const reader = new FileReader();
-            reader.onload = function (e) {
-                currentIconSrc = e.target.result;
-                button.querySelector('img').src = currentIconSrc;
-                generateCode();
-            };
-            reader.readAsDataURL(file);
-        }
-    });
-
-    strokeSelect.addEventListener('change', updateButton);
-    buttonURL.addEventListener('input', updateButton);
-
-    document.querySelectorAll('.code-tab').forEach(tab => {
-        tab.addEventListener('click', () => {
-            document.querySelectorAll('.code-tab').forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-            currentTab = tab.dataset.tab;
+        function updateButton() {
+            button.style.backgroundColor = bgColor.value;
+            button.style.color = textColor.value;
+            button.href = buttonURL.value || '#';
+            button.querySelector('span').textContent = buttonText.value;
             generateCode();
+        }
+
+        // Event Listeners
+        fileUpload.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                uploadedFileName = file.name;
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    currentIconSrc = e.target.result;
+                    button.querySelector('img').src = currentIconSrc;
+                    generateCode();
+                };
+                reader.readAsDataURL(file);
+            }
         });
-    });
 
-    function copyCode() {
-        navigator.clipboard.writeText(codeOutput.textContent)
-            .then(() => alert('Code copied to clipboard!'))
-            .catch(err => console.error('Failed to copy code:', err));
-    }
+        strokeSelect.addEventListener('change', updateButton);
+        buttonURL.addEventListener('input', updateButton);
 
-    // Color input synchronization
-    bgColor.addEventListener('input', function () {
-        bgColorText.value = this.value.toUpperCase();
+        document.querySelectorAll('.code-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.code-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                currentTab = tab.dataset.tab;
+                generateCode();
+            });
+        });
+
+        function copyCode() {
+            navigator.clipboard.writeText(codeOutput.textContent)
+                .then(() => alert('Code copied to clipboard!'))
+                .catch(err => console.error('Failed to copy code:', err));
+        }
+
+        // Color input synchronization
+        bgColor.addEventListener('input', function() {
+            bgColorText.value = this.value.toUpperCase();
+            updateButton();
+        });
+
+        bgColorText.addEventListener('input', function() {
+            bgColor.value = this.value;
+            updateButton();
+        });
+
+        textColor.addEventListener('input', function() {
+            textColorText.value = this.value.toUpperCase();
+            updateButton();
+        });
+
+        textColorText.addEventListener('input', function() {
+            textColor.value = this.value;
+            updateButton();
+        });
+
+        buttonText.addEventListener('input', updateButton);
+
+        // Initial update
         updateButton();
-    });
-
-    bgColorText.addEventListener('input', function () {
-        bgColor.value = this.value;
-        updateButton();
-    });
-
-    textColor.addEventListener('input', function () {
-        textColorText.value = this.value.toUpperCase();
-        updateButton();
-    });
-
-    textColorText.addEventListener('input', function () {
-        textColor.value = this.value;
-        updateButton();
-    });
-
-    buttonText.addEventListener('input', updateButton);
-
-    // Initial update
-    updateButton();
-</script>
+    </script>

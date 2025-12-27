@@ -3,7 +3,7 @@
             <h2 class="card-title">Button Preview</h2>
             <div class="preview-area">
                 <a id="previewButton" class="button" href="#" target="_blank" rel="noopener" role="button">
-                    <img class="icon" src="images/littlelink.svg" alt="Button icon">
+                    <img class="icon" src="{{site.url}}/images/littlelink.svg" alt="Button icon">
                     <span>Button Text</span>
                 </a>
             </div>
@@ -246,7 +246,7 @@
 
             // Generate the HTML with aria-hidden and URL
             const html = `<!-- ${buttonLabel} -->
-<a class="button button-${className}" href="${url}" target="_blank" rel="noopener" role="button"><img class="icon" aria-hidden="true" src="images/icons/${uploadedFileName || 'default-icon.svg'}" alt="${buttonLabel} icon">${buttonLabel}</a>`;
+<a class="button button-${className}" href="${url}" target="_blank" rel="noopener" role="button"><img class="icon" aria-hidden="true" src="{% raw %}{{site.url}}{% endraw %}/images/icons/${uploadedFileName || 'default-icon.svg'}" alt="${buttonLabel} icon">${buttonLabel}</a>`;
 
             // Display code based on current tab
             codeOutput.textContent = currentTab === 'css' ? css : html;

@@ -177,11 +177,11 @@ footer {
 /* Links
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
   a {
-	color:#2457F5;
+	color:#2457F5; 
 	text-decoration:underline;
 }
 a:hover {
-	color:#083BDA;
+	color:#083BDA; 
 }
 
 /* Buttons

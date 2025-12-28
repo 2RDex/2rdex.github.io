@@ -7,26 +7,27 @@
   <link rel="icon" type="image/png" href="{{site.url}}/images/avatar.png">
 
   <!-- HTML Meta Tags -->
-  <title>{{ page.username | default: site.username }} | {{ page.title | default: site.title }}</title>
-  <meta name="description" content="{{ page.description | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
+  <title>{{ page.username | default: site.username }} | {{ page.main_title | default: site.main_title }}</title>
+  <meta name="description" content="{{ page.main_description | default: site.main_description | strip_html | strip_newlines | truncate: 160 }}">
 
   <!-- Facebook Meta Tags -->
   <meta property="og:url" content="{{site.url}}">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="{{ page.username | default: site.username }} | {{ page.title | default: site.title }}">
-  <meta property="og:description" content="{{ page.description | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
-  <meta property="og:image" content="{{site.url}}{{site.ogm}}">
+  <meta property="og:title" content="{{ page.username | default: site.username }} | {{ page.main_title | default: site.main_title }}">
+  <meta property="og:description" content="{{ page.main_description | default: site.main_description | strip_html | strip_newlines | truncate: 160 }}">
+  <meta property="og:image" content="{{site.url}}{{site.main_ogm}}">
 
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta property="twitter:domain" content="{{site.domain}}">
   <meta property="twitter:url" content="{{site.url}}">
-  <meta name="twitter:title" content="{{ page.username | default: site.username }} | {{ page.title | default: site.title }}">
-  <meta name="twitter:description" content="{{ page.description | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
-  <meta name="twitter:image" content="{{site.url}}{{site.ogm}}">
+  <meta name="twitter:title" content="{{ page.username | default: site.username }} | {{ page.main_title | default: site.main_title }}">
+  <meta name="twitter:description" content="{{ page.main_description | default: site.main_description | strip_html | strip_newlines | truncate: 160 }}">
+  <meta name="twitter:image" content="{{site.url}}{{site.main_ogm}}">
 
 	<link rel="stylesheet" href="{{ '/assets/css/reset.css' | prepend: site.url }}" />
 	<link rel="stylesheet" href="{{ '/assets/css/style.css' | prepend: site.url }}" />
+  <link rel="stylesheet" href="{{ '/assets/css/style-2rd.css' | prepend: site.url }}" />
 	<link rel="stylesheet" href="{{ '/assets/css/brands.css' | prepend: site.url }}" />
 	<link rel="stylesheet" href="{{ '/assets/css/brands-2rd.css' | prepend: site.url }}" />
 	<link rel="stylesheet" href="{{ '/assets/css/brands-extended.css' | prepend: site.url }}" />

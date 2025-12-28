@@ -1,27 +1,33 @@
 # Site settings
 domain: "2RD.top"
 url: "https://2rd.top"
-title: "Linktree"
-description: "รวมลิงค์โปรไฟล์โซเชียลมีเดียทั้งหมดของผม"
-ogm: "/images/2rd_ogm.png"
+
+# main settings
+main_title: "Linktree"
+main_description: "รวมลิงค์โปรไฟล์โซเชียลมีเดียทั้งหมดของผม"
+main_ogm: "/images/2rd_ogm.png"
+
+# mcpe settings
 mcpe_url: "/mcpe"
 mcpe_title: "ม็อดมายคราฟ"
 mcpe_description: "🤣 ทำตามอารมณ์ ไม่มีอารมณ์ก็ไม่ทำ 🤣"
 mcpe_ogm: "/images/mcpe_ogm.png"
+
+# mods settings
 mods_url: "/mods"
 mods_title: "ม็อด"
 mods_description: "🤣 ทำตามอารมณ์ ไม่มีอารมณ์ก็ไม่ทำ 🤣"
 mods_ogm: "/images/mods_ogm.png"
+
+# 404 settings
 404_title: "404 PAGE NOT FOUND"
 404_description: "ไซต์ที่กําหนดค่าตามที่อยู่นี้ไม่ มีไฟล์ที่ร้องขอ"
-urlc: https://c.2rd.top
 
 
 # User settings
 username: "2RD"
 email: "contact@2rd.top"
-# footer: "<p>&copy;2025 <a href='URL_PLACEHOLDER' rel='noopener'>USER_PLACEHOLDER</a>. Build your own by forking <a href='https://littlelink.io/' target='_blank' rel='noopener'>LittleLink</a>.</p>"
-footer: "<p>&copy;2026 USER_PLACEHOLDER. สงวนลิขสิทธิ์."
+footer: "<p class='footer'>&copy;2026 <a href='URL_PLACEHOLDER' target='_top' rel='noopener'>USER_PLACEHOLDER</a>. Build your own by forking <a href='https://littlelink.io/' target='_blank' rel='noopener'>LittleLink</a>.</p>"
 
 # Google-analytics
 google-analytics:

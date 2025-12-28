@@ -34,7 +34,6 @@ or create your own! */
 .sensitive-panel.open {
   max-height: 300px;
   border: 1px solid #ccc;
-  margin-top: -10px;
   margin-bottom: 1rem;
 }
 

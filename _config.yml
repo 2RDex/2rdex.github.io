@@ -9,7 +9,7 @@ main_ogm: "/images/2rd_ogm.png"
 
 # mcpe settings
 mcpe_url: "/mcpe"
-mcpe_title: "ม็อดมายคราฟ"
+mcpe_title: "ม็อดไมน์คราฟต์เบดร็อก"
 mcpe_description: "🤣 ทำตามอารมณ์ ไม่มีอารมณ์ก็ไม่ทำ 🤣"
 mcpe_ogm: "/images/mcpe_ogm.png"
 
@@ -27,8 +27,7 @@ mods_ogm: "/images/mods_ogm.png"
 # User settings
 username: "2RD"
 email: "contact@2rd.top"
-footer: "<p class='footer'>&copy;2026 <a href='URL_PLACEHOLDER' target='_top' rel='noopener'>USER_PLACEHOLDER</a>.</p>"
-#Build your own by forking <a href='https://littlelink.io/' target='_blank' rel='noopener'>LittleLink</a>.
+footer: "<p class='footer'>Built by <a href='URL_PLACEHOLDER' target='_top' rel='noopener'>USER_PLACEHOLDER</a> and <a href='https://littlelink.io/' target='_blank' rel='noopener'>LittleLink</a>.</p>"
 
 # Google-analytics
 google-analytics:

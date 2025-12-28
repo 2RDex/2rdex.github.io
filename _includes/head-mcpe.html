@@ -7,23 +7,23 @@
 	<link rel="icon" type="image/png" href="{{site.url}}/images/avatar-mods.png" />
 
 	<!-- HTML Meta Tags -->
-	<title>{{ page.username | default: site.username }} | {{ page.mods_title | default: site.mods_title }}</title>
-	<meta name="description" content="{{ page.mods_description | default: site.mods_description | strip_html | strip_newlines | truncate: 160 }}" />
+	<title>{{ page.username | default: site.username }} | {{ page.mcpe_title | default: site.mcpe_title }}</title>
+	<meta name="description" content="{{ page.mcpe_description | default: site.mcpe_description | strip_html | strip_newlines | truncate: 160 }}" />
 
 	<!-- Facebook Meta Tags -->
-	<meta property="og:url" content="{{site.url}}{{site.mods_url}}" />
+	<meta property="og:url" content="{{site.url}}{{site.mcpe_url}}" />
 	<meta property="og:type" content="website" />
-	<meta property="og:title" content="{{ page.username | default: site.username }} | {{ page.mods_title | default: site.mods_title }}" />
-	<meta property="og:description" content="{{ page.mods_description | default: site.mods_description | strip_html | strip_newlines | truncate: 160 }}" />
-	<meta property="og:image" content="{{site.url}}{{site.mods_ogm}}" />
+	<meta property="og:title" content="{{ page.username | default: site.username }} | {{ page.mcpe_title | default: site.mcpe_title }}" />
+	<meta property="og:description" content="{{ page.mcpe_description | default: site.mcpe_description | strip_html | strip_newlines | truncate: 160 }}" />
+	<meta property="og:image" content="{{site.url}}{{site.mcpe_ogm}}" />
 	
 	<!-- Twitter Meta Tags -->
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta property="twitter:domain" content="{{site.domain}}" />
-	<meta property="twitter:url" content="{{site.url}}{{site.mods_url}}" />
-	<meta name="twitter:title" content="{{ page.username | default: site.username }} | {{ page.mods_title | default: site.mods_title }}" />
-	<meta name="twitter:description" content="{{ page.mods_description | default: site.mods_description | strip_html | strip_newlines | truncate: 160 }}" />
-	<meta name="twitter:image" content="{{site.url}}{{site.mods_ogm}}" />
+	<meta property="twitter:url" content="{{site.url}}{{site.mcpe_url}}" />
+	<meta name="twitter:title" content="{{ page.username | default: site.username }} | {{ page.mcpe_title | default: site.mcpe_title }}" />
+	<meta name="twitter:description" content="{{ page.mcpe_description | default: site.mcpe_description | strip_html | strip_newlines | truncate: 160 }}" />
+	<meta name="twitter:image" content="{{site.url}}{{site.mcpe_ogm}}" />
 
 	<link rel="stylesheet" href="{{ '/assets/css/reset.css' | prepend: site.url }}" />
 	<link rel="stylesheet" href="{{ '/assets/css/style.css' | prepend: site.url }}" />

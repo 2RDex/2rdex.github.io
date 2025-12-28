@@ -24,12 +24,6 @@ p.line {
 margin-bottom: 1rem;
 }
 
-/* 3) When open, show border and expand */
-.sensitive-panel.open {
-  margin-top: 0.1rem;
-
-}
-
 /* Links
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
 :root.theme-dark a:not(.button) {

@@ -58,11 +58,11 @@ or create your own! */
    Dark theme support (forced .theme-dark)
    ------------------------------------ */
 :root.theme-dark .sensitive-panel__content {
-  background-color: #121212;
+  background: linear-gradient(0deg,rgba(61, 61, 61, 0.9) 0%, rgba(0, 0, 0, 0.0) 100%);
   color: #ffffff;
 }
 :root.theme-dark .sensitive-panel.open {
-  border-color: #444;
+  border-color: #00000000;
 }
 
 .button-sensitive-yt {

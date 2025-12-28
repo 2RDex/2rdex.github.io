@@ -1,16 +1,20 @@
 # Site settings
 domain: "2RD.top"
-title: "2RD Channel | Linktree"
+title: "Linktree"
 description: "รวมลิงค์โปรไฟล์โซเชียลมีเดียทั้งหมดของผม"
-page_404: "404 PAGE NOT FOUND"
-page_404_description: "ไซต์ที่กําหนดค่าตามที่อยู่นี้ไม่ มีไฟล์ที่ร้องขอ"
+ogm: "/images/2rd_ogm.png"
+mods_url: "/mods"
+mods_title: "ม็อดภาษาไทย"
+mods_description: "🤣 ทำตามอารมณ์ ไม่มีอารมณ์ก็ไม่ทำ 🤣"
+mods_ogm: "/images/mods_ogm.png"
+404_title: "404 PAGE NOT FOUND"
+404_description: "ไซต์ที่กําหนดค่าตามที่อยู่นี้ไม่ มีไฟล์ที่ร้องขอ"
 urlc: https://c.2rd.top
 
 
 # User settings
 username: "2RD Channel"
-user_description: ""
-footer: "&copy;2025"
+#footer: "&copy;2025 <a href='URL_PLACEHOLDER'>USER_PLACEHOLDER</a>. All rights reserved."
 email: "contact@2rd.top"
 
 # Google-analytics

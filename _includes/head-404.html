@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="{{site.url}}/images/avatar.png">
 
   <!-- HTML Meta Tags -->
-  <title>{{ page.username | default: site.username }} | {{ page.title | default: site.title }}</title>
+  <title>{{ page.username | default: site.username }} | {{ page.404_title | default: site.404_title }}</title>
   <meta name="description" content="{{ page.description | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
 
   <!-- Facebook Meta Tags -->

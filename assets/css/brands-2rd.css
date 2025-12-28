@@ -1,5 +1,12 @@
 /* 2RD */
 
+.avatar2 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%; /* Adjusts the width to 50% of the original size */
+}
+
 /* Download */
 .button-download {
     --button-text: #ffffff;

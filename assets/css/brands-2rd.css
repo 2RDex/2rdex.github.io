@@ -41,3 +41,9 @@
     --button-text: #ffffff;
     --button-background: #1767c4;
 }
+
+/* Crysis 2 Remastered */
+.button-crysis-2-remastered {
+    --button-text: #2d2a2a;
+    --button-background: #9ba6b1;
+}

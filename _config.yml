@@ -14,8 +14,8 @@ urlc: https://c.2rd.top
 
 # User settings
 username: "2RD Channel"
-#footer: "&copy;2025 <a href='URL_PLACEHOLDER'>USER_PLACEHOLDER</a>. All rights reserved."
 email: "contact@2rd.top"
+#footer: "&copy;2025 <a href='URL_PLACEHOLDER'>USER_PLACEHOLDER</a>. All rights reserved."
 
 # Google-analytics
 google-analytics:

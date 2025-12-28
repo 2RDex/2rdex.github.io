@@ -1,5 +1,74 @@
 /* 2RD */
 
+h1, h2, h3, h4, p {
+    text-shadow: 0px 0px 8px rgba(0,0,0,1);
+}
+
+/* Font Face Definitions
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .chakra-petch-light {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.chakra-petch-regular {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.chakra-petch-medium {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.chakra-petch-semibold {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.chakra-petch-bold {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.chakra-petch-light-italic {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.chakra-petch-regular-italic {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.chakra-petch-medium-italic {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.chakra-petch-semibold-italic {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.chakra-petch-bold-italic {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+/* Icon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .avatar2 {
   display: block;
   margin-left: auto;
@@ -7,30 +76,42 @@
   width: 50%; /* Adjusts the width to 50% of the original size */
 }
 
+.button {
+    --button-border: 1px solid #000;
+}
+
 /* Download */
 .button-download {
     --button-text: #ffffff;
-    --button-background: #2b2c45;
-    --button-border: 1px solid #FFFFFF;
+    --button-background: #6D1C1C;
 }
 
 /* Thai Font */
 .button-thai-font {
     --button-text: #ffffff;
-    --button-background: #485284;
-    --button-border: 1px solid #FFFFFF;
+    --button-background: #383838;
 }
 
 /* ภาษาไทยเกมหลัก */
 .button-THLanguage {
     --button-text: #ffffff;
-    --button-background: #8b3737;
-    --button-border: 1px solid #FFFFFF;
+    --button-background: #383838;
 }
 
-/* Mods */
-.button-mods {
+/* ม็อดมายคราฟ */
+.button-ม็อดมายคราฟ {
     --button-text: #ffffff;
-    --button-background: #b80000;
-    --button-border: 1px solid #FFFFFF;
+    --button-background: #217d0d;
+}
+
+/* Email-2 */
+.button-email-2 {
+    --button-text: #ffffff;
+    --button-background: #115ad0;
+}
+
+/* Planet Coaster */
+.button-planet-coaster {
+    --button-text: #ffffff;
+    --button-background: #1767c4;
 }

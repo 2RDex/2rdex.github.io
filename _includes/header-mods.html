@@ -1,7 +1,7 @@
 <div class="container">
   <div class="column">
     <img class="avatar avatar--soft" src="{{site.url}}/images/avatar-mods.png"
-      srcset="{{site.url}}/images/avatar-mods@2x.png 2x" alt="{{site.mods_title}}" />
+      srcset="{{site.url}}/images/avatar-mods@2x.png" alt="{{site.mods_title}}" />
     <h1>{{site.mods_title}}</h1>
     <p>{{site.mods_description}}</p>
 
@@ -166,8 +166,7 @@
     </div>
 
     <footer>
-      {{ site.footer | replace: 'URL_PLACEHOLDER', site.url | replace:
-      'USER_PLACEHOLDER', site.username }}
+      {{ site.footer | replace: 'URL_PLACEHOLDER', site.url | replace: 'USER_PLACEHOLDER', site.username }}
     </footer>
   </div>
 </div>

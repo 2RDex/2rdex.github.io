@@ -1,5 +1,6 @@
 # Site settings
 domain: "2RD.top"
+url: "https://2rd.top"
 title: "Linktree"
 description: "รวมลิงค์โปรไฟล์โซเชียลมีเดียทั้งหมดของผม"
 ogm: "/images/2rd_ogm.png"

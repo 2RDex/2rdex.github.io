@@ -5,6 +5,7 @@
 	<meta name="theme-color" content="#1e700c" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="icon" type="image/png" href="{{site.url}}/images/avatar-mods.png" />
+	<link rel="apple-touch-icon" sizes="180x180" href="{{site.url}}/images/apple-touch-icon.png">
 
 	<!-- HTML Meta Tags -->
 	<title>{{ page.username | default: site.username }} | {{ page.mcpe_title | default: site.mcpe_title }}</title>
@@ -16,6 +17,7 @@
 	<meta property="og:title" content="{{ page.username | default: site.username }} | {{ page.mcpe_title | default: site.mcpe_title }}" />
 	<meta property="og:description" content="{{ page.mcpe_description | default: site.mcpe_description | strip_html | strip_newlines | truncate: 160 }}" />
 	<meta property="og:image" content="{{site.url}}{{site.mcpe_ogm}}" />
+	<meta property="og:logo" content="{{site.url}}/images/favicon_logo.png">
 	
 	<!-- Twitter Meta Tags -->
 	<meta name="twitter:card" content="summary_large_image" />

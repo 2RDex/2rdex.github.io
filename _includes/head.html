@@ -5,6 +5,8 @@
   <meta name="theme-color" content="#b95589">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="{{site.url}}/images/avatar.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{site.url}}/images/apple-touch-icon.png">
+  
 
   <!-- HTML Meta Tags -->
   <title>{{ page.username | default: site.username }} | {{ page.main_title | default: site.main_title }}</title>
@@ -16,6 +18,7 @@
   <meta property="og:title" content="{{ page.username | default: site.username }} | {{ page.main_title | default: site.main_title }}">
   <meta property="og:description" content="{{ page.main_description | default: site.main_description | strip_html | strip_newlines | truncate: 160 }}">
   <meta property="og:image" content="{{site.url}}{{site.main_ogm}}">
+  <meta property="og:logo" content="{{site.url}}/images/favicon_logo.png">
 
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">

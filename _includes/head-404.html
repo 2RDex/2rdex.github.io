@@ -8,22 +8,22 @@
 
   <!-- HTML Meta Tags -->
   <title>{{ page.username | default: site.username }} | {{ page.404_title | default: site.404_title }}</title>
-  <meta name="description" content="{{ page.description | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
+  <meta name="description" content="{{ page.404_description | default: site.404_description | strip_html | strip_newlines | truncate: 160 }}">
 
   <!-- Facebook Meta Tags -->
   <meta property="og:url" content="{{site.url}}">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="{{ page.username | default: site.username }} | {{ page.title | default: site.title }}">
-  <meta property="og:description" content="{{ page.description | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
-  <meta property="og:image" content="{{site.url}}{{site.ogm}}">
+  <meta property="og:title" content="{{ page.username | default: site.username }} | {{ page.404_title | default: site.404_title }}">
+  <meta property="og:description" content="{{ page.404_description | default: site.404_description | strip_html | strip_newlines | truncate: 160 }}">
+  <meta property="og:image" content="{{site.url}}{{site.main_ogm}}">
 
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta property="twitter:domain" content="{{site.domain}}">
   <meta property="twitter:url" content="{{site.url}}">
-  <meta name="twitter:title" content="{{ page.username | default: site.username }} | {{ page.title | default: site.title }}">
-  <meta name="twitter:description" content="{{ page.description | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
-  <meta name="twitter:image" content="{{site.url}}{{site.ogm}}">
+  <meta name="twitter:title" content="{{ page.username | default: site.username }} | {{ page.404_title | default: site.404_title }}">
+  <meta name="twitter:description" content="{{ page.404_description | default: site.404_description | strip_html | strip_newlines | truncate: 160 }}">
+  <meta name="twitter:image" content={{site.url}}{{site.main_ogm}}">
 
 	<link rel="stylesheet" href="{{ '/assets/css/reset.css' | prepend: site.url }}" />
 	<link rel="stylesheet" href="{{ '/assets/css/style.css' | prepend: site.url }}" />

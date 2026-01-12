@@ -1,6 +1,12 @@
 /* 2RD.top
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
+/* Base Styles
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  body {
+	font-family: 'CMU Serif', serif;
+}
+
 /* Avatar
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .avatar2 {
@@ -44,62 +50,62 @@ p.line {
 
 /* Font Face Definitions
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.chakra-petch-light {
-  font-family: "Chakra Petch", sans-serif;
-  font-weight: 300;
-  font-style: normal;
+/* 1. Regular (ตัวปกติ) */
+@font-face {
+    font-family: 'CMU Serif';
+    src: url('../fonts/CMU-Regular.woff2') format('woff2'),
+         url('../fonts/CMU-Regular.woff') format('woff'),
+         url('../fonts/CMU-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
-.chakra-petch-regular {
-  font-family: "Chakra Petch", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+/* 2. Bold (ตัวหนา) */
+@font-face {
+    font-family: 'CMU Serif';
+    src: url('../fonts/CMU-Bold.woff2') format('woff2'),
+         url('../fonts/CMU-Bold.woff') format('woff'),
+         url('../fonts/CMU-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
 }
 
-.chakra-petch-medium {
-  font-family: "Chakra Petch", sans-serif;
-  font-weight: 500;
-  font-style: normal;
+/* 3. Italic (ตัวเอียง) */
+@font-face {
+    font-family: 'CMU Serif';
+    src: url('../fonts/CMU-Italic.woff2') format('woff2'),
+         url('../fonts/CMU-Italic.woff') format('woff'),
+         url('../fonts/CMU-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
 }
 
-.chakra-petch-semibold {
-  font-family: "Chakra Petch", sans-serif;
-  font-weight: 600;
-  font-style: normal;
+/* 4. Bold Italic (ตัวหนาเอียง) */
+@font-face {
+    font-family: 'CMU Serif';
+    src: url('../fonts/CMU-BoldItalic.woff2') format('woff2'),
+         url('../fonts/CMU-BoldItalic.woff') format('woff'),
+         url('../fonts/CMU-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
 }
 
-.chakra-petch-bold {
-  font-family: "Chakra Petch", sans-serif;
-  font-weight: 700;
-  font-style: normal;
+/* 5. Light (ตัวบาง) */
+@font-face {
+    font-family: 'CMU Serif';
+    src: url('../fonts/CMU-Light.woff2') format('woff2'),
+         url('../fonts/CMU-Light.woff') format('woff'),
+         url('../fonts/CMU-Light.ttf') format('truetype');
+    font-weight: 300; /* กำหนดน้ำหนักให้เบากว่าปกติ */
+    font-style: normal;
 }
 
-.chakra-petch-light-italic {
-  font-family: "Chakra Petch", sans-serif;
-  font-weight: 300;
-  font-style: italic;
-}
-
-.chakra-petch-regular-italic {
-  font-family: "Chakra Petch", sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.chakra-petch-medium-italic {
-  font-family: "Chakra Petch", sans-serif;
-  font-weight: 500;
-  font-style: italic;
-}
-
-.chakra-petch-semibold-italic {
-  font-family: "Chakra Petch", sans-serif;
-  font-weight: 600;
-  font-style: italic;
-}
-
-.chakra-petch-bold-italic {
-  font-family: "Chakra Petch", sans-serif;
-  font-weight: 700;
-  font-style: italic;
+/* 6. Light Italic (ตัวบางเอียง) */
+@font-face {
+    font-family: 'CMU Serif';
+    src: url('../fonts/CMU-LightItalic.woff2') format('woff2'),
+         url('../fonts/CMU-LightItalic.woff') format('woff'),
+         url('../fonts/CMU-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
 }

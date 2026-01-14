@@ -1,0 +1,42 @@
+<head>
+	<meta charset="utf-8" />
+ 	<meta name="facebook-domain-verification" content="idc3vpm36g0195mi20tkdi1z4zauqt" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="theme-color" content="#1e700c" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" type="image/png" href="{{site.url}}/images/avatar-mods.png" />
+	<link rel="apple-touch-icon" sizes="180x180" href="{{site.url}}/images/apple-touch-icon.png">
+
+	<!-- HTML Meta Tags -->
+	<title>{{ page.username | default: site.username }} | {{ page.hytale_title | default: site.hytale_title }}</title>
+	<meta name="description" content="{{ page.hytale_description | default: site.hytale_description | strip_html | strip_newlines | truncate: 160 }}" />
+
+	<!-- Facebook Meta Tags -->
+	<meta property="og:url" content="{{site.url}}{{site.hytale_url}}" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="{{ page.username | default: site.username }} | {{ page.hytale_title | default: site.hytale_title }}" />
+	<meta property="og:description" content="{{ page.hytale_description | default: site.hytale_description | strip_html | strip_newlines | truncate: 160 }}" />
+	<meta property="og:image" content="{{site.url}}{{site.hytale_ogm}}" />
+	<meta property="og:logo" content="{{site.url}}/images/favicon_logo.png">
+	
+	<!-- Twitter Meta Tags -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="twitter:domain" content="{{site.domain}}" />
+	<meta property="twitter:url" content="{{site.url}}{{site.hytale_url}}" />
+	<meta name="twitter:title" content="{{ page.username | default: site.username }} | {{ page.hytale_title | default: site.hytale_title }}" />
+	<meta name="twitter:description" content="{{ page.hytale_description | default: site.hytale_description | strip_html | strip_newlines | truncate: 160 }}" />
+	<meta name="twitter:image" content="{{site.url}}{{site.hytale_ogm}}" />
+
+	<link rel="stylesheet" href="{{ '/assets/css/reset.css' | prepend: site.url }}" />
+	<link rel="stylesheet" href="{{ '/assets/css/style.css' | prepend: site.url }}" />
+  	<link rel="stylesheet" href="{{ '/assets/css/style-2rd.css' | prepend: site.url }}" />
+	<link rel="stylesheet" href="{{ '/assets/css/brands.css' | prepend: site.url }}" />
+	<link rel="stylesheet" href="{{ '/assets/css/brands-2rd.css' | prepend: site.url }}" />
+	<link rel="stylesheet" href="{{ '/assets/css/brands-extended.css' | prepend: site.url }}" />
+	<link rel="stylesheet" href="{{ '/assets/css/sensitive-content.css' | prepend: site.url }}" />
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+</head>

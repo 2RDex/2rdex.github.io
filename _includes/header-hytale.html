@@ -1,0 +1,94 @@
+<div class="container">
+  <div class="column">
+    <img class="avatar avatar--soft" src="{{site.url}}/images/avatar-hytale.png"
+      srcset="{{site.url}}/images/avatar-hytale@2x.png" alt="{{site.username}}" />
+    <h1>
+      <div>{{site.hytale_title}}</div>
+    </h1>
+    <p>{{site.hytale_description}}</p>
+
+    <!-- All your buttons go here -->
+    <div class="button-stack" role="navigation">
+      <!-- Default -->
+      <a class="button button-default" href="{{site.url}}" rel="noopener" role="button">
+        <img class="icon" aria-hidden="true" src="{{site.url}}/images/icons/back.svg" alt="Back Icon" />ย้อนกลับ</a>
+
+      <p class="line">
+        <i class="fa-solid fa-closed-captioning"></i> ภาษาไทยของเกมหลัก
+      </p>
+
+      <!-- รีซอร์ซแพ็กภาษาไทย -->
+      <div class="slide-container" data-continue-url="{{site.url}}/download/Hytale_THLanguage_0.1.zip">
+        <a class="button button-THLanguage sensitive-trigger" href="javascript:void(0)">
+          <img class="icon" aria-hidden="true" src="{{site.url}}/images/icons/font.svg"
+            alt="Thai Font icon" />แพ็กภาษาไทย</a>
+        <div class="sensitive-panel">
+          <div class="sensitive-panel__content">
+            <p>แปลด้วย AI</p>
+            <div>
+              <a class="button button-sensitive-yt" href="https://youtu.be/7uriQaqQl5w?si=Ao_j4amk2Cw9eI7J"
+                target="_blank" rel="noopener" role="button">
+                <img class="icon" aria-hidden="true" src="{{site.url}}/images/icons/youtube.svg"
+                  alt="YouTube Logo" />วิธีเปิดใช้รีซอร์ซแพ็ก</a>
+            </div>
+            <button class="button button-sensitive sensitive-continue">
+              ดาวน์โหลด
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- รีซอร์ซแพ็กไทยฟอนต์ -->
+      <div class="slide-container" data-continue-url="{{site.url}}/download/Hytale_THFont.zip">
+        <a class="button button-thai-font sensitive-trigger" href="javascript:void(0)">
+          <img class="icon" aria-hidden="true" src="{{site.url}}/images/icons/font.svg"
+            alt="Thai Font icon" />แพ็กไทยฟอนต์</a>
+        <div class="sensitive-panel">
+          <div class="sensitive-panel__content">
+            <p>มีแค่ฟอนต์เท่านั้น</p>
+            <div>
+              <a class="button button-sensitive-yt" href="https://youtu.be/7uriQaqQl5w?si=Ao_j4amk2Cw9eI7J"
+                target="_blank" rel="noopener" role="button">
+                <img class="icon" aria-hidden="true" src="{{site.url}}/images/icons/youtube.svg"
+                  alt="YouTube Logo" />วิธีเปิดใช้รีซอร์ซแพ็ก</a>
+            </div>
+            <button class="button button-sensitive sensitive-continue">
+              ดาวน์โหลด
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <p class="line">
+        <i class="fa-solid fa-closed-captioning"></i> ภาษาอังกฤษของเกมหลัก
+      </p>
+
+      <!-- รีซอร์ซแพ็กไทยฟอนต์ -->
+      <div class="slide-container" data-continue-url="{{site.url}}/download/Hytale_ENG.zip">
+        <a class="button button-thai-font sensitive-trigger" href="javascript:void(0)">
+          <img class="icon" aria-hidden="true" src="{{site.url}}/images/icons/font.svg"
+            alt="Thai Font icon" />แพ็กภาษาอังกฤษ</a>
+        <div class="sensitive-panel">
+          <div class="sensitive-panel__content">
+            <p>เอาไว้ใช้เพื่อเปลี่ยนกลับเป็นภาษาอังกฤษ</p>
+            <div>
+              <a class="button button-sensitive-yt" href="https://youtu.be/7uriQaqQl5w?si=Ao_j4amk2Cw9eI7J"
+                target="_blank" rel="noopener" role="button">
+                <img class="icon" aria-hidden="true" src="{{site.url}}/images/icons/youtube.svg"
+                  alt="YouTube Logo" />วิธีเปิดใช้รีซอร์ซแพ็ก</a>
+            </div>
+            <button class="button button-sensitive sensitive-continue">
+              ดาวน์โหลด
+            </button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+    <footer>
+      {{ site.footer | replace: 'URL_PLACEHOLDER', site.url | replace:
+      'USER_PLACEHOLDER', site.username }}
+    </footer>
+  </div>
+</div>

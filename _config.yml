@@ -13,11 +13,11 @@ mcpe_title: "ม็อดไมน์คราฟต์เบดร็อก"
 mcpe_description: "🤣 ทำตามอารมณ์ ไม่มีอารมณ์ก็ไม่ทำ 🤣"
 mcpe_ogm: "/images/mcpe_ogm.png"
 
-# mods settings
-mods_url: "/mods"
-mods_title: "ม็อด"
-mods_description: "🤣 ทำตามอารมณ์ ไม่มีอารมณ์ก็ไม่ทำ 🤣"
-mods_ogm: "/images/mods_ogm.png"
+# hytale settings
+hytale_url: "/hytale"
+hytale_title: "ม็อดไฮเทล"
+hytale_description: "🤣 ทำตามอารมณ์ ไม่มีอารมณ์ก็ไม่ทำ 🤣"
+hytale_ogm: "/images/hytale_ogm.png"
 
 # 404 settings
 404_title: "404 PAGE NOT FOUND"

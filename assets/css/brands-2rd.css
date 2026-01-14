@@ -48,3 +48,9 @@
     --button-text: #2d2a2a;
     --button-background: #9ba6b1;
 }
+
+/* Hytale */
+.button-hytale {
+    --button-text: #ffffff;
+    --button-background: #195192;
+}

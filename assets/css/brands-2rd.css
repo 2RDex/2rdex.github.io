@@ -52,5 +52,5 @@
 /* Hytale */
 .button-hytale {
     --button-text: #ffffff;
-    --button-background: #0d181f;
+    background-image: linear-gradient(90deg, #272f57, #71a5d2, #534196);
 }

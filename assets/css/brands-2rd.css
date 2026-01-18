@@ -72,3 +72,10 @@
     --button-text: #ffffff;
     --button-background: #f52424;
 }
+
+/* ไทยฟอนต์ */
+.button-ไทยฟอนต์ {
+    --button-text: #ffffff;
+    --button-background: #541b0d;
+    --button-border: 1px solid #FFFFFF;
+}

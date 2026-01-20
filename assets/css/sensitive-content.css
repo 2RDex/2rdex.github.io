@@ -32,7 +32,7 @@ or create your own! */
 
 /* 3) When open, show border and expand */
 .sensitive-panel.open {
-  max-height: 300px;
+  max-height: 800px;
   border: 1px solid #ccc;
   margin-bottom: 1rem;
 }

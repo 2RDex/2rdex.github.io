@@ -72,6 +72,20 @@ or create your own! */
 	--button-border:1px solid #FFFFFF;
 }
 
+.button-sensitive-pre-release {
+    width: 15rem;
+   	--button-text:#ffffff;
+    --button-background: #996900;
+	--button-border:1px solid #FFFFFF;
+}
+
+.button-sensitive-release {
+    width: 15rem;
+   	--button-text:#ffffff;
+    --button-background: #0a8f00;
+	--button-border:1px solid #FFFFFF;
+}
+
 /* ------------------------------------
    Auto theme support (.theme-auto):
    Light by default, switch on system dark

@@ -23,7 +23,6 @@ hytale_ogm: "/images/hytale_ogm.png"
 404_title: "404 PAGE NOT FOUND"
 404_description: "ไซต์ที่กําหนดค่าตามที่อยู่นี้ไม่ มีไฟล์ที่ร้องขอ"
 
-
 # User settings
 username: "2RD"
 email: "contact@2rd.top"
@@ -34,3 +33,4 @@ google-analytics:
   id: ""
 
 exclude: ['package.json', 'src' , 'node_modules']
+

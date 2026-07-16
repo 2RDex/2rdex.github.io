@@ -3,6 +3,7 @@ let grandPiano;
 let steelDrum;
 let currentInstrument = 'piano';
 const statusBadge = document.getElementById('status');
+let masterVolume = 1;
 
 let instrumentsLoaded = { piano: false, steel_tongue_drum: false };
 
@@ -244,6 +245,14 @@ document.getElementById('themeSwitcher').addEventListener('change', (e) => {
     document.documentElement.setAttribute('data-theme', e.target.value);
 });
 
+const volumeSlider = document.getElementById("volumeSlider");
+const volumeValue = document.getElementById("volumeValue");
+
+volumeSlider.addEventListener("input", () => {
+    masterVolume = volumeSlider.value / 100;
+    volumeValue.textContent = volumeSlider.value + "%";
+});
+
 const MAX_POLYPHONY = 32;
 const activeVoices = [];
 let isRecoveringCtx = false;
@@ -311,7 +320,8 @@ function playNote(midiNote) {
 
     try {
         const duration = currentInstrument === 'steel_tongue_drum' ? 3.0 : 1.8;
-        const gain = currentInstrument === 'steel_tongue_drum' ? 2.0 : 1.5;
+        const baseGain = currentInstrument === 'steel_tongue_drum' ? 2.0 : 1.5;
+        const gain = baseGain * masterVolume * 5;
         const node = activeInst.play(midiNote, audioCtx.currentTime, {
             duration: duration,
             gain: gain

@@ -79,3 +79,9 @@
     --button-background: #541b0d;
     --button-border: 1px solid #FFFFFF;
 }
+
+/* Minecraft Dungeons */
+.button-minecraft-dungeons {
+	--button-text:#ffffff;
+	background-image:linear-gradient(90deg,#9c4201,#d49f0c);
+}

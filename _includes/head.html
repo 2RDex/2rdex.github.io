@@ -35,27 +35,35 @@
   <meta name="twitter:image" content="{{ page.ogimage | absolute_url }}">
 
   <!-- Fonts -->
-  <link rel="preload" href="{{ "/assets/fonts/CMU-Light.woff2" | relative_url }}" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="{{ "/assets/fonts/CMU-Regular.woff2" | relative_url }}" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="{{ "/assets/fonts/CMU-Bold.woff2" | relative_url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ '/assets/fonts/CMU-Light.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ '/assets/fonts/CMU-Regular.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ '/assets/fonts/CMU-Bold.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
 
   {% if page.layout == nil %}
 
   <!-- LittleLink -->
-  <link rel="stylesheet" href="{{ "/assets/css/reset.css" | relative_url }}">
-  <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
-  <link rel="stylesheet" href="{{ "/assets/css/style-2rd.css" | relative_url }}">
-  <link rel="stylesheet" href="{{ "/assets/css/brands.css" | relative_url }}">
-  <link rel="stylesheet" href="{{ "/assets/css/brands-extended.css" | relative_url }}">
-  <link rel="stylesheet" href="{{ "/assets/css/brands-2rd.css" | relative_url }}">
-  <link rel="stylesheet" href="{{ "/assets/css/sensitive-content.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/reset.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style-2rd.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/brands.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/brands-extended.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/brands-2rd.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/sensitive-content.css' | relative_url }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  {% elsif page.layout == 'piano' %}
+
+  <!-- Piano Layout CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/soundfont-player@0.12.0/dist/soundfont-player.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tonejs/midi@2.0.28/build/Midi.js"></script>
+
+  <link rel="stylesheet" href="{{site.url}}/assets/css/piano.css">
 
   {% else %}
 
   <!-- Jekyll / Minima -->
-  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
-  <link rel="stylesheet" href="{{ "/assets/css/blog-custom.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/blog-custom.css' | relative_url }}">
 
   {% endif %}
 

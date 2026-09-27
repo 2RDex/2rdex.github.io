@@ -1,0 +1,94 @@
+---
+layout: piano
+title: ฮาร์ทโทเปีย เปียโน
+description: จำลองเปียโนในฮาร์ทโทเปีย
+ogimage: /assets/images/2rd_ogm.png
+avatar: /assets/images/avatar.png
+permalink: /piano
+---
+
+<!DOCTYPE html>
+<html class="theme-dark" lang="th">
+
+{% include head.html %}
+
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1 class="app-title">
+                <span class="title-icon" id="titleIcon">🎹</span>
+                <span id="titleText">Heartopia Piano Simulator</span>
+            </h1>
+            <div class="status-badge" id="status">
+                <span class="status-dot"></span>
+                <span>Loading Piano Sounds...</span>
+            </div>
+        </header>
+
+        <nav class="controls-bar">
+            <div class="control-group">
+                <label class="control-label" for="instrumentSwitcher">Instrument</label>
+                <div class="select-wrapper">
+                    <select id="instrumentSwitcher">
+                        <option value="piano">🎹 Piano</option>
+                        <option value="steel_tongue_drum">🥁 Steel Tongue Drum</option>
+                    </select>
+                    <span class="select-arrow">▾</span>
+                </div>
+            </div>
+            <div class="control-group" id="layoutGroup">
+                <label class="control-label" for="layoutSwitcher">Layout</label>
+                <div class="select-wrapper">
+                    <select id="layoutSwitcher">
+                        <option value="37">Full (37 Keys)</option>
+                        <option value="22">No Semi-Tones (22)</option>
+                        <option value="15">Simple (15 Keys)</option>
+                    </select>
+                    <span class="select-arrow">▾</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="langSwitcher">Language</label>
+                <div class="select-wrapper">
+                    <select id="langSwitcher">
+                        <option value="th">Thai (โด, เร, มี)</option>
+                        <option value="en_sol">English (Do, Re, Mi)</option>
+                        <option value="en_notes">English (C, D, E)</option>
+                    </select>
+                    <span class="select-arrow">▾</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="themeSwitcher">Theme</label>
+                <div class="select-wrapper">
+                    <select id="themeSwitcher">
+                        <option value="light">☀️ Light</option>
+                        <option value="dark">🌙 Dark</option>
+                    </select>
+                    <span class="select-arrow">▾</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="volumeSlider">Volume</label>
+                <div class="speed-control">
+                    <span>🔈</span>
+                    <input type="range" id="volumeSlider" min="0" max="100" value="100">
+                    <span id="volumeValue">100%</span>
+                </div>
+            </div>
+        </nav>
+
+        <main class="keyboard-stage">
+            <div class="keyboard-container" id="keyboard"></div>
+        </main>
+
+        <footer class="app-footer">
+            <span>[EN] Press your keyboard keys to play.</span> | <span>[TH] กดปุ่มบนแป้นพิมพ์เพื่อเล่น</span>
+        </footer>
+    </div>
+
+    <script src="{{site.url}}/assets/js/piano.js"></script>
+
+</body>
+
+</html>

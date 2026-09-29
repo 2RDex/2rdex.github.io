@@ -85,3 +85,9 @@
 	--button-text:#ffffff;
 	background-image:linear-gradient(90deg,#9c4201,#d49f0c);
 }
+
+/* Minecraft Dungeons 2 */
+.button-minecraft-dungeons2 {
+	--button-text:#ffffff;
+	background-image:linear-gradient(90deg,#08143b,#029cbc);
+}

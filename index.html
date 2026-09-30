@@ -5,18 +5,15 @@ ogimage: /assets/images/2rd_ogm.png
 avatar: /assets/images/avatar.png
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html class="theme-dark" lang="th">
+  {% include head.html %}
 
-{% include head.html %}
-
-<body style="background: url('assets/images/background.jpg') no-repeat center center fixed; background-size: cover;">
-
-  <div class="container">
-    <div class="column">
-      <main>
-
-        <!--
+  <body style="background: url(&quot;assets/images/background.jpg&quot;) no-repeat center center fixed; background-size: cover">
+    <div class="container">
+      <div class="column">
+        <main>
+          <!--
               By default, the Avatar is rounded. Use the following:
               - avatar--rounded: Automatically rounds the image
               - avatar--soft: Slightly rounds the image
@@ -24,151 +21,109 @@ avatar: /assets/images/avatar.png
 
               Be sure to replace the src with your own image path and update the alt text
             -->
-        <img class="avatar avatar--rounded" src="{{ '/assets/images/avatar.png' | relative_url }}"
-          srcset="{{ '/assets/images/avatar.png' | relative_url }} 1x, {{ '/assets/images/avatar@2x.png' | relative_url }} 2x"
-          alt="C2Z" width="128" height="128" fetchpriority="high">
+          <img class="avatar avatar--rounded" src="{{ '/assets/images/avatar.png' | relative_url }}" srcset="{{ '/assets/images/avatar.png' | relative_url }} 1x, {{ '/assets/images/avatar@2x.png' | relative_url }} 2x" alt="C2Z" width="128" height="128" fetchpriority="high" />
 
-        <!-- Replace with your name or brand -->
-        <h1>2RD Channel</h1>
+          <!-- Replace with your name or brand -->
+          <h1>2RD Channel</h1>
 
-        <!-- Add a short description about yourself or your brand -->
-        <p>รวมลิงค์โปรไฟล์โซเชียลมีเดียทั้งหมดของผม</p>
+          <!-- Add a short description about yourself or your brand -->
+          <p>รวมลิงค์โปรไฟล์โซเชียลมีเดียทั้งหมดของผม</p>
 
-        <!-- All your buttons go here -->
-        <nav class="button-stack" aria-label="Links">
+          <!-- All your buttons go here -->
+          <nav class="button-stack" aria-label="Links">
+            <!-- YouTube -->
+            <a class="button button-yt" href="https://www.youtube.com/@2RD.Channel" target="_blank" rel="noopener" role="button"><img class="icon" aria-hidden="true" src="assets/images/icons/youtube.svg" alt="YouTube Logo" />YouTube</a>
 
-          <!-- YouTube -->
-          <a class="button button-yt" href="https://www.youtube.com/@2RD.Channel" target="_blank" rel="noopener"
-            role="button"><img class="icon" aria-hidden="true" src="assets/images/icons/youtube.svg"
-              alt="YouTube Logo" />YouTube</a>
+            <!-- TikTok -->
+            <a class="button button-tiktok" href="https://www.tiktok.com/@2rd.channel" target="_blank" rel="noopener" role="button"><img class="icon" aria-hidden="true" src="assets/images/icons/tiktok.svg" alt="TikTok Logo" />TikTok</a>
 
-          <!-- TikTok -->
-          <a class="button button-tiktok" href="https://www.tiktok.com/@2rd.channel" target="_blank" rel="noopener"
-            role="button"><img class="icon" aria-hidden="true" src="assets/images/icons/tiktok.svg"
-              alt="TikTok Logo" />TikTok</a>
+            <!-- Facebook -->
+            <a class="button button-faceb" href="https://www.facebook.com/2RD.Channel" target="_blank" rel="noopener" role="button"><img class="icon" aria-hidden="true" src="assets/images/icons/facebook.svg" alt="Facebook Logo" />Facebook</a>
 
-          <!-- Facebook -->
-          <a class="button button-faceb" href="https://www.facebook.com/2RD.Channel" target="_blank" rel="noopener"
-            role="button"><img class="icon" aria-hidden="true" src="assets/images/icons/facebook.svg"
-              alt="Facebook Logo" />Facebook</a>
+            <!-- Bluesky -->
+            <a class="button button-bluesky" href="https://bsky.app/profile/2rd.top" target="_blank" rel="noopener" role="button"><img class="icon" aria-hidden="true" src="assets/images/icons/bluesky.svg" alt="Bluesky Logo" />Bluesky</a>
 
-          <!-- Bluesky -->
-          <a class="button button-bluesky" href="https://bsky.app/profile/2rd.top" target="_blank" rel="noopener"
-            role="button"><img class="icon" aria-hidden="true" src="assets/images/icons/bluesky.svg"
-              alt="Bluesky Logo" />Bluesky</a>
+            <!-- Discord -->
+            <a class="button button-discord" href="https://discord.2rd.top" target="_blank" rel="noopener" role="button"><img class="icon" aria-hidden="true" src="assets/images/icons/discord.svg" alt="Discord Logo" />Discord</a>
 
-          <!-- Discord -->
-          <a class="button button-discord" href="https://discord.2rd.top" target="_blank" rel="noopener"
-            role="button"><img class="icon" aria-hidden="true" src="assets/images/icons/discord.svg"
-              alt="Discord Logo" />Discord</a>
+            <p class="line"><i class="fa-solid fa-puzzle-piece"></i> ดาวน์โหลดม็อด</p>
+            <!-- ม็อดมายคราฟ -->
+            <a class="button button-ม็อดมายคราฟ" href="/mcpe" target="_top" rel="noopener" role="button"><img class="icon" aria-hidden="true" src="assets/images/icon-new/minecraft.svg" alt="ม็อดมายคราฟ icon" />Minecraft Bedrock</a>
 
-          <p class="line"><i class="fa-solid fa-puzzle-piece"></i> ดาวน์โหลดม็อด</p>
-          <!-- ม็อดมายคราฟ -->
-          <a class="button button-ม็อดมายคราฟ" href="/mcpe" target="_top" rel="noopener" role="button"><img class="icon"
-              aria-hidden="true" src="assets/images/icon-new/minecraft.svg" alt="ม็อดมายคราฟ icon" />Minecraft
-            Bedrock</a>
-
-          <!-- Minecraft Dungeons -->
-          <div class="slide-container" data-continue-url="{{site.url}}/download/other/MCD_Thai_by_2RD_D23M09Y26.zip">
-            <a class="button button-minecraft-dungeons sensitive-trigger" href="javascript:void(0)" download>
-              <img class="icon" aria-hidden="true" src="assets/images/icon-new/minecraft.svg"
-                alt="Minecraft Dungeons icon" />Minecraft Dungeons</a>
-            <div class="sensitive-panel">
-              <div class="sensitive-panel__content">
-                <p>ภาษาไทยเกม มายคราฟดันเจี้ยน</p>
-                <div>
-                  <a class="button button-sensitive-yt" href="minecraft_dungeons/mods/guide/2022/04/22/MCD-Thai.html"
-                    target="_top" rel="noopener" role="button">วิธีติดตั้งภาษาไทย</a>
+            <!-- Minecraft Dungeons -->
+            <div class="slide-container" data-continue-url="https://dl.2rd.top/MCD">
+              <a class="button button-minecraft-dungeons sensitive-trigger" href="javascript:void(0)" download> <img class="icon" aria-hidden="true" src="assets/images/icon-new/minecraft.svg" alt="Minecraft Dungeons icon" />Minecraft Dungeons</a>
+              <div class="sensitive-panel">
+                <div class="sensitive-panel__content">
+                  <p>ภาษาไทยเกม มายคราฟดันเจี้ยน</p>
+                  <div>
+                    <a class="button button-sensitive-yt" href="minecraft_dungeons/mods/guide/2022/04/22/MCD-Thai.html" target="_top" rel="noopener" role="button">วิธีติดตั้งภาษาไทย</a>
+                  </div>
+                  <button class="button button-sensitive sensitive-continue">ดาวน์โหลด</button>
+                  <span class="dl-count-badge"> 📥 ดาวน์โหลดแล้ว <b id="count-MCD">0</b> ครั้ง </span>
                 </div>
-                <button class="button button-sensitive sensitive-continue">
-                  ดาวน์โหลด
-                </button>
               </div>
             </div>
-          </div>
 
-          <!-- Minecraft Dungeons -->
-          <div class="slide-container" data-continue-url="{{site.url}}/download/other/MCD2_Thai-by-2RD_D30M09Y26.zip">
-            <a class="button button-minecraft-dungeons2 sensitive-trigger" href="javascript:void(0)" download>
-              <img class="icon" aria-hidden="true" src="assets/images/icon-new/minecraft.svg"
-                alt="Minecraft Dungeons 2 icon" />Minecraft Dungeons 2</a>
-            <div class="sensitive-panel">
-              <div class="sensitive-panel__content">
-                <p>ภาษาไทยเกม มายคราฟดันเจี้ยน 2</p>
-                <p style="color: brown;">ใช้ AI ในการแปล</p>
-                <div>
-                  <a class="button button-sensitive-yt" href="minecraft_dungeons/mods/guide/2022/04/22/MCD-Thai.html"
-                    target="_top" rel="noopener" role="button">วิธีติดตั้งภาษาไทย</a>
+            <!-- Minecraft Dungeons 2 -->
+            <div class="slide-container" data-continue-url="https://dl.2rd.top/MCD2">
+              <a class="button button-minecraft-dungeons2 sensitive-trigger" href="javascript:void(0)" download> <img class="icon" aria-hidden="true" src="assets/images/icon-new/minecraft.svg" alt="Minecraft Dungeons 2 icon" />Minecraft Dungeons 2</a>
+              <div class="sensitive-panel">
+                <div class="sensitive-panel__content">
+                  <p>ภาษาไทยเกม มายคราฟดันเจี้ยน 2</p>
+                  <p style="color: brown">ใช้ AI ในการแปล</p>
+                  <div>
+                    <a class="button button-sensitive-yt" href="minecraft_dungeons/mods/guide/2022/04/22/MCD-Thai.html" target="_top" rel="noopener" role="button">วิธีติดตั้งภาษาไทย</a>
+                  </div>
+                  <button class="button button-sensitive sensitive-continue">ดาวน์โหลด</button>
+                  <span class="dl-count-badge"> 📥 ดาวน์โหลดแล้ว <b id="count-MCD2">0</b> ครั้ง </span>
                 </div>
-                <button class="button button-sensitive sensitive-continue">
-                  ดาวน์โหลด
-                </button>
               </div>
             </div>
-          </div>
 
-          <!-- Hytale -->
-          <a class="button button-hytale" href="/hytale" target="_top" rel="noopener" role="button"><img class="icon"
-              aria-hidden="true" src="assets/images/icon-new/Hytale.png" alt="Hytale icon">Hytale</a>
+            <!-- Hytale -->
+            <a class="button button-hytale" href="/hytale" target="_top" rel="noopener" role="button"><img class="icon" aria-hidden="true" src="assets/images/icon-new/Hytale.png" alt="Hytale icon" />Hytale</a>
 
-
-          <!-- Planet Coaster -->
-          <div class="slide-container" data-continue-url="{{site.url}}/download/other/Thai_by_2RD_D04.03.22_T02.48.zip">
-            <a class="button button-planet-coaster sensitive-trigger" href="javascript:void(0)" download>
-              <img class="icon" aria-hidden="true" src="assets/images/icon-new/Planet_Coaster.png"
-                alt="Planet Coaster icon" />Planet Coaster</a>
-            <div class="sensitive-panel">
-              <div class="sensitive-panel__content">
-                <p>ภาษาไทยเกม แพลเน็ตโคสเตอร์</p>
-                <div>
-                  <a class="button button-sensitive-yt" href="planet_coaster/mods/guide/2021/12/17/PC-Thai.html"
-                    target="_top" rel="noopener" role="button">วิธีติดตั้งภาษาไทย</a>
+            <!-- Planet Coaster -->
+            <div class="slide-container" data-continue-url="https://dl.2rd.top/PLC">
+              <a class="button button-planet-coaster sensitive-trigger" href="javascript:void(0)" download> <img class="icon" aria-hidden="true" src="assets/images/icon-new/Planet_Coaster.png" alt="Planet Coaster icon" />Planet Coaster</a>
+              <div class="sensitive-panel">
+                <div class="sensitive-panel__content">
+                  <p>ภาษาไทยเกม แพลเน็ตโคสเตอร์</p>
+                  <div>
+                    <a class="button button-sensitive-yt" href="planet_coaster/mods/guide/2021/12/17/PLC-Thai.html" target="_top" rel="noopener" role="button">วิธีติดตั้งภาษาไทย</a>
+                  </div>
+                  <button class="button button-sensitive sensitive-continue">ดาวน์โหลด</button>
+                  <span class="dl-count-badge"> 📥 ดาวน์โหลดแล้ว <b id="count-PLC">0</b> ครั้ง </span>
                 </div>
-                <button class="button button-sensitive sensitive-continue">
-                  ดาวน์โหลด
-                </button>
               </div>
             </div>
-          </div>
 
-          <!-- Crysis 2 Remastered -->
-          <div class="slide-container"
-            data-continue-url="https://drive.google.com/file/d/1TVYa-4JLiuKxJUTRV-etg0LU2VM6rYOU/view">
-            <a class="button button-crysis-2-remastered sensitive-trigger" href="javascript:void(0)" download>
-              <img class="icon" aria-hidden="true" src="assets/images/icon-new/Crysis2Remastered.png"
-                alt="Crysis 2 Remastered icon" />
-              Crysis 2 Remastered</a>
-            <div class="sensitive-panel">
-              <div class="sensitive-panel__content">
-                <p>ภาษาไทยเกม ครายซิส 2 รีมาสเตอร์</p>
-                <div>
-                  <a class="button button-sensitive-yt"
-                    href="crysis_2_remastered/mods/guide/2022/11/19/Crysis2-Thai.html" target="_top"
-                    rel="noopener" role="button">วิธีติดตั้งภาษาไทย</a>
+            <!-- Crysis 2 Remastered -->
+            <div class="slide-container" data-continue-url="https://dl.2rd.top/C2R">
+              <a class="button button-crysis-2-remastered sensitive-trigger" href="javascript:void(0)" download>
+                <img class="icon" aria-hidden="true" src="assets/images/icon-new/Crysis2Remastered.png" alt="Crysis 2 Remastered icon" />Crysis 2 Remastered</a>
+              <div class="sensitive-panel">
+                <div class="sensitive-panel__content">
+                  <p>ภาษาไทยเกม ครายซิส 2 รีมาสเตอร์</p>
+                  <div>
+                    <a class="button button-sensitive-yt" href="crysis_2_remastered/mods/guide/2022/11/19/Crysis2-Thai.html" target="_top" rel="noopener" role="button">วิธีติดตั้งภาษาไทย</a>
+                  </div>
+                  <button class="button button-sensitive sensitive-continue">ดาวน์โหลด</button>
+                  <span class="dl-count-badge"> 📥 ดาวน์โหลดแล้ว <b id="count-C2R">0</b> ครั้ง </span>
                 </div>
-                <button class="button button-sensitive sensitive-continue">
-                  ดาวน์โหลด
-                </button>
               </div>
             </div>
-          </div>
 
-          <p class="line"><i class="fa-solid fa-address-card"></i> ติดต่อ</p>
+            <p class="line"><i class="fa-solid fa-address-card"></i> ติดต่อ</p>
 
-          <!-- Generic Email -->
-          <a class="button button-email-2" href="mailto:{{site.email}}?subject=สวัสดีครับ!" target="_blank"
-            rel="noopener" role="button"><img class="icon" aria-hidden="true"
-              src="assets/images/icons/generic-email.svg" alt="Email Icon" />{{site.email}}</a>
+            <!-- Generic Email -->
+            <a class="button button-email-2" href="mailto:{{site.email}}?subject=สวัสดีครับ!" target="_blank" rel="noopener" role="button"><img class="icon" aria-hidden="true" src="assets/images/icons/generic-email.svg" alt="Email Icon" />{{site.email}}</a>
+          </nav>
+        </main>
 
-        </nav>
-
-      </main>
-
-      {% include footer_index.html %}
-
+        {% include footer_index.html %}
+      </div>
     </div>
-  </div>
-
-</body>
-
+  </body>
 </html>

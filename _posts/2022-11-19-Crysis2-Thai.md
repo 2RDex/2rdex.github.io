@@ -22,7 +22,15 @@ tags: [Crysis 2 Remastered, Mods, Guide]
 ---
 
 ## ⬇️ ดาวน์โหลด
-ลิงค์: [https://drive.google.com/file/d/1TVYa-4JLiuKxJUTRV-etg0LU2VM6rYOU/view](https://drive.google.com/file/d/1TVYa-4JLiuKxJUTRV-etg0LU2VM6rYOU/view)
+<div class="dl-box">
+  <div>
+    <span style="color:#a1a1aa;">🔗 ลิงก์:</span>
+    <a href="https://dl.2rd.top/C2R" class="dl-link" target="_blank">dl.2rd.top/C2R</a>
+  </div>
+  <div class="dl-stats">
+    📊 <span id="count-C2R" class="dl-stats-num">0</span> ครั้ง
+  </div>
+</div>
 
 ---
 

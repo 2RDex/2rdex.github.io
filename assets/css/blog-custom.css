@@ -659,3 +659,32 @@ img.s50 {
   display: block;
   border-radius: 6px; /* (Optional) ทำมุมโค้ง */
 }
+
+.dl-box {
+    background: #18181b;
+    border-left: 4px solid #3b82f6;
+    padding: 12px 18px;
+    border-radius: 0 8px 8px 0;
+    margin: 12px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 500px;
+  }
+  .dl-link {
+    color: #60a5fa;
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 1.05em;
+  }
+  .dl-link:hover {
+    text-decoration: underline;
+  }
+  .dl-stats {
+    color: #9ca3af;
+    font-size: 0.88em;
+  }
+  .dl-stats-num {
+    color: #e5e7eb;
+    font-weight: 600;
+  }

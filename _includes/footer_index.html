@@ -9,6 +9,34 @@
   </div>
 </footer>
 
+<script>
+  async function loadDownloadStats() {
+    try {
+      // ดึงข้อมูลสถิติจาก Worker API
+      const response = await fetch('https://dl.2rd.top/api/stats');
+      const result = await response.json();
+
+      // ตรวจสอบว่ามีข้อมูลส่งกลับมาหรือไม่
+      if (result && result.data) {
+        result.data.forEach(item => {
+          // ค้นหา element ตาม ID เช่น count-MCD, count-Bedrock_Thai_Font
+          const element = document.getElementById(`count-${item.file_name}`);
+          
+          if (element) {
+            // แปลงตัวเลขใส่คอมม่า (เช่น 1,234)
+            element.innerText = Number(item.total).toLocaleString();
+          }
+        });
+      }
+    } catch (error) {
+      console.error('ไม่สามารถดึงข้อมูลสถิติได้:', error);
+    }
+  }
+
+  // เรียกทำงานทันทีที่โหลดหน้าเว็บเสร็จ
+  document.addEventListener('DOMContentLoaded', loadDownloadStats);
+</script>
+
 <!-- JS -->
 <script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script src="{{ '/assets/js/sensitive-content.js' | prepend: site.baseurl }}"></script>

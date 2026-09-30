@@ -78,3 +78,19 @@ p.line {
     font-weight: 800;
     font-style: normal;
 }
+
+/* ชิปแสดงสถิติดาวน์โหลด */
+.dl-count-badge {
+  font-size: 0.82rem;
+  color: #d1d5db;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 3px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: inline-block;
+  margin-top: 4px;
+}
+
+.dl-count-badge b {
+  color: #38bdf8;
+}

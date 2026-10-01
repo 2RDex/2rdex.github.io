@@ -7,20 +7,22 @@ avatar: /assets/images/avatar.png
 
 <!doctype html>
 <html class="theme-dark" lang="th">
+
   {% include head.html %}
 
   <body style="background: url(&quot;assets/images/background.jpg&quot;) no-repeat center center fixed; background-size: cover">
     <div class="container">
       <div class="column">
         <main>
-          <!--
-              By default, the Avatar is rounded. Use the following:
-              - avatar--rounded: Automatically rounds the image
-              - avatar--soft: Slightly rounds the image
-              - avatar--none: Removes any rounding
 
-              Be sure to replace the src with your own image path and update the alt text
-            -->
+          <!--
+            By default, the Avatar is rounded. Use the following:
+            - avatar--rounded: Automatically rounds the image
+            - avatar--soft: Slightly rounds the image
+            - avatar--none: Removes any rounding
+
+            Be sure to replace the src with your own image path and update the alt text
+          -->
           <img class="avatar avatar--rounded" src="{{ '/assets/images/avatar.png' | relative_url }}" srcset="{{ '/assets/images/avatar.png' | relative_url }} 1x, {{ '/assets/images/avatar@2x.png' | relative_url }} 2x" alt="C2Z" width="128" height="128" fetchpriority="high" />
 
           <!-- Replace with your name or brand -->
@@ -31,6 +33,7 @@ avatar: /assets/images/avatar.png
 
           <!-- All your buttons go here -->
           <nav class="button-stack" aria-label="Links">
+
             <!-- YouTube -->
             <a class="button button-yt" href="https://www.youtube.com/@2RD.Channel" target="_blank" rel="noopener" role="button"><img class="icon" aria-hidden="true" src="assets/images/icons/youtube.svg" alt="YouTube Logo" />YouTube</a>
 
@@ -47,20 +50,25 @@ avatar: /assets/images/avatar.png
             <a class="button button-discord" href="https://discord.2rd.top" target="_blank" rel="noopener" role="button"><img class="icon" aria-hidden="true" src="assets/images/icons/discord.svg" alt="Discord Logo" />Discord</a>
 
             <p class="line"><i class="fa-solid fa-puzzle-piece"></i> ดาวน์โหลดม็อด</p>
+
             <!-- ม็อดมายคราฟ -->
             <a class="button button-ม็อดมายคราฟ" href="/mcpe" target="_top" rel="noopener" role="button"><img class="icon" aria-hidden="true" src="assets/images/icon-new/minecraft.svg" alt="ม็อดมายคราฟ icon" />Minecraft Bedrock</a>
 
             <!-- Minecraft Dungeons -->
             <div class="slide-container" data-continue-url="https://dl.2rd.top/MCD">
               <a class="button button-minecraft-dungeons sensitive-trigger" href="javascript:void(0)" download> <img class="icon" aria-hidden="true" src="assets/images/icon-new/minecraft.svg" alt="Minecraft Dungeons icon" />Minecraft Dungeons</a>
+
               <div class="sensitive-panel">
                 <div class="sensitive-panel__content">
                   <p>ภาษาไทยเกม มายคราฟดันเจี้ยน</p>
                   <p style="color: brown">ใช้ AI ในการแปล</p>
+
                   <div>
                     <a class="button button-sensitive-yt" href="minecraft_dungeons/mods/guide/2022/04/22/MCD-Thai.html" target="_top" rel="noopener" role="button">วิธีติดตั้งภาษาไทย</a>
                   </div>
+
                   <button class="button button-sensitive sensitive-continue">ดาวน์โหลด</button>
+
                   <span class="dl-count-badge"> 📥 ดาวน์โหลดแล้ว <b id="count-MCD">0</b> ครั้ง </span>
                 </div>
               </div>
@@ -69,14 +77,18 @@ avatar: /assets/images/avatar.png
             <!-- Minecraft Dungeons 2 -->
             <div class="slide-container" data-continue-url="https://dl.2rd.top/MCD2">
               <a class="button button-minecraft-dungeons2 sensitive-trigger" href="javascript:void(0)" download> <img class="icon" aria-hidden="true" src="assets/images/icon-new/minecraft.svg" alt="Minecraft Dungeons 2 icon" />Minecraft Dungeons 2</a>
+
               <div class="sensitive-panel">
                 <div class="sensitive-panel__content">
                   <p>ภาษาไทยเกม มายคราฟดันเจี้ยน 2</p>
                   <p style="color: brown">ใช้ AI ในการแปล</p>
+
                   <div>
                     <a class="button button-sensitive-yt" href="minecraft_dungeons_2/mods/guide/2026/09/30/MCD2-Thai.html" target="_top" rel="noopener" role="button">วิธีติดตั้งภาษาไทย</a>
                   </div>
+
                   <button class="button button-sensitive sensitive-continue">ดาวน์โหลด</button>
+
                   <span class="dl-count-badge"> 📥 ดาวน์โหลดแล้ว <b id="count-MCD2">0</b> ครั้ง </span>
                 </div>
               </div>
@@ -88,13 +100,17 @@ avatar: /assets/images/avatar.png
             <!-- Planet Coaster -->
             <div class="slide-container" data-continue-url="https://dl.2rd.top/PLC">
               <a class="button button-planet-coaster sensitive-trigger" href="javascript:void(0)" download> <img class="icon" aria-hidden="true" src="assets/images/icon-new/Planet_Coaster.png" alt="Planet Coaster icon" />Planet Coaster</a>
+
               <div class="sensitive-panel">
                 <div class="sensitive-panel__content">
                   <p>ภาษาไทยเกม แพลเน็ตโคสเตอร์</p>
+
                   <div>
                     <a class="button button-sensitive-yt" href="planet_coaster/mods/guide/2021/12/17/PLC-Thai.html" target="_top" rel="noopener" role="button">วิธีติดตั้งภาษาไทย</a>
                   </div>
+
                   <button class="button button-sensitive sensitive-continue">ดาวน์โหลด</button>
+
                   <span class="dl-count-badge"> 📥 ดาวน์โหลดแล้ว <b id="count-PLC">0</b> ครั้ง </span>
                 </div>
               </div>
@@ -104,13 +120,17 @@ avatar: /assets/images/avatar.png
             <div class="slide-container" data-continue-url="https://dl.2rd.top/C2R">
               <a class="button button-crysis-2-remastered sensitive-trigger" href="javascript:void(0)" download>
                 <img class="icon" aria-hidden="true" src="assets/images/icon-new/Crysis2Remastered.png" alt="Crysis 2 Remastered icon" />Crysis 2 Remastered</a>
+
               <div class="sensitive-panel">
                 <div class="sensitive-panel__content">
                   <p>ภาษาไทยเกม ครายซิส 2 รีมาสเตอร์</p>
+
                   <div>
                     <a class="button button-sensitive-yt" href="crysis_2_remastered/mods/guide/2022/11/19/Crysis2-Thai.html" target="_top" rel="noopener" role="button">วิธีติดตั้งภาษาไทย</a>
                   </div>
+
                   <button class="button button-sensitive sensitive-continue">ดาวน์โหลด</button>
+
                   <span class="dl-count-badge"> 📥 ดาวน์โหลดแล้ว <b id="count-C2R">0</b> ครั้ง </span>
                 </div>
               </div>
@@ -120,6 +140,7 @@ avatar: /assets/images/avatar.png
 
             <!-- Generic Email -->
             <a class="button button-email-2" href="mailto:{{site.email}}?subject=สวัสดีครับ!" target="_blank" rel="noopener" role="button"><img class="icon" aria-hidden="true" src="assets/images/icons/generic-email.svg" alt="Email Icon" />{{site.email}}</a>
+
           </nav>
         </main>
 

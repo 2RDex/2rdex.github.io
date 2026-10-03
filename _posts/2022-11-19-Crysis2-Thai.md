@@ -8,7 +8,7 @@ categories: crysis_2_remastered mods guide
 tags: [Crysis 2 Remastered, Mods, Guide]
 ---
 
-> วิธีลงม็อดภาษาไทยในเกม ไครซิส 2 รีมาสเตอร์ (แจกฟรี)
+> ม็อดภาษาไทย Crysis 2 Remastered (แจกฟรี)
 
 ---
 

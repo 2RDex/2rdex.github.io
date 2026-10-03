@@ -2,7 +2,7 @@
 layout: post
 ogimage: /assets/images/post/crysis2_01.jpg
 avatar: /assets/images/avatar.png
-title: "วิธีลงภาษาไทย Crysis 2 Remastered"
+title: "วิธีลงม็อดภาษาไทย Crysis 2 Remastered"
 date: 2022-11-19 20:00:00 +0700
 categories: crysis_2_remastered mods guide
 tags: [Crysis 2 Remastered, Mods, Guide]

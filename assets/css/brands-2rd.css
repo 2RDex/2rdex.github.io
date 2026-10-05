@@ -13,6 +13,12 @@
     --button-background: #6D1C1C;
 }
 
+/* Download */
+.button-dl-addon {
+    --button-text: #ffffff;
+    --button-background: #a87b00;
+}
+
 /* Thai Font */
 .button-thai-font {
     --button-text: #ffffff;

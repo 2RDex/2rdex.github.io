@@ -1,0 +1,347 @@
+---
+layout: null
+title: YT Sub Checker
+description: YT Sub Checker is a YouTube subscription verification service that connects YouTube subscription status with Discord roles.
+ogimage: /assets/images/2rd_ogm.png
+avatar: /assets/images/avatar.png
+permalink: /youtube
+---
+
+<!doctype html>
+<html class="theme-dark" lang="th">
+
+  {% include head.html %}
+
+  <body style="background: url(&quot;assets/images/background.jpg&quot;) no-repeat center center fixed; background-size: cover;">
+
+    <main style="
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    ">
+
+      <div style="
+        width: 100%;
+        max-width: 760px;
+        background: rgba(15, 23, 42, 0.94);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 20px;
+        padding: 40px;
+        color: #f8fafc;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(10px);
+      ">
+
+        <!-- Logo -->
+        <div style="
+          text-align: center;
+          margin-bottom: 28px;
+        ">
+
+          <img
+            src="/assets/images/avatar.png"
+            alt="YT Sub Checker"
+            style="
+              width: 96px;
+              height: 96px;
+              object-fit: cover;
+              border-radius: 50%;
+              border: 3px solid #b95589;
+              margin-bottom: 18px;
+            "
+          >
+
+          <h1 style="
+            margin: 0 0 8px;
+            font-size: 2.2rem;
+            font-weight: 700;
+          ">
+            YT Sub Checker
+          </h1>
+
+          <p style="
+            margin: 0;
+            color: #38bdf8;
+            font-size: 1.05rem;
+            font-weight: 600;
+          ">
+            YouTube Subscription Verification
+          </p>
+
+        </div>
+
+
+        <!-- Application Purpose -->
+        <section style="
+          background: rgba(30, 41, 59, 0.9);
+          border-radius: 14px;
+          padding: 24px;
+          margin-bottom: 18px;
+        ">
+
+          <h2 style="
+            margin: 0 0 12px;
+            font-size: 1.25rem;
+          ">
+            📌 Application Purpose
+          </h2>
+
+          <p style="
+            margin: 0;
+            color: #cbd5e1;
+            line-height: 1.8;
+          ">
+            <strong>YT Sub Checker</strong>
+            is a verification service that checks whether a
+            user's YouTube account is subscribed to the
+            configured YouTube channel.
+          </p>
+
+          <p style="
+            margin: 12px 0 0;
+            color: #cbd5e1;
+            line-height: 1.8;
+          ">
+            After successful verification, the service can
+            assign the corresponding role to the user's
+            Discord account.
+          </p>
+
+        </section>
+
+
+        <!-- How It Works -->
+        <section style="
+          background: rgba(30, 41, 59, 0.9);
+          border-radius: 14px;
+          padding: 24px;
+          margin-bottom: 18px;
+        ">
+
+          <h2 style="
+            margin: 0 0 12px;
+            font-size: 1.25rem;
+          ">
+            ⚙️ How It Works
+          </h2>
+
+          <ol style="
+            margin: 0;
+            padding-left: 24px;
+            color: #cbd5e1;
+            line-height: 1.9;
+          ">
+
+            <li>
+              Sign in with Discord.
+            </li>
+
+            <li>
+              Choose to verify your YouTube subscription.
+            </li>
+
+            <li>
+              Sign in with Google and authorize the
+              requested YouTube read-only permission.
+            </li>
+
+            <li>
+              YT Sub Checker checks the subscription status
+              using the YouTube Data API.
+            </li>
+
+            <li>
+              If the subscription is confirmed,
+              the corresponding Discord role is assigned.
+            </li>
+
+          </ol>
+
+        </section>
+
+
+        <!-- Google / YouTube Data -->
+        <section style="
+          background: rgba(30, 41, 59, 0.9);
+          border-radius: 14px;
+          padding: 24px;
+          margin-bottom: 18px;
+        ">
+
+          <h2 style="
+            margin: 0 0 12px;
+            font-size: 1.25rem;
+          ">
+            🔒 Google &amp; YouTube Data
+          </h2>
+
+          <p style="
+            margin: 0;
+            color: #cbd5e1;
+            line-height: 1.8;
+          ">
+            YT Sub Checker uses Google OAuth 2.0 and requests
+            the
+            <code style="
+              background: #0f172a;
+              color: #7dd3fc;
+              padding: 3px 7px;
+              border-radius: 5px;
+            ">
+              youtube.readonly
+            </code>
+            permission only for the purpose of verifying
+            the user's YouTube subscription status.
+          </p>
+
+          <ul style="
+            margin: 14px 0 0;
+            padding-left: 24px;
+            color: #cbd5e1;
+            line-height: 1.8;
+          ">
+
+            <li>
+              The application does not request your Google password.
+            </li>
+
+            <li>
+              YouTube data is used only for subscription verification.
+            </li>
+
+            <li>
+              The application does not use YouTube data for advertising.
+            </li>
+
+            <li>
+              The application does not sell Google or YouTube data.
+            </li>
+
+          </ul>
+
+        </section>
+
+
+        <!-- Privacy -->
+        <section style="
+          background: rgba(30, 41, 59, 0.9);
+          border-radius: 14px;
+          padding: 24px;
+          margin-bottom: 24px;
+        ">
+
+          <h2 style="
+            margin: 0 0 12px;
+            font-size: 1.25rem;
+          ">
+            🛡️ Privacy
+          </h2>
+
+          <p style="
+            margin: 0;
+            color: #cbd5e1;
+            line-height: 1.8;
+          ">
+
+            Please read our
+
+            <a
+              href="https://yt.2rd.top/privacy/"
+              style="color: #38bdf8;"
+            >
+              Privacy Policy
+            </a>
+
+            and
+
+            <a
+              href="https://yt.2rd.top/terms/"
+              style="color: #38bdf8;"
+            >
+              Terms of Service
+            </a>
+
+            for more information about the service.
+
+          </p>
+
+        </section>
+
+
+        <!-- Login -->
+        <div style="
+          text-align: center;
+          margin-bottom: 24px;
+        ">
+
+          <a
+            href="https://yt.2rd.top/login"
+            style="
+              display: inline-block;
+              background: #5865F2;
+              color: #ffffff;
+              text-decoration: none;
+              padding: 14px 28px;
+              border-radius: 10px;
+              font-weight: 700;
+              font-size: 1rem;
+              transition: opacity .2s;
+            "
+          >
+            Login with Discord to Verify
+          </a>
+
+        </div>
+
+
+        <!-- Footer -->
+        <div style="
+          text-align: center;
+          padding-top: 20px;
+          border-top: 1px solid rgba(255,255,255,0.1);
+          color: #94a3b8;
+          font-size: 0.9rem;
+        ">
+
+          <p style="margin: 0 0 8px;">
+            © 2RD Channel. All rights reserved.
+          </p>
+
+          <a
+            href="https://yt.2rd.top/privacy/"
+            style="
+              color: #38bdf8;
+              text-decoration: none;
+              margin: 0 6px;
+            "
+          >
+            Privacy Policy
+          </a>
+
+          <span>|</span>
+
+          <a
+            href="https://yt.2rd.top/terms/"
+            style="
+              color: #38bdf8;
+              text-decoration: none;
+              margin: 0 6px;
+            "
+          >
+            Terms of Service
+          </a>
+
+        </div>
+
+      </div>
+
+    </main>
+
+
+    {% include footer_index.html %}
+
+  </body>
+
+</html>

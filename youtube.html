@@ -12,7 +12,7 @@ permalink: /youtube
 
   {% include head.html %}
 
-  <body style="background: url(&quot;assets/images/background.jpg&quot;) no-repeat center center fixed; background-size: cover;">
+  <body>
 
     <main style="
       min-height: 100vh;
@@ -40,18 +40,7 @@ permalink: /youtube
           margin-bottom: 28px;
         ">
 
-          <img
-            src="/assets/images/avatar.png"
-            alt="YT Sub Checker"
-            style="
-              width: 96px;
-              height: 96px;
-              object-fit: cover;
-              border-radius: 50%;
-              border: 3px solid #b95589;
-              margin-bottom: 18px;
-            "
-          >
+          <img class="avatar avatar--rounded" src="{{ '/assets/images/avatar.png' | relative_url }}" srcset="{{ '/assets/images/avatar.png' | relative_url }} 1x, {{ '/assets/images/avatar@2x.png' | relative_url }} 2x" alt="YT Sub Checker" width="128" height="128" fetchpriority="high" />
 
           <h1 style="
             margin: 0 0 8px;
@@ -338,9 +327,6 @@ permalink: /youtube
       </div>
 
     </main>
-
-
-    {% include footer_index.html %}
 
   </body>
 

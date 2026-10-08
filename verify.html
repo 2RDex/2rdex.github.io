@@ -39,7 +39,7 @@ permalink: /verify
 
           <div class="lang-content lang-th active">
             <p><strong>2RD Verify</strong> คือบริการยืนยันตัวตนสำหรับตรวจสอบว่าบัญชี YouTube ของผู้ใช้ได้กดติดตามช่อง YouTube ที่กำหนดไว้หรือไม่</p>
-            <p style="margin-top: 12px">เมื่อทำการยืนยันตัวตนสำเร็จ ระบบจะมอบยศที่เกี่ยวข้องให้กับบัญชี Discord ของผู้ใช้โดยอัตโนมัติ</p>
+            <p style="margin-top: 12px">เมื่อทำการยืนยันตัวตนสำเร็จระบบจะมอบยศที่เกี่ยวข้องให้กับบัญชี Discord ของผู้ใช้โดยอัตโนมัติ</p>
           </div>
 
           <div class="lang-content lang-en">
@@ -68,40 +68,6 @@ permalink: /verify
             <li>2RD Verify checks the subscription status using the YouTube Data API.</li>
             <li>If confirmed, the corresponding Discord role is assigned.</li>
           </ol>
-        </section>
-
-        <!-- Google / YouTube Data -->
-        <section class="section-block">
-          <h2 class="lang-content lang-th active">🔒 การจัดการข้อมูล Google &amp; YouTube</h2>
-          <h2 class="lang-content lang-en">🔒 Google &amp; YouTube Data</h2>
-
-          <div class="lang-content lang-th active">
-            <p>
-              2RD Verify ใช้งาน Google OAuth 2.0 โดยขอสิทธิ์
-              <code>youtube.readonly</code>
-              เฉพาะเพื่อตรวจสอบสถานะการติดตามช่องเท่านั้น
-            </p>
-            <ul style="margin-top: 14px">
-              <li>ระบบไม่มีการขอรหัสผ่าน Google ของคุณ</li>
-              <li>ข้อมูล YouTube ถูกใช้เพื่อการยืนยันตัวตนเท่านั้น</li>
-              <li>ไม่มีการนำข้อมูลไปใช้เพื่อการโฆษณา</li>
-              <li>ไม่มีการขายหรือส่งต่อข้อมูล Google/YouTube ให้บุคคลภายนอก</li>
-            </ul>
-          </div>
-
-          <div class="lang-content lang-en">
-            <p>
-              2RD Verify uses Google OAuth 2.0 and requests the
-              <code>youtube.readonly</code>
-              permission only for verifying subscription status.
-            </p>
-            <ul style="margin-top: 14px">
-              <li>The application does not request your Google password.</li>
-              <li>YouTube data is used only for subscription verification.</li>
-              <li>The application does not use YouTube data for advertising.</li>
-              <li>The application does not sell Google or YouTube data.</li>
-            </ul>
-          </div>
         </section>
 
         <!-- Login / Action Button -->

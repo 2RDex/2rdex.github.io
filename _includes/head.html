@@ -2,9 +2,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <!-- Dynamic Title logic for layout: verify vs default -->
+  {% if page.layout == 'verify' %}
+    {% assign page_title_custom = page.title %}
+  {% elsif page.title %}
+    {% assign page_title_custom = page.title | append: " | " | append: site.title %}
+  {% else %}
+    {% assign page_title_custom = site.title %}
+  {% endif %}
 
-  <meta name="title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
+  <title>{{ page_title_custom }}</title>
+
+  <meta name="title" content="{{ page_title_custom }}">
   <meta name="description" content="{{ page.description | escape }}">
   <meta name="author" content="{{ site.title | escape }}">
 
@@ -20,7 +29,7 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="{{ site.title | escape }}">
-  <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
+  <meta property="og:title" content="{{ page_title_custom }}">
   <meta property="og:description" content="{{ page.description | escape }}">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
   <meta property="og:image" content="{{ page.ogimage | absolute_url }}">
@@ -30,7 +39,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta property="twitter:domain" content="{{site.domain}}">
   <meta property="twitter:url" content="{{site.url}}">
-  <meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
+  <meta name="twitter:title" content="{{ page_title_custom }}">
   <meta name="twitter:description" content="{{ page.description | escape }}">
   <meta name="twitter:image" content="{{ page.ogimage | absolute_url }}">
 
@@ -58,6 +67,11 @@
   <script src="https://cdn.jsdelivr.net/npm/@tonejs/midi@2.0.28/build/Midi.js"></script>
 
   <link rel="stylesheet" href="{{site.url}}/assets/css/piano.css">
+
+  {% elsif page.layout == 'verify' %}
+
+  <!-- Verify Layout CSS -->
+  <link rel="stylesheet" href="{{ '/assets/css/style-2rd-verify.css' | relative_url }}">
 
   {% else %}
 

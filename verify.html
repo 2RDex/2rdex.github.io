@@ -9,10 +9,24 @@ permalink: /verify
 
 <!doctype html>
 <html class="theme-dark" lang="th">
-
   {% include head.html %}
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #0f172a;
+      color: #f8fafc;
+      margin: 0;
+      padding: 20px;
+    }
+
     .lang-switcher {
       display: flex;
       justify-content: flex-end;
@@ -60,28 +74,8 @@ permalink: /verify
   </style>
 
   <body>
-
-    <main style="
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-    ">
-
-      <div style="
-        width: 100%;
-        max-width: 760px;
-        background: rgba(15, 23, 42, 0.94);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        border-radius: 20px;
-        padding: 40px;
-        color: #f8fafc;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-        backdrop-filter: blur(10px);
-        position: relative;
-      ">
-
+    <main style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 40px 20px">
+      <div style="width: 100%; max-width: 760px; background: #1e293b; border: 1px solid #334155; border-radius: 20px; padding: 40px; color: #f8fafc; box-shadow: 0 20px 45px rgba(0, 0, 0, .30); backdrop-filter: blur(10px); position: relative">
         <!-- Language Switcher -->
         <div class="lang-switcher">
           <button class="lang-btn active" onclick="switchLang('th')">TH</button>
@@ -89,86 +83,40 @@ permalink: /verify
         </div>
 
         <!-- Logo -->
-        <div style="
-          text-align: center;
-          margin-bottom: 28px;
-        ">
-
+        <div style="text-align: center; margin-bottom: 28px">
           <img class="avatar-circle" src="{{ '/assets/images/avatar.png' | relative_url }}" srcset="{{ '/assets/images/avatar.png' | relative_url }} 1x, {{ '/assets/images/avatar@2x.png' | relative_url }} 2x" alt="2RD Verify" fetchpriority="high" />
 
-          <h1 style="
-            margin: 0 0 8px;
-            font-size: 2.2rem;
-            font-weight: 700;
-          ">
-            2RD Verify
-          </h1>
+          <h1 style="margin: 0 0 8px; font-size: 2.2rem; font-weight: 700">2RD Verify</h1>
 
-          <p class="lang-content lang-th active" style="margin: 0; color: #38bdf8; font-size: 1.05rem; font-weight: 600;">
-            ระบบยืนยันตัวตนการติดตามช่อง YouTube
-          </p>
-          <p class="lang-content lang-en" style="margin: 0; color: #38bdf8; font-size: 1.05rem; font-weight: 600;">
-            YouTube Subscription Verification
-          </p>
-
+          <p class="lang-content lang-th active" style="margin: 0; color: #38bdf8; font-size: 1.05rem; font-weight: 600">ระบบยืนยันตัวตนการติดตามช่อง YouTube</p>
+          <p class="lang-content lang-en" style="margin: 0; color: #38bdf8; font-size: 1.05rem; font-weight: 600">YouTube Subscription Verification</p>
         </div>
 
-
         <!-- Application Purpose -->
-        <section style="
-          background: rgba(30, 41, 59, 0.9);
-          border-radius: 14px;
-          padding: 24px;
-          margin-bottom: 18px;
-        ">
-
-          <h2 class="lang-content lang-th active" style="margin: 0 0 12px; font-size: 1.25rem;">
-            📌 วัตถุประสงค์ของระบบ
-          </h2>
-          <h2 class="lang-content lang-en" style="margin: 0 0 12px; font-size: 1.25rem;">
-            📌 Application Purpose
-          </h2>
+        <section style="background: rgba(30, 41, 59, 0.9); border-radius: 14px; padding: 24px; margin-bottom: 18px">
+          <h2 class="lang-content lang-th active" style="margin: 0 0 12px; font-size: 1.25rem">📌 วัตถุประสงค์ของระบบ</h2>
+          <h2 class="lang-content lang-en" style="margin: 0 0 12px; font-size: 1.25rem">📌 Application Purpose</h2>
 
           <!-- TH Content -->
-          <div class="lang-content lang-th active" style="color: #cbd5e1; line-height: 1.8;">
-            <p style="margin: 0;">
-              <strong>2RD Verify</strong> คือบริการยืนยันตัวตนสำหรับตรวจสอบว่าบัญชี YouTube ของผู้ใช้ได้กดติดตามช่อง YouTube ที่กำหนดไว้หรือไม่
-            </p>
-            <p style="margin: 12px 0 0;">
-              เมื่อทำการยืนยันตัวตนสำเร็จ ระบบจะมอบยศที่เกี่ยวข้องให้กับบัญชี Discord ของผู้ใช้โดยอัตโนมัติ
-            </p>
+          <div class="lang-content lang-th active" style="color: #cbd5e1; line-height: 1.8">
+            <p style="margin: 0"><strong>2RD Verify</strong> คือบริการยืนยันตัวตนสำหรับตรวจสอบว่าบัญชี YouTube ของผู้ใช้ได้กดติดตามช่อง YouTube ที่กำหนดไว้หรือไม่</p>
+            <p style="margin: 12px 0 0">เมื่อทำการยืนยันตัวตนสำเร็จ ระบบจะมอบยศที่เกี่ยวข้องให้กับบัญชี Discord ของผู้ใช้โดยอัตโนมัติ</p>
           </div>
 
           <!-- EN Content -->
-          <div class="lang-content lang-en" style="color: #cbd5e1; line-height: 1.8;">
-            <p style="margin: 0;">
-              <strong>2RD Verify</strong> is a verification service that checks whether a user's YouTube account is subscribed to the configured YouTube channel.
-            </p>
-            <p style="margin: 12px 0 0;">
-              After successful verification, the service assigns the corresponding role to the user's Discord account.
-            </p>
+          <div class="lang-content lang-en" style="color: #cbd5e1; line-height: 1.8">
+            <p style="margin: 0"><strong>2RD Verify</strong> is a verification service that checks whether a user's YouTube account is subscribed to the configured YouTube channel.</p>
+            <p style="margin: 12px 0 0">After successful verification, the service assigns the corresponding role to the user's Discord account.</p>
           </div>
-
         </section>
 
-
         <!-- How It Works -->
-        <section style="
-          background: rgba(30, 41, 59, 0.9);
-          border-radius: 14px;
-          padding: 24px;
-          margin-bottom: 18px;
-        ">
-
-          <h2 class="lang-content lang-th active" style="margin: 0 0 12px; font-size: 1.25rem;">
-            ⚙️ ขั้นตอนการทำงาน
-          </h2>
-          <h2 class="lang-content lang-en" style="margin: 0 0 12px; font-size: 1.25rem;">
-            ⚙️ How It Works
-          </h2>
+        <section style="background: rgba(30, 41, 59, 0.9); border-radius: 14px; padding: 24px; margin-bottom: 18px">
+          <h2 class="lang-content lang-th active" style="margin: 0 0 12px; font-size: 1.25rem">⚙️ ขั้นตอนการทำงาน</h2>
+          <h2 class="lang-content lang-en" style="margin: 0 0 12px; font-size: 1.25rem">⚙️ How It Works</h2>
 
           <!-- TH Content -->
-          <ol class="lang-content lang-th active" style="margin: 0; padding-left: 24px; color: #cbd5e1; line-height: 1.9;">
+          <ol class="lang-content lang-th active" style="margin: 0; padding-left: 24px; color: #cbd5e1; line-height: 1.9">
             <li>เข้าสู่ระบบด้วย Discord</li>
             <li>เลือกยืนยันการกดติดตามช่อง YouTube</li>
             <li>เข้าสู่ระบบด้วย Google และอนุมัติสิทธิ์อ่านข้อมูลการติดตาม (Read-only)</li>
@@ -177,40 +125,28 @@ permalink: /verify
           </ol>
 
           <!-- EN Content -->
-          <ol class="lang-content lang-en" style="margin: 0; padding-left: 24px; color: #cbd5e1; line-height: 1.9;">
+          <ol class="lang-content lang-en" style="margin: 0; padding-left: 24px; color: #cbd5e1; line-height: 1.9">
             <li>Sign in with Discord.</li>
             <li>Choose to verify your YouTube subscription.</li>
             <li>Sign in with Google and authorize the requested YouTube read-only permission.</li>
             <li>2RD Verify checks the subscription status using the YouTube Data API.</li>
             <li>If confirmed, the corresponding Discord role is assigned.</li>
           </ol>
-
         </section>
 
-
         <!-- Google / YouTube Data -->
-        <section style="
-          background: rgba(30, 41, 59, 0.9);
-          border-radius: 14px;
-          padding: 24px;
-          margin-bottom: 18px;
-        ">
-
-          <h2 class="lang-content lang-th active" style="margin: 0 0 12px; font-size: 1.25rem;">
-            🔒 การจัดการข้อมูล Google &amp; YouTube
-          </h2>
-          <h2 class="lang-content lang-en" style="margin: 0 0 12px; font-size: 1.25rem;">
-            🔒 Google &amp; YouTube Data
-          </h2>
+        <section style="background: rgba(30, 41, 59, 0.9); border-radius: 14px; padding: 24px; margin-bottom: 18px">
+          <h2 class="lang-content lang-th active" style="margin: 0 0 12px; font-size: 1.25rem">🔒 การจัดการข้อมูล Google &amp; YouTube</h2>
+          <h2 class="lang-content lang-en" style="margin: 0 0 12px; font-size: 1.25rem">🔒 Google &amp; YouTube Data</h2>
 
           <!-- TH Content -->
-          <div class="lang-content lang-th active" style="color: #cbd5e1; line-height: 1.8;">
-            <p style="margin: 0;">
+          <div class="lang-content lang-th active" style="color: #cbd5e1; line-height: 1.8">
+            <p style="margin: 0">
               2RD Verify ใช้งาน Google OAuth 2.0 โดยขอสิทธิ์
-              <code style="background: #0f172a; color: #7dd3fc; padding: 3px 7px; border-radius: 5px;">youtube.readonly</code>
+              <code style="background: #0f172a; color: #7dd3fc; padding: 3px 7px; border-radius: 5px">youtube.readonly</code>
               เฉพาะเพื่อตรวจสอบสถานะการติดตามช่องเท่านั้น
             </p>
-            <ul style="margin: 14px 0 0; padding-left: 24px; line-height: 1.8;">
+            <ul style="margin: 14px 0 0; padding-left: 24px; line-height: 1.8">
               <li>ระบบไม่มีการขอรหัสผ่าน Google ของคุณ</li>
               <li>ข้อมูล YouTube ถูกใช้เพื่อการยืนยันตัวตนเท่านั้น</li>
               <li>ไม่มีการนำข้อมูลไปใช้เพื่อการโฆษณา</li>
@@ -219,133 +155,83 @@ permalink: /verify
           </div>
 
           <!-- EN Content -->
-          <div class="lang-content lang-en" style="color: #cbd5e1; line-height: 1.8;">
-            <p style="margin: 0;">
+          <div class="lang-content lang-en" style="color: #cbd5e1; line-height: 1.8">
+            <p style="margin: 0">
               2RD Verify uses Google OAuth 2.0 and requests the
-              <code style="background: #0f172a; color: #7dd3fc; padding: 3px 7px; border-radius: 5px;">youtube.readonly</code>
+              <code style="background: #0f172a; color: #7dd3fc; padding: 3px 7px; border-radius: 5px">youtube.readonly</code>
               permission only for verifying subscription status.
             </p>
-            <ul style="margin: 14px 0 0; padding-left: 24px; line-height: 1.8;">
+            <ul style="margin: 14px 0 0; padding-left: 24px; line-height: 1.8">
               <li>The application does not request your Google password.</li>
               <li>YouTube data is used only for subscription verification.</li>
               <li>The application does not use YouTube data for advertising.</li>
               <li>The application does not sell Google or YouTube data.</li>
             </ul>
           </div>
-
         </section>
 
-
         <!-- Privacy -->
-        <section style="
-          background: rgba(30, 41, 59, 0.9);
-          border-radius: 14px;
-          padding: 24px;
-          margin-bottom: 24px;
-        ">
+        <section style="background: rgba(30, 41, 59, 0.9); border-radius: 14px; padding: 24px; margin-bottom: 24px">
+          <h2 class="lang-content lang-th active" style="margin: 0 0 12px; font-size: 1.25rem">🛡️ ความเป็นส่วนตัว</h2>
+          <h2 class="lang-content lang-en" style="margin: 0 0 12px; font-size: 1.25rem">🛡️ Privacy</h2>
 
-          <h2 class="lang-content lang-th active" style="margin: 0 0 12px; font-size: 1.25rem;">
-            🛡️ ความเป็นส่วนตัว
-          </h2>
-          <h2 class="lang-content lang-en" style="margin: 0 0 12px; font-size: 1.25rem;">
-            🛡️ Privacy
-          </h2>
-
-          <p class="lang-content lang-th active" style="margin: 0; color: #cbd5e1; line-height: 1.8;">
+          <p class="lang-content lang-th active" style="margin: 0; color: #cbd5e1; line-height: 1.8">
             โปรดอ่าน
-            <a href="https://verify.2rd.top/privacy" style="color: #38bdf8;">นโยบายความเป็นส่วนตัว</a>
+            <a href="https://verify.2rd.top/privacy" style="color: #38bdf8">นโยบายความเป็นส่วนตัว</a>
             และ
-            <a href="https://verify.2rd.top/terms" style="color: #38bdf8;">เงื่อนไขการให้บริการ</a>
+            <a href="https://verify.2rd.top/terms" style="color: #38bdf8">เงื่อนไขการให้บริการ</a>
             สำหรับข้อมูลเพิ่มเติมเกี่ยวกับระบบ
           </p>
 
-          <p class="lang-content lang-en" style="margin: 0; color: #cbd5e1; line-height: 1.8;">
+          <p class="lang-content lang-en" style="margin: 0; color: #cbd5e1; line-height: 1.8">
             Please read our
-            <a href="https://verify.2rd.top/privacy" style="color: #38bdf8;">Privacy Policy</a>
+            <a href="https://verify.2rd.top/privacy" style="color: #38bdf8">Privacy Policy</a>
             and
-            <a href="https://verify.2rd.top/terms" style="color: #38bdf8;">Terms of Service</a>
+            <a href="https://verify.2rd.top/terms" style="color: #38bdf8">Terms of Service</a>
             for more information about the service.
           </p>
-
         </section>
 
-
         <!-- Login / Action Button -->
-        <div style="
-          text-align: center;
-          margin-bottom: 24px;
-        ">
-
-          <a
-            href="https://verify.2rd.top/login"
-            style="
-              display: inline-flex;
-              align-items: center;
-              justify-content: center;
-              gap: 10px;
-              background: #5865F2;
-              color: #ffffff;
-              text-decoration: none;
-              padding: 14px 32px;
-              border-radius: 10px;
-              font-weight: 700;
-              font-size: 1.05rem;
-              transition: background 0.2s;
-            "
-          >
+        <div style="text-align: center; margin-bottom: 24px">
+          <a href="https://verify.2rd.top/login" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: #5865f2; color: #ffffff; text-decoration: none; padding: 14px 32px; border-radius: 10px; font-weight: 700; font-size: 1.05rem; transition: background 0.2s">
             <span class="lang-inline lang-th active">เริ่มต้นยืนยันตัวตน</span>
             <span class="lang-inline lang-en">Login with Discord to Verify</span>
           </a>
-
         </div>
 
-
         <!-- Footer -->
-        <div style="
-          text-align: center;
-          padding-top: 20px;
-          border-top: 1px solid rgba(255,255,255,0.1);
-          color: #94a3b8;
-          font-size: 0.9rem;
-        ">
+        <div style="text-align: center; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1); color: #94a3b8; font-size: 0.9rem">
+          <p style="margin: 0 0 8px">2RD Verify · 2RD Channel</p>
 
-          <p style="margin: 0 0 8px;">
-            2RD Verify · 2RD Channel
-          </p>
-
-          <a href="https://verify.2rd.top/privacy" style="color: #38bdf8; text-decoration: none; margin: 0 6px;">
+          <a href="https://verify.2rd.top/privacy" style="color: #38bdf8; text-decoration: none; margin: 0 6px">
             <span class="lang-inline lang-th active">Privacy Policy</span>
             <span class="lang-inline lang-en">Privacy Policy</span>
           </a>
 
           <span>|</span>
 
-          <a href="https://verify.2rd.top/terms" style="color: #38bdf8; text-decoration: none; margin: 0 6px;">
+          <a href="https://verify.2rd.top/terms" style="color: #38bdf8; text-decoration: none; margin: 0 6px">
             <span class="lang-inline lang-th active">Terms of Service</span>
             <span class="lang-inline lang-en">Terms of Service</span>
           </a>
-
         </div>
-
       </div>
-
     </main>
 
     <script>
       function switchLang(lang) {
-        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-        document.querySelectorAll('.lang-content, .lang-inline').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll(".lang-btn").forEach((btn) => btn.classList.remove("active"));
+        document.querySelectorAll(".lang-content, .lang-inline").forEach((el) => el.classList.remove("active"));
 
-        if (lang === 'th') {
-          document.querySelectorAll('.lang-btn')[0].classList.add('active');
-          document.querySelectorAll('.lang-th').forEach(el => el.classList.add('active'));
+        if (lang === "th") {
+          document.querySelectorAll(".lang-btn")[0].classList.add("active");
+          document.querySelectorAll(".lang-th").forEach((el) => el.classList.add("active"));
         } else {
-          document.querySelectorAll('.lang-btn')[1].classList.add('active');
-          document.querySelectorAll('.lang-en').forEach(el => el.classList.add('active'));
+          document.querySelectorAll(".lang-btn")[1].classList.add("active");
+          document.querySelectorAll(".lang-en").forEach((el) => el.classList.add("active"));
         }
       }
     </script>
-
   </body>
-
 </html>

@@ -1,5 +1,5 @@
 ---
-layout: null
+layout: verify
 title: 2RD Verify
 description: 2RD Verify is an automated YouTube subscription verification service that assigns corresponding Discord roles.
 ogimage: /assets/images/2rd_ogm.png
@@ -47,6 +47,16 @@ permalink: /verify
     .lang-inline.active {
       display: inline;
     }
+    /* สไตล์โลโก้วงกลมเหมือนบน verify.2rd.top */
+    .avatar-circle {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 3px solid #b95589;
+      object-fit: cover;
+      background: #0f172a;
+      margin-bottom: 16px;
+    }
   </style>
 
   <body>
@@ -84,7 +94,7 @@ permalink: /verify
           margin-bottom: 28px;
         ">
 
-          <img class="avatar avatar--rounded" src="{{ '/assets/images/avatar.png' | relative_url }}" srcset="{{ '/assets/images/avatar.png' | relative_url }} 1x, {{ '/assets/images/avatar@2x.png' | relative_url }} 2x" alt="2RD Verify" width="128" height="128" fetchpriority="high" />
+          <img class="avatar-circle" src="{{ '/assets/images/avatar.png' | relative_url }}" srcset="{{ '/assets/images/avatar.png' | relative_url }} 1x, {{ '/assets/images/avatar@2x.png' | relative_url }} 2x" alt="2RD Verify" fetchpriority="high" />
 
           <h1 style="
             margin: 0 0 8px;
@@ -283,9 +293,6 @@ permalink: /verify
               transition: background 0.2s;
             "
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 127.14 96.36" fill="#ffffff">
-              <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1,105.25,105.25,0,0,0,32.19-16.14c2.64-27.38-4.51-51.11-18.91-72.15ZM42.45,65.69C36.18,65.69,31,60,31,53S36,40.3,42.45,40.3C48.92,40.3,54,46,53.9,53,53.9,60,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5.08-12.7,11.44-12.7C91.16,40.3,96.24,46,96.14,53,96.14,60,91.08,65.69,84.69,65.69Z"/>
-            </svg>
             <span class="lang-inline lang-th active">เริ่มต้นยืนยันตัวตน</span>
             <span class="lang-inline lang-en">Login with Discord to Verify</span>
           </a>

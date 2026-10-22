@@ -1,5 +1,5 @@
 /* ==========================================================================
-   C2Z Dark Blog Theme
+   C2Z Dark Blog Theme (Updated Spacing & Typography)
    ========================================================================== */
 
 /* ===== Base & Global Layout ===== */
@@ -10,6 +10,8 @@ body {
 
 body {
     color: #e5e5e5;
+    font-size: 16px;
+    line-height: 1.75; /* เพิ่มระยะห่างระหว่างบรรทัดให้โปร่งอ่านง่ายขึ้น */
 }
 
 .wrapper {
@@ -22,11 +24,62 @@ body {
     background: #111;
 }
 
-/* ===== Typography & Links ===== */
+/* ===== Typography & Post Article Styles ===== */
 h1, h2, h3, h4, h5, h6,
 .post-title,
 .post-link {
     color: #fff;
+    line-height: 1.4;
+}
+
+/* เพิ่มระยะห่างรอบๆ หัวข้อต่างๆ ให้ชัดเจน ไม่ติดกับเนื้อหาก่อนหน้าและหลัง */
+.post-content h2,
+.post-main h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.65rem;
+}
+
+.post-content h3,
+.post-main h3 {
+    margin-top: 1.75rem;
+    margin-bottom: 0.85rem;
+    font-size: 1.35rem;
+}
+
+.post-content h4,
+.post-main h4 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.15rem;
+}
+
+/* เพิ่มระยะห่างย่อหน้าข้อความ */
+.post-content p,
+.post-main p {
+    margin-bottom: 1.25rem;
+}
+
+/* ปรับระยะห่างรายการลิสต์ (Lists) ให้โปร่งไม่ติดกัน */
+.post-content ul,
+.post-content ol,
+.post-main ul,
+.post-main ol {
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.post-content li,
+.post-main li {
+    margin-bottom: 0.5rem; /* เว้นระยะระหว่างข้อ */
+    line-height: 1.7;
+}
+
+.post-content li > ul,
+.post-content li > ol {
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
 }
 
 a,
@@ -56,6 +109,8 @@ a:hover {
 blockquote {
     color: #aaa;
     border-left-color: #444;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
 }
 
 /* ===== Header & Navigation ===== */
@@ -227,6 +282,8 @@ blockquote {
     grid-template-columns: minmax(0, 900px) 240px;
     gap: 40px;
     align-items: start;
+    padding-top: 20px;
+    padding-bottom: 40px;
 }
 
 .post-main,
@@ -320,6 +377,7 @@ blockquote {
 table {
     color: #ddd;
     border-color: #333;
+    margin: 1.5rem 0;
 }
 
 table tr:nth-child(even) {
@@ -329,10 +387,12 @@ table tr:nth-child(even) {
 table th {
     background: #222;
     border-color: #333;
+    padding: 8px 12px;
 }
 
 table td {
     border-color: #333;
+    padding: 8px 12px;
 }
 
 /* ===== Code Components ===== */
@@ -341,6 +401,13 @@ code {
     background: #181818;
     border-color: #333;
     color: #e5e5e5;
+}
+
+/* Inline Code แทรกในข้อความ */
+:not(pre) > code {
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
 }
 
 .highlighter-rouge .highlight,
@@ -599,7 +666,7 @@ code {
 .youtube-embed {
   width: 100%;
   aspect-ratio: 16 / 9;
-  margin: 20px 0;
+  margin: 24px 0;
 }
 
 .youtube-embed iframe {
@@ -625,7 +692,8 @@ img.s100 {
   max-width: 100%;
   height: auto;
   display: block;
-  margin-bottom: 10px;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
   border-radius: 6px;
 }
 
@@ -637,6 +705,8 @@ img.s50 {
   display: inline-block;
   vertical-align: top;
   box-sizing: border-box;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
   border-radius: 6px;
 }
 
@@ -644,7 +714,7 @@ img.s50 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px; /* ระยะห่างระหว่างรูป */
-  margin: 1rem 0;
+  margin: 1.5rem 0;
 }
 
 /* รูปแรกขยายเต็ม 2 คอลัมน์ (แถวบน) */
@@ -665,26 +735,30 @@ img.s50 {
     border-left: 4px solid #3b82f6;
     padding: 12px 18px;
     border-radius: 0 8px 8px 0;
-    margin: 12px 0;
+    margin: 1.5rem 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
     max-width: 500px;
-  }
-  .dl-link {
+}
+
+.dl-link {
     color: #60a5fa;
     text-decoration: none;
     font-family: monospace;
     font-size: 1.05em;
-  }
-  .dl-link:hover {
+}
+
+.dl-link:hover {
     text-decoration: underline;
-  }
-  .dl-stats {
+}
+
+.dl-stats {
     color: #9ca3af;
     font-size: 0.88em;
-  }
-  .dl-stats-num {
+}
+
+.dl-stats-num {
     color: #e5e7eb;
     font-weight: 600;
-  }
+}

@@ -25,7 +25,7 @@ tags: [Crysis 2 Remastered, Mods, Guide]
 <div class="dl-box">
   <div>
     <span style="color:#a1a1aa;">🔗 ลิงก์:</span>
-    <a href="https://dl.2rd.top/C2R" class="dl-link" target="_blank">dl.2rd.top/C2R</a>
+    <a href="https://link.2rd.top/C2R" class="dl-link" target="_blank">link.2rd.top/C2R</a>
   </div>
   <div class="dl-stats">
     📊 <span id="count-C2R" class="dl-stats-num">0</span> ครั้ง

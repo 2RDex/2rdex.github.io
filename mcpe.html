@@ -69,6 +69,19 @@ permalink: /mcpe
     font-size: 18px;
 }
 
+.image-preview-dialog {
+    touch-action: pan-x pan-y;
+}
+
+.image-preview-dialog img {
+    transform-origin: center center;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    will-change: transform;
+    cursor: grab;
+}
+
 </style>
 <body style="background: url('assets/images/background.jpg') no-repeat center center fixed; background-size: cover;">
 
@@ -161,8 +174,7 @@ permalink: /mcpe
     role="button"
     aria-haspopup="dialog"
   >
-    <span aria-hidden="true">🖼️</span>
-    ตัวอย่าง
+    <span aria-hidden="true" style="margin-right: 5px;">🖼️</span> ตัวอย่าง
   </a>
 </div>
 
@@ -360,26 +372,144 @@ permalink: /mcpe
     </div>
   </div>
   <script>
-document.querySelectorAll(".js-image-preview").forEach(trigger => {
-  trigger.addEventListener("click", event => {
-    event.preventDefault();
 
-    const dialog = document.getElementById(trigger.dataset.preview);
-    if (dialog) dialog.showModal();
-  });
+document.querySelectorAll(".js-image-preview").forEach(trigger => {
+    trigger.addEventListener("click", event => {
+        event.preventDefault();
+
+        const dialog = document.getElementById(trigger.dataset.preview);
+
+        if (dialog) {
+            dialog.showModal();
+        }
+    });
 });
 
 document.querySelectorAll(".image-preview-dialog").forEach(dialog => {
-  dialog.addEventListener("click", event => {
-    // คลิกที่รูปหรือพื้นที่ด้านนอกเพื่อปิด
-    if (
-      event.target === dialog ||
-      event.target.tagName === "IMG"
-    ) {
-      dialog.close();
+    const img = dialog.querySelector("img");
+
+    let scale = 1;
+    let x = 0;
+    let y = 0;
+
+    const pointers = new Map();
+    let startDistance = 0;
+    let startScale = 1;
+    let dragStart = null;
+
+    function update() {
+        img.style.transform =
+            `translate(${x}px, ${y}px) scale(${scale})`;
     }
-  });
+
+    function reset() {
+        scale = 1;
+        x = 0;
+        y = 0;
+        update();
+    }
+
+    function zoom(value) {
+        scale = Math.max(1, Math.min(5, value));
+
+        if (scale === 1) {
+            x = 0;
+            y = 0;
+        }
+
+        update();
+    }
+
+    // Mouse wheel zoom
+    img.addEventListener("wheel", event => {
+        event.preventDefault();
+        zoom(scale * (event.deltaY < 0 ? 1.15 : 0.87));
+    }, { passive: false });
+
+    // Touch and mouse gestures
+    img.addEventListener("pointerdown", event => {
+        event.preventDefault();
+        img.setPointerCapture(event.pointerId);
+
+        pointers.set(event.pointerId, {
+            x: event.clientX,
+            y: event.clientY
+        });
+
+        if (pointers.size === 2) {
+            const points = [...pointers.values()];
+
+            startDistance = Math.hypot(
+                points[0].x - points[1].x,
+                points[0].y - points[1].y
+            );
+
+            startScale = scale;
+            dragStart = null;
+        } else {
+            dragStart = {
+                px: event.clientX,
+                py: event.clientY,
+                x,
+                y
+            };
+        }
+    });
+
+    img.addEventListener("pointermove", event => {
+        if (!pointers.has(event.pointerId)) return;
+
+        pointers.set(event.pointerId, {
+            x: event.clientX,
+            y: event.clientY
+        });
+
+        if (pointers.size === 2) {
+            const points = [...pointers.values()];
+
+            const distance = Math.hypot(
+                points[0].x - points[1].x,
+                points[0].y - points[1].y
+            );
+
+            if (startDistance > 0) {
+                zoom(startScale * distance / startDistance);
+            }
+        } else if (pointers.size === 1 && scale > 1 && dragStart) {
+            x = dragStart.x + event.clientX - dragStart.px;
+            y = dragStart.y + event.clientY - dragStart.py;
+            update();
+        }
+    });
+
+    function pointerEnd(event) {
+        pointers.delete(event.pointerId);
+
+        if (pointers.size === 1) {
+            const point = [...pointers.values()][0];
+
+            dragStart = {
+                px: point.x,
+                py: point.y,
+                x,
+                y
+            };
+        } else {
+            dragStart = null;
+        }
+    }
+
+    img.addEventListener("pointerup", pointerEnd);
+    img.addEventListener("pointercancel", pointerEnd);
+
+    dialog.addEventListener("close", () => {
+        reset();
+        pointers.clear();
+    });
+
+    update();
 });
+
 </script>
 
 </body>

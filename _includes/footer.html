@@ -153,15 +153,204 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
+
 <!-- medium-zoom JS -->
 <script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
+
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // กำหนดให้รูปภาพทั้งหมดในบทความกดซูมได้
-    mediumZoom('.post-content img, .image-gallery img', {
-      margin: 24,
-      background: 'rgba(0, 0, 0, 0.8)',
-      scrollOffset: 0,
-    });
-  });
+document.addEventListener("DOMContentLoaded", function () {
+
+    const zoom = mediumZoom(
+        '.post-content img, .image-gallery img',
+        {
+            margin: 24,
+            background: 'rgba(0, 0, 0, 0.85)',
+            scrollOffset: 0
+        }
+    );
+
+    const MAX_ZOOM = 5;
+    const MIN_ZOOM = 1;
+
+    let activeImage = null;
+    let scale = 1;
+    let x = 0;
+    let y = 0;
+
+    let pointers = new Map();
+    let pinchDistance = 0;
+    let pinchScale = 1;
+    let dragStart = null;
+    let moved = false;
+
+    function updateZoom() {
+        if (!activeImage) return;
+
+        activeImage.style.scale = scale;
+        activeImage.style.translate = `${x}px ${y}px`;
+    }
+
+    function setZoom(value) {
+        scale = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, value));
+
+        if (scale === 1) {
+            x = 0;
+            y = 0;
+        }
+
+        updateZoom();
+    }
+
+    function getDistance(a, b) {
+        return Math.hypot(a.x - b.x, a.y - b.y);
+    }
+
+    function startZoom(event) {
+        const image = zoom.getZoomedImage();
+        if (!image) return;
+
+        activeImage = image;
+        scale = 1;
+        x = 0;
+        y = 0;
+
+        image.style.touchAction = 'none';
+
+        image.addEventListener('wheel', onWheel, {
+            passive: false
+        });
+
+        image.addEventListener('pointerdown', onPointerDown);
+        image.addEventListener('pointermove', onPointerMove);
+        image.addEventListener('pointerup', onPointerUp);
+        image.addEventListener('pointercancel', onPointerUp);
+        image.addEventListener('click', onImageClick);
+
+        updateZoom();
+    }
+
+    function onWheel(event) {
+        event.preventDefault();
+
+        const factor = event.deltaY < 0 ? 1.15 : 0.87;
+        setZoom(scale * factor);
+    }
+
+    function onPointerDown(event) {
+        event.preventDefault();
+
+        activeImage.setPointerCapture(event.pointerId);
+
+        pointers.set(event.pointerId, {
+            x: event.clientX,
+            y: event.clientY
+        });
+
+        moved = false;
+
+        if (pointers.size === 2) {
+            const points = [...pointers.values()];
+            pinchDistance = getDistance(points[0], points[1]);
+            pinchScale = scale;
+            dragStart = null;
+        } else {
+            dragStart = {
+                px: event.clientX,
+                py: event.clientY,
+                x,
+                y
+            };
+        }
+    }
+
+    function onPointerMove(event) {
+        if (!pointers.has(event.pointerId)) return;
+
+        pointers.set(event.pointerId, {
+            x: event.clientX,
+            y: event.clientY
+        });
+
+        if (pointers.size === 2) {
+            const points = [...pointers.values()];
+            const distance = getDistance(points[0], points[1]);
+
+            if (pinchDistance > 0) {
+                if (Math.abs(distance - pinchDistance) > 3) {
+                    moved = true;
+                }
+
+                setZoom(pinchScale * distance / pinchDistance);
+            }
+
+        } else if (pointers.size === 1 && scale > 1 && dragStart) {
+
+            const dx = event.clientX - dragStart.px;
+            const dy = event.clientY - dragStart.py;
+
+            if (Math.abs(dx) > 3 || Math.abs(dy) > 3) {
+                moved = true;
+            }
+
+            x = dragStart.x + dx;
+            y = dragStart.y + dy;
+
+            updateZoom();
+        }
+    }
+
+    function onPointerUp(event) {
+        pointers.delete(event.pointerId);
+
+        if (pointers.size === 1) {
+            const point = [...pointers.values()][0];
+
+            dragStart = {
+                px: point.x,
+                py: point.y,
+                x,
+                y
+            };
+
+        } else {
+            dragStart = null;
+        }
+    }
+
+    function onImageClick(event) {
+        if (moved) {
+            event.stopPropagation();
+            event.preventDefault();
+            moved = false;
+        }
+    }
+
+    function cleanupZoom() {
+        if (activeImage) {
+            activeImage.style.scale = '';
+            activeImage.style.translate = '';
+            activeImage.style.touchAction = '';
+
+            activeImage.removeEventListener('wheel', onWheel);
+            activeImage.removeEventListener('pointerdown', onPointerDown);
+            activeImage.removeEventListener('pointermove', onPointerMove);
+            activeImage.removeEventListener('pointerup', onPointerUp);
+            activeImage.removeEventListener('pointercancel', onPointerUp);
+            activeImage.removeEventListener('click', onImageClick);
+        }
+
+        activeImage = null;
+        pointers.clear();
+
+        scale = 1;
+        x = 0;
+        y = 0;
+        dragStart = null;
+        moved = false;
+    }
+
+    zoom.on('opened', startZoom);
+    zoom.on('closed', cleanupZoom);
+
+});
 </script>

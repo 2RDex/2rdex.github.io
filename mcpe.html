@@ -11,7 +11,45 @@ permalink: /mcpe
 <html class="theme-dark" lang="th">
 
 {% include head.html %}
+<style>.image-preview-dialog {
+  position: relative;
+  border: none;
+  padding: 0;
+  background: transparent;
+  max-width: 94vw;
+  max-height: 94vh;
+  overflow: visible;
+}
 
+.image-preview-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(5px);
+}
+
+.image-preview-dialog img {
+  display: block;
+  max-width: 92vw;
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.preview-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+}</style>
 <body style="background: url('assets/images/background.jpg') no-repeat center center fixed; background-size: cover;">
 
   <div class="container">
@@ -76,6 +114,51 @@ permalink: /mcpe
                 </button>
 
                 <span class="dl-count-badge"> 📥 ดาวน์โหลดแล้ว <b id="count-THLanguage_Bedrock">0</b> ครั้ง </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- รีซอร์ซแพ็กภาษาไทย -->
+          <div class="slide-container" data-continue-url="https://link.2rd.top/THLanguage_Bedrock_Effect_Text_Fix">
+            <a class="button button-THLanguage sensitive-trigger" href="javascript:void(0)">
+              <img class="icon" aria-hidden="true" src="assets/images/icon-new/THLanguage.png"
+                alt="รีซอร์ซแพ็กภาษาไทย icon" />ปรับปรุงคำแปลเอฟเฟกต์</a>
+
+            <div class="sensitive-panel">
+              <div class="sensitive-panel__content">
+                <p>
+                  สร้างโดย: <a href="https://www.facebook.com/MineGarp.PED/" target="_blank" rel="noopener">มายก๊าบดอทเป็ด</a>
+                </p>
+                <p>
+                  แก้ไขโดย: <a href="https://2rd.top/" target="_top" rel="noopener">2RD Channel</a>
+                </p>
+
+<div>
+  <a
+    class="button button-sensitive-yt js-image-preview"
+    href="https://raw.githubusercontent.com/2RDex/THLanguage_Bedrock_Effect_Text_Fix/refs/heads/main/Screenshot_001.png"
+    data-preview="effect-example-preview"
+    role="button"
+    aria-haspopup="dialog"
+  >
+    <span aria-hidden="true">🖼️</span>
+    ตัวอย่าง
+  </a>
+</div>
+
+<dialog id="effect-example-preview" class="image-preview-dialog">
+  <img
+    src="https://raw.githubusercontent.com/2RDex/THLanguage_Bedrock_Effect_Text_Fix/refs/heads/main/Screenshot_001.png"
+    alt="ตัวอย่างการปรับปรุงคำแปลเอฟเฟกต์"
+  />
+</dialog>
+
+                <button class="button button-sensitive sensitive-continue">
+                  <img class="icon" aria-hidden="true" src="assets/images/icons/github.svg" alt="GitHub Logo" />
+                  ดาวน์โหลด
+                </button>
+
+                <span class="dl-count-badge"> 📥 ดาวน์โหลดแล้ว <b id="count-THLanguage_Bedrock_Effect_Text_Fix">0</b> ครั้ง </span>
               </div>
             </div>
           </div>
@@ -256,6 +339,28 @@ permalink: /mcpe
 
     </div>
   </div>
+  <script>
+document.querySelectorAll(".js-image-preview").forEach(trigger => {
+  trigger.addEventListener("click", event => {
+    event.preventDefault();
+
+    const dialog = document.getElementById(trigger.dataset.preview);
+    if (dialog) dialog.showModal();
+  });
+});
+
+document.querySelectorAll(".image-preview-dialog").forEach(dialog => {
+  dialog.addEventListener("click", event => {
+    // คลิกที่รูปหรือพื้นที่ด้านนอกเพื่อปิด
+    if (
+      event.target === dialog ||
+      event.target.tagName === "IMG"
+    ) {
+      dialog.close();
+    }
+  });
+});
+</script>
 
 </body>
 

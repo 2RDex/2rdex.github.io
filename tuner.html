@@ -1,0 +1,285 @@
+---
+layout: Tuner
+title: Tuner
+description: Real-time audio processing studio
+ogimage: /assets/images/2rd_tuner_ogm.jpg
+avatar: /assets/images/avatar_tuner.png
+permalink: /tuner
+---
+
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+{% include head.html %}
+<link rel="stylesheet" href="assets/css/style-tuner.css">
+<body>
+<header class="topbar">
+  <div class="brand"><div class="logo"><img src="/assets/images/avatar_tuner.png" alt="2RD TUNER"></div><div><b>2RD TUNER</b><small>Real-time audio processing studio</small></div></div>
+  
+</header>
+<main class="layout">
+
+  <section class="source-grid">
+    <article class="panel source-card">
+      <div class="section-head"><div><span class="eyebrow">BROWSER INPUT</span><h2>Browser Audio</h2></div><span class="tag">TAB CAPTURE</span></div>
+      <p class="muted">เพิ่มเสียงจาก Browser Tab ได้สูงสุด 5 แท็บพร้อมกัน · ปรับ Gain และปิดเสียงแยกแต่ละแท็บได้</p>
+      <div class="browser-source-actions">
+        <button id="browserBtn" class="primary capture-button" type="button" aria-pressed="false">＋ เพิ่ม Browser Tab</button>
+        <button id="stopAllBrowsers" class="ghost small" type="button" disabled>หยุดทั้งหมด</button>
+      </div>
+      <div id="browserSources" class="browser-sources" aria-live="polite"></div>
+      <div class="source-foot"><span id="browserStatus" class="dot-label">ยังไม่ได้เชื่อมต่อ</span><b id="browserCount" class="browser-count">0 / 5</b></div>
+    </article>
+    <section class="panel soundboard-panel">
+      <div class="section-head">
+        <div><span class="eyebrow">QUICK PLAYBACK</span><h2>Soundboard</h2></div>
+        <label class="tag">LOCAL FILES</label>
+      </div>
+      <div class="soundboard-player">
+        <div class="player-controls">
+          <button id="previousTrack" class="player-control skip-control" type="button" aria-label="เพลงก่อนหน้า" title="เพลงก่อนหน้า" disabled>◀|</button>
+          <button id="togglePlayback" class="player-control play-control" type="button" aria-label="เล่นเพลง" title="เล่นเพลง" disabled>▶</button>
+          <button id="nextTrack" class="player-control skip-control" type="button" aria-label="เพลงถัดไป" title="เพลงถัดไป" disabled>|▶</button>
+        </div>
+        <div class="player-track-info">
+          <strong id="currentTrackTitle">ยังไม่มีเพลง</strong>
+          <small id="currentTrackMeta">เพิ่มไฟล์เสียงเพื่อเริ่ม Playlist</small>
+        </div>
+        <div class="player-actions">
+          <button id="openPlaylist" class="secondary small playlist-open-button" type="button">
+            <span>Playlist</span><span id="playlistCount" class="playlist-count">0</span>
+          </button>
+          <label class="player-add-button">＋ เพิ่มไฟล์<input id="soundFiles" type="file" accept="audio/*,.mp3,.wav,.flac,.m4a,.aac,.ogg,.opus" multiple></label>
+        </div>
+      </div>
+      <p class="hint">เล่นเพลงผ่าน EQ, Automatic Loudness และ Output Gain ของ Audio Tuner · ไฟล์เสียงเล่นจากเครื่องของคุณ</p>
+    </section>
+  
+  </section>
+
+  <section class="monitor-layout">
+    <section class="panel monitor">
+      <div class="section-head monitor-title">
+        <div><span class="eyebrow">LIVE AUDIO MONITOR</span><h2>Audio Monitor</h2></div>
+        <span class="monitor-live"><i></i><span id="monitorState">WAITING FOR AUDIO</span></span>
+      </div>
+
+      <div class="monitor-level-cards">
+        <div class="monitor-level-card input-level-card">
+          <div><small>INPUT LEVEL</small><span class="level-source">ก่อนประมวลผล</span></div>
+          <b id="inputDbReadout">−∞ <small>dBFS</small></b>
+        </div>
+        <div class="monitor-level-card output-level-card">
+          <div><small>OUTPUT LEVEL</small><span class="level-source">หลังประมวลผล</span></div>
+          <b id="dbReadout">−∞ <small>dBFS</small></b>
+        </div>
+      </div>
+
+      <div class="stereo-output-meter">
+        <div class="stereo-meter-heading">
+          <span class="eyebrow">STEREO OUTPUT</span>
+          <span>PEAK HOLD <b id="peakReadout">−∞ dBFS</b></span>
+        </div>
+        <div class="stereo-meter-row">
+          <span class="stereo-channel">L</span>
+          <div class="stereo-meter-track"><i id="outputLeftBar"></i></div>
+          <b id="outputLeftValue">−∞ dBFS</b>
+        </div>
+        <div class="stereo-meter-row">
+          <span class="stereo-channel">R</span>
+          <div class="stereo-meter-track"><i id="outputRightBar"></i></div>
+          <b id="outputRightValue">−∞ dBFS</b>
+        </div>
+      </div>
+
+      <div class="spectrum-heading">
+        <div><span class="eyebrow">FREQUENCY ANALYSIS</span><h3>Spectrum Analyzer</h3></div>
+        <span class="spectrum-caption">OUTPUT · REAL TIME</span>
+      </div>
+      <canvas id="spectrum" height="150" aria-label="Output frequency spectrum"></canvas>
+
+      <div class="monitor-stats">
+        <div><small>INPUT SOURCE</small><b id="inputCount">0 / 5</b></div>
+        <div><small>ENGINE</small><b id="sampleRate">— kHz</b></div>
+        <div><small>MONITOR</small><b>STEREO</b></div>
+      </div>
+
+      <div class="loudness-compare">
+        <div class="compare-heading">
+          <div>
+            <span class="eyebrow">LOUDNESS ANALYSIS</span>
+            <h3>ความดังต้นฉบับเทียบหลังปรับ</h3>
+            <p>เปรียบเทียบระดับความดังตลอดช่วงเวลาที่รับเสียง</p>
+          </div>
+          <div class="compare-legend">
+            <span><i class="legend-dot original"></i>ต้นฉบับ</span>
+            <span><i class="legend-dot processed"></i>หลังปรับ</span>
+          </div>
+        </div>
+        <canvas id="loudnessCompare" height="112" aria-label="กราฟเปรียบเทียบความดังต้นฉบับและหลังปรับ"></canvas>
+        <div class="compare-readouts">
+          <div class="compare-value original-value">
+            <small>ORIGINAL LEVEL</small>
+            <b id="originalLufs">— LUFS</b>
+          </div>
+          <div class="compare-value processed-value">
+            <small>PROCESSED LEVEL</small>
+            <b id="processedLufs">— LUFS</b>
+          </div>
+          <div class="compare-value delta-value">
+            <small>LEVEL CHANGE</small>
+            <b id="loudnessDelta">— dB</b>
+          </div>
+        </div>
+        <p class="hint compare-hint">ค่าความดังเป็นค่าประมาณจาก K-weighted RMS ไม่ใช่ Integrated LUFS ตามมาตรฐาน EBU R128</p>
+      </div>
+    </section>
+    <section class="panel auto-panel">
+      <div class="section-head"><div><span class="eyebrow">LOUDNESS CONTROL</span><h2>ความดังอัตโนมัติ</h2></div><label class="switch"><input id="autoEnabled" type="checkbox" checked><span></span></label></div>
+      <p class="muted">ปรับระดับเสียงขึ้นหรือลงอย่างค่อยเป็นค่อยไป เพื่อให้ความดังใกล้เคียงเป้าหมาย</p>
+      <div class="loudness-readouts"><div><small>INPUT LOUDNESS</small><b id="inputLufs">— LUFS</b></div><div><small>AUTO GAIN</small><b id="autoGainReadout">0.0 dB</b></div></div>
+      <div class="control"><div><label for="autoTarget">ความดังเป้าหมาย</label><b id="autoTargetVal">−16 LUFS</b></div><input id="autoTarget" type="range" min="-24" max="-10" step="1" value="-16"></div>
+      <div class="control"><div><label for="autoMaxBoost">เพิ่มเสียงสูงสุด</label><b id="autoMaxBoostVal">+12 dB</b></div><input id="autoMaxBoost" type="range" min="0" max="18" step="1" value="12"></div>
+      <div class="auto-note"><span class="pulse"></span><span id="autoStatus">รอรับเสียงเพื่อวิเคราะห์</span></div>
+      <p class="hint">ใช้ K-weighting และการเฉลี่ยระดับเสียงแบบต่อเนื่องเพื่อประเมิน LUFS โดยประมาณ ไม่ใช่เครื่องวัด EBU R128 ที่ผ่านการรับรอง</p>
+    </section>
+  </section>
+  <div class="workspace">
+    <div class="workspace-column workspace-column-left">
+      <section class="panel">
+      <div class="section-head"><div><span class="eyebrow">TONE SHAPING</span><h2>10-Band Equalizer</h2></div><label class="switch"><input id="eqEnabled" type="checkbox" checked><span></span></label></div>
+      <div id="eqBands" class="eq-bands"></div>
+      <div class="panel-foot"><button id="eqReset" class="text-btn">Reset EQ</button><span class="muted">±12 dB · 10 frequencies</span></div>
+    </section>
+      <section class="panel speakers-panel">
+    <div class="section-head">
+      <div><span class="eyebrow">OUTPUT ROUTING</span><h2>ลำโพงหลายตัว</h2></div>
+      <label class="switch" title="เปิดหรือปิดการส่งเสียงไปยังลำโพงหลายตัว">
+        <input id="speakersEnabled" type="checkbox"><span></span>
+      </label>
+    </div>
+    <p class="muted">ส่งเสียงที่ผ่าน Audio Tuner ไปยังอุปกรณ์เสียงหลายตัวพร้อมกัน ปรับความหน่วงและระดับเสียงแยกแต่ละตัวได้ รองรับ Edge ผ่านการอนุญาตอุปกรณ์แบบชั่วคราว</p>
+    <div class="speaker-toolbar">
+      <button id="refreshOutputs" class="secondary small" type="button">แสดงอุปกรณ์เสียง</button>
+      <button id="speakerTest" class="secondary small" type="button">ทดสอบเสียง</button>
+      <span id="speakerSupport" class="device-status">กำลังตรวจสอบอุปกรณ์เสียง...</span>
+    </div>
+    <div class="speaker-grid">
+      <article class="speaker-slot" id="speakerSlot0">
+        <div class="speaker-slot-head">
+          <div class="speaker-slot-title"><span class="eyebrow">OUTPUT A</span><span>ช่องสัญญาณ A</span></div>
+          <label class="switch" title="เปิด/ปิด Output A">
+            <input id="speaker0Enabled" type="checkbox"><span></span>
+          </label>
+        </div>
+        <div class="speaker-device-row">
+          <select id="speaker0Device" aria-label="เลือกอุปกรณ์ Output A">
+            <option value="">เลือกอุปกรณ์...</option>
+          </select>
+          <button id="speaker0Choose" class="text-btn choose-device" type="button">แสดงรายชื่อ</button>
+        </div>
+        <div class="speaker-control">
+          <div><label for="speaker0Delay">หน่วง</label><b id="speaker0DelayValue">0 ms</b></div>
+          <input id="speaker0Delay" type="range" min="0" max="500" step="1" value="0">
+        </div>
+        <div class="speaker-control">
+          <div><label for="speaker0Gain">ระดับเสียง</label><b id="speaker0GainValue">0 dB</b></div>
+          <input id="speaker0Gain" type="range" min="-24" max="12" step="0.5" value="0">
+        </div>
+        <div class="speaker-slot-foot"><span id="speaker0Status">ยังไม่ได้เลือกอุปกรณ์</span><button id="speaker0Test" class="text-btn" type="button" disabled>ทดสอบ</button></div>
+      </article>
+      <article class="speaker-slot" id="speakerSlot1">
+        <div class="speaker-slot-head">
+          <div class="speaker-slot-title"><span class="eyebrow">OUTPUT B</span><span>ช่องสัญญาณ B</span></div>
+          <label class="switch" title="เปิด/ปิด Output B">
+            <input id="speaker1Enabled" type="checkbox"><span></span>
+          </label>
+        </div>
+        <div class="speaker-device-row">
+          <select id="speaker1Device" aria-label="เลือกอุปกรณ์ Output B">
+            <option value="">เลือกอุปกรณ์...</option>
+          </select>
+          <button id="speaker1Choose" class="text-btn choose-device" type="button">แสดงรายชื่อ</button>
+        </div>
+        <div class="speaker-control">
+          <div><label for="speaker1Delay">หน่วง</label><b id="speaker1DelayValue">0 ms</b></div>
+          <input id="speaker1Delay" type="range" min="0" max="500" step="1" value="0">
+        </div>
+        <div class="speaker-control">
+          <div><label for="speaker1Gain">ระดับเสียง</label><b id="speaker1GainValue">0 dB</b></div>
+          <input id="speaker1Gain" type="range" min="-24" max="12" step="0.5" value="0">
+        </div>
+        <div class="speaker-slot-foot"><span id="speaker1Status">ยังไม่ได้เลือกอุปกรณ์</span><button id="speaker1Test" class="text-btn" type="button" disabled>ทดสอบ</button></div>
+      </article>
+    </div>
+    <p class="hint speaker-hint">กด “แสดงอุปกรณ์เสียง” เพื่อขอสิทธิ์ไมโครโฟนชั่วคราวสำหรับปลดล็อกรายชื่อ Output เท่านั้น ระบบจะหยุดทุก Microphone Track ทันที ไม่เชื่อมเสียงไมค์เข้ากับ Audio Engine และไม่บันทึกเสียง (Edge อาจจำสิทธิ์เว็บไซต์ไว้จนกว่าจะเพิกถอนใน Site permissions) หาก Output บางตัวไม่อนุญาต อาจต้องขอสิทธิ์จากไมโครโฟนในกลุ่มอุปกรณ์เดียวกันอีกครั้ง ค่า Delay ใช้ชดเชยความหน่วงด้วยตนเองและไม่รับประกันการซิงค์ระดับ sample</p>
+  </section>
+    </div>
+    <div class="workspace-column workspace-column-right">
+      <section class="panel output-level-panel">
+      <div class="section-head">
+        <div><span class="eyebrow">OUTPUT LEVEL</span><h2>ระดับเสียงเอาต์พุต</h2></div>
+        <span class="tag">FINAL GAIN</span>
+      </div>
+      <p class="muted">ปรับระดับเสียงโดยรวมหลังผ่าน Equalizer และ Automatic Loudness</p>
+      <div class="control">
+        <div><label for="outputGain">Output Gain</label><b id="outputGainVal">0 dB</b></div>
+        <input id="outputGain" type="range" min="-18" max="12" value="0" step="0.5">
+      </div>
+      <p class="hint">ไม่มี Limiter ใน Audio Engine แล้ว ควรระวังการเพิ่ม Gain มากเกินไป เพราะอาจทำให้เสียง Clipping ได้</p>
+    </section>
+      <section class="panel preset-panel">
+      <div class="section-head"><div><span class="eyebrow">WORKSPACE SETTINGS</span><h2>Presets</h2></div><span class="tag">AUTO SAVE ON</span></div>
+      <div class="preset-actions"><select id="presetSelect"><option value="">เลือก Preset</option></select><button id="loadPreset" class="secondary small">โหลด</button><button id="savePreset" class="primary small">บันทึกค่าปัจจุบัน</button></div>
+      <div class="panel-foot"><span id="autoSaveStatus" class="auto-save-status">กำลังโหลดการตั้งค่า...</span><button id="deletePreset" class="text-btn danger">ลบ Preset ที่เลือก</button><button id="resetAll" class="text-btn">คืนค่าเริ่มต้น</button></div>
+    </section>
+    </div>
+  </div>
+
+
+  <footer>2RD TUNER <span>Runs locally in your browser · No audio uploaded</span></footer>
+</main>
+<div id="playlistModal" class="playlist-overlay" hidden>
+  <section class="playlist-dialog" role="dialog" aria-modal="true" aria-labelledby="playlistTitle" tabindex="-1">
+    <div class="playlist-dialog-head">
+      <div>
+        <span class="eyebrow">SOUNDBOARD LIBRARY</span>
+        <h2 id="playlistTitle">Playlist</h2>
+        <p id="playlistCountLabel">0 เพลง</p>
+      </div>
+      <button id="closePlaylist" class="playlist-close" type="button" aria-label="ปิด Playlist">✕</button>
+    </div>
+    <div class="playlist-toolbar">
+      <button id="playlistAddFiles" class="player-add-button" type="button">＋ เพิ่มไฟล์เสียง</button>
+      <span class="playlist-format-note">รองรับไฟล์เสียงที่ Browser เล่นได้</span>
+    </div>
+    <div id="playlistItems" class="playlist-items">
+      <div class="playlist-empty">
+        <span class="playlist-empty-icon">♫</span>
+        <strong>ยังไม่มีเพลงใน Playlist</strong>
+        <span>เพิ่มไฟล์ MP3, WAV หรือไฟล์เสียงที่ Browser รองรับ</span>
+      </div>
+    </div>
+    <div class="playlist-dialog-foot">
+      <span id="playlistFooterCount">0 TRACKS</span>
+      <button id="playlistDone" class="primary small" type="button">เสร็จสิ้น</button>
+    </div>
+  </section>
+</div>
+<div id="toast" role="status"></div>
+<script src="assets/js/app.js"></script>
+<script>
+  document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+  });
+
+  document.addEventListener('selectstart', function (e) {
+    e.preventDefault();
+  });
+
+  document.addEventListener('dragstart', function (e) {
+    e.preventDefault();
+  });
+</script>
+</body></html>

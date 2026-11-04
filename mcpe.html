@@ -373,6 +373,7 @@ permalink: /mcpe
   </div>
   <script>
 
+
 document.querySelectorAll(".js-image-preview").forEach(trigger => {
     trigger.addEventListener("click", event => {
         event.preventDefault();
@@ -502,6 +503,21 @@ document.querySelectorAll(".image-preview-dialog").forEach(dialog => {
     img.addEventListener("pointerup", pointerEnd);
     img.addEventListener("pointercancel", pointerEnd);
 
+    // Click image again to close
+    img.addEventListener("click", event => {
+        event.preventDefault();
+        event.stopPropagation();
+        dialog.close();
+    });
+
+    // Click outside image to close
+    dialog.addEventListener("click", event => {
+        if (event.target === dialog) {
+            dialog.close();
+        }
+    });
+
+    // Reset when dialog closes
     dialog.addEventListener("close", () => {
         reset();
         pointers.clear();
